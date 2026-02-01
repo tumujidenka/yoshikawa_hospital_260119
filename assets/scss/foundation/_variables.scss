@@ -1,1 +1,69 @@
 // Variables
+
+// Colors
+$color-main: #F4A886;
+$color-main-dark: #E8956F;
+$color-accent: #FFFFFF;
+$color-text: #333333;
+$color-text-light: #666666;
+$color-bg: #FFF9F5;
+$color-bg-white: #FFFFFF;
+$color-border: #E5E5E5;
+
+// Gradients
+$gradient-main: linear-gradient(135deg, #F4A886 0%, #F7C4A5 100%);
+$gradient-cta: linear-gradient(135deg, #F4A886 0%, #FFB088 100%);
+
+// Typography
+$font-family-base: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-xs: 12px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-2xl: 24px;
+$font-size-3xl: 32px;
+$font-size-4xl: 40px;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$line-height-base: 1.8;
+$line-height-tight: 1.4;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+$spacing-4xl: 80px;
+
+// Layout
+$container-max-width: 1200px;
+$container-padding: 20px;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1200px;
+
+// Border Radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+$border-radius-xl: 24px;
+$border-radius-full: 9999px;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+// Transitions
+$transition-base: 0.3s ease;
+$transition-fast: 0.15s ease;

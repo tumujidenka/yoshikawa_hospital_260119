@@ -1,1 +1,102 @@
 // Utility
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
+
+// Display Utilities
+.u-sp-only {
+  @include pc {
+    display: none !important;
+  }
+}
+
+.u-pc-only {
+  display: none !important;
+
+  @include pc {
+    display: block !important;
+  }
+}
+
+.u-pc-inline {
+  display: none !important;
+
+  @include pc {
+    display: inline !important;
+  }
+}
+
+.u-pc-flex {
+  display: none !important;
+
+  @include pc {
+    display: flex !important;
+  }
+}
+
+// Text Alignment
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-text-right {
+  text-align: right;
+}
+
+// Font Weight
+.u-font-bold {
+  font-weight: $font-weight-bold;
+}
+
+.u-font-medium {
+  font-weight: $font-weight-medium;
+}
+
+// Margins
+.u-mt-0 {
+  margin-top: 0 !important;
+}
+
+.u-mt-sm {
+  margin-top: $spacing-sm !important;
+}
+
+.u-mt-md {
+  margin-top: $spacing-md !important;
+}
+
+.u-mt-lg {
+  margin-top: $spacing-lg !important;
+}
+
+.u-mt-xl {
+  margin-top: $spacing-xl !important;
+}
+
+.u-mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.u-mb-sm {
+  margin-bottom: $spacing-sm !important;
+}
+
+.u-mb-md {
+  margin-bottom: $spacing-md !important;
+}
+
+.u-mb-lg {
+  margin-bottom: $spacing-lg !important;
+}
+
+.u-mb-xl {
+  margin-bottom: $spacing-xl !important;
+}
+
+// Visually Hidden
+.u-visually-hidden {
+  @include visually-hidden;
+}

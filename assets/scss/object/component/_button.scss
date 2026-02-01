@@ -1,1 +1,131 @@
 // Component Button
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
+
+.c-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: $spacing-md $spacing-xl;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  border-radius: $border-radius-full;
+  transition: all $transition-base;
+  cursor: pointer;
+  border: 2px solid transparent;
+
+  @include pc {
+    padding: $spacing-md $spacing-2xl;
+  }
+
+  // Primary Button (背景色あり)
+  &--primary {
+    background-color: $color-main;
+    color: $color-accent;
+    border-color: $color-main;
+
+    &:hover {
+      background-color: $color-main-dark;
+      border-color: $color-main-dark;
+    }
+  }
+
+  // Secondary Button (白背景/枠線)
+  &--secondary {
+    background-color: $color-accent;
+    color: $color-main;
+    border-color: $color-main;
+
+    &:hover {
+      background-color: $color-main;
+      color: $color-accent;
+    }
+  }
+
+  // Outline Button (透明背景/白枠)
+  &--outline {
+    background-color: transparent;
+    color: $color-accent;
+    border-color: $color-accent;
+
+    &:hover {
+      background-color: $color-accent;
+      color: $color-main;
+    }
+  }
+
+  // Text Button
+  &--text {
+    background-color: transparent;
+    color: $color-main;
+    padding: $spacing-sm $spacing-md;
+    border: none;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  // Large Size
+  &--lg {
+    padding: $spacing-lg $spacing-2xl;
+    font-size: $font-size-lg;
+
+    @include pc {
+      padding: $spacing-lg $spacing-3xl;
+    }
+  }
+
+  // Small Size
+  &--sm {
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-sm;
+  }
+
+  // Full Width
+  &--block {
+    width: 100%;
+  }
+
+  // With Arrow Icon
+  &--arrow {
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-top: 2px solid currentColor;
+      border-right: 2px solid currentColor;
+      transform: rotate(45deg);
+      margin-left: $spacing-xs;
+    }
+  }
+
+  // Phone Button
+  &--phone {
+    background-color: $color-main;
+    color: $color-accent;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+
+    @include pc {
+      font-size: $font-size-2xl;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      background-color: $color-main-dark;
+    }
+  }
+}

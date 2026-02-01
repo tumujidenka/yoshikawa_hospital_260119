@@ -1,1 +1,119 @@
 // Mixins
+@use "variables" as *;
+
+// Media Queries
+@mixin sp {
+  @media screen and (max-width: #{$breakpoint-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media screen and (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: #{$breakpoint-md}) and (max-width: #{$breakpoint-lg - 1px}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+// Container
+@mixin container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+// Flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Typography
+@mixin section-title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  text-align: center;
+  margin-bottom: $spacing-xl;
+
+  @include pc {
+    font-size: $font-size-3xl;
+    margin-bottom: $spacing-2xl;
+  }
+}
+
+// Hover Effect
+@mixin hover-opacity {
+  transition: opacity $transition-base;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@mixin hover-scale {
+  transition: transform $transition-base;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+// Visually Hidden
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Clear Fix
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Truncate Text
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
