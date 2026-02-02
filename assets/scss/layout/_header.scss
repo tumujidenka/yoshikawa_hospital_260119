@@ -3,9 +3,9 @@
 @use "../foundation/mixin" as *;
 
 .l-header {
-  background-color: transparent;
-  box-shadow: none;
-  position: absolute;
+  background-color: rgba(#F8C8B4, 0.8);
+  box-shadow: $shadow-sm;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
