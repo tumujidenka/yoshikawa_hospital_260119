@@ -31,6 +31,10 @@
   max-width: $container-max-width;
   margin: 0 auto;
   padding: 0 $container-padding;
+
+  @include pc {
+    padding: 0 80px;
+  }
 }
 
 // Flexbox
@@ -106,11 +110,13 @@
 
 // Truncate Text
 @mixin truncate($lines: 1) {
-  @if $lines == 1 {
+  @if $lines ==1 {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  } @else {
+  }
+
+  @else {
     display: -webkit-box;
     -webkit-line-clamp: $lines;
     -webkit-box-orient: vertical;

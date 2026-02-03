@@ -9,7 +9,7 @@
   gap: $spacing-sm;
   padding: $spacing-md $spacing-xl;
   font-size: $font-size-base;
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-bold;
   text-decoration: none;
   border-radius: $border-radius-full;
   transition: all $transition-base;
@@ -23,35 +23,35 @@
   // Primary Button (背景色あり)
   &--primary {
     background-color: $color-main;
-    color: $color-accent;
-    border-color: $color-main;
+    color: $color-white;
+    border-color: $color-white;
 
     &:hover {
-      background-color: $color-main-dark;
-      border-color: $color-main-dark;
+      background-color: rgba($color-main, 0.3);
+      // opacity: 0.8; // 削除
     }
   }
 
   // Secondary Button (白背景/枠線)
   &--secondary {
-    background-color: $color-accent;
+    background-color: $color-white;
     color: $color-main;
     border-color: $color-main;
 
     &:hover {
       background-color: $color-main;
-      color: $color-accent;
+      color: $color-white;
     }
   }
 
   // Outline Button (透明背景/白枠)
   &--outline {
-    background-color: transparent;
+    background-color: $color-white;
     color: $color-accent;
     border-color: $color-accent;
 
     &:hover {
-      background-color: $color-accent;
+      background-color: $color-white;
       color: $color-main;
     }
   }
@@ -103,6 +103,18 @@
     }
   }
 
+  // News Button (オレンジ系背景)
+  &--news {
+    background-color: #F4A886;
+    color: $color-white;
+    border-color: #F4A886;
+
+    &:hover {
+      background-color: darken(#F4A886, 10%);
+      border-color: darken(#F4A886, 10%);
+    }
+  }
+
   // Phone Button
   &--phone {
     background-color: $color-main;
@@ -125,7 +137,8 @@
     }
 
     &:hover {
-      background-color: $color-main-dark;
+      background-color: rgba($color-main, 0.8);
+      // opacity: 0.8; // 削除
     }
   }
 }

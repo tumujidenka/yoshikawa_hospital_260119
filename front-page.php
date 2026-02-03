@@ -11,13 +11,14 @@ get_header();
                     <span class="p-top-mv__title-main">安心の医療を</span>
                 </h1>
                 <p class="p-top-mv__text">交通の利便のよい大阪市内。<br>
-                    地域で暮らすご家族が通いやすい立地で、外来診療のかかりつけとして72床の入院環境も含め、<br>
-                    きめ細やかな医療とケアを提供しています。</p>
+                    地域で暮らすご家族が<br class="u-sp-only">通いやすい立地で、<br class="u-sp-only">外来診療のかかりつけとして<br
+                        class="u-sp-only">72床の入院環境も含め、<br>
+                    きめ細やかな医療とケアを<br class="u-sp-only">提供しています。</p>
                 <div class="p-top-mv__buttons">
                     <a href="<?php echo esc_url(home_url('/contact')); ?>"
                         class="c-btn c-btn--primary c-btn--lg">予約・お問い合わせ</a>
                     <a href="<?php echo esc_url(home_url('/about')); ?>"
-                        class="c-btn c-btn--outline c-btn--lg">詳細はこちら</a>
+                        class="c-btn c-btn--outline c-btn--lg">診療案内を見る</a>
                 </div>
             </div>
         </div>
@@ -33,45 +34,42 @@ get_header();
     <!-- Section: News -->
     <section class="p-top-news">
         <div class="p-top-news__inner">
-            <h2 class="p-top-news__title">お知らせ</h2>
-            <ul class="p-top-news__list">
-                <?php
-                $news_query = new WP_Query(array(
-                    'post_type' => 'post',
-                    'posts_per_page' => 5,
-                    'post_status' => 'publish'
-                ));
+            <div class="p-top-news__header">
+                <h2 class="p-top-news__title top-title">お知らせ</h2>
+            </div>
+            <div class="p-top-news__box">
+                <ul class="p-top-news__list">
+                    <?php
+                    $news_query = new WP_Query(array(
+                        'post_type' => 'post',
+                        'posts_per_page' => 5,
+                        'post_status' => 'publish'
+                    ));
 
-                if ($news_query->have_posts()):
-                    while ($news_query->have_posts()):
-                        $news_query->the_post();
+                    if ($news_query->have_posts()):
+                        while ($news_query->have_posts()):
+                            $news_query->the_post();
+                            ?>
+                            <li class="p-top-news__item">
+                                <a href="<?php the_permalink(); ?>" class="p-top-news__link">
+                                    <time class="p-top-news__date"
+                                        datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>"><?php echo esc_html(get_the_date('Y.m.d')); ?></time>
+                                    <span class="p-top-news__item-title"><?php the_title(); ?></span>
+                                </a>
+                            </li>
+                            <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    else:
                         ?>
                         <li class="p-top-news__item">
-                            <a href="<?php the_permalink(); ?>" class="p-top-news__link">
-                                <time class="p-top-news__date"
-                                    datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>"><?php echo esc_html(get_the_date('Y.m.d')); ?></time>
-                                <?php
-                                $categories = get_the_category();
-                                if ($categories):
-                                    ?>
-                                    <span class="p-top-news__category"><?php echo esc_html($categories[0]->name); ?></span>
-                                <?php endif; ?>
-                                <span class="p-top-news__item-title"><?php the_title(); ?></span>
-                            </a>
+                            <p class="p-top-news__no-posts">現在、お知らせはありません。</p>
                         </li>
-                        <?php
-                    endwhile;
-                    wp_reset_postdata();
-                else:
-                    ?>
-                    <li class="p-top-news__item">
-                        <p class="p-top-news__no-posts">現在、お知らせはありません。</p>
-                    </li>
-                <?php endif; ?>
-            </ul>
+                    <?php endif; ?>
+                </ul>
+            </div>
             <div class="p-top-news__more">
-                <a href="<?php echo esc_url(home_url('/news')); ?>"
-                    class="c-btn c-btn--secondary c-btn--arrow">すべて見る</a>
+                <a href="<?php echo esc_url(home_url('/news')); ?>" class="c-btn c-btn--news c-btn--arrow">すべて見る</a>
             </div>
         </div>
     </section>
@@ -79,7 +77,7 @@ get_header();
     <!-- Section: Features -->
     <section class="p-top-features">
         <div class="p-top-features__inner">
-            <h2 class="p-top-features__title">当院の特徴</h2>
+            <h2 class="p-top-features__title top-title">当院の特徴</h2>
             <div class="p-top-features__list">
                 <div class="p-top-features__item">
                     <div class="p-top-features__icon">
@@ -122,7 +120,7 @@ get_header();
     <!-- Section: Departments -->
     <section class="p-top-departments">
         <div class="p-top-departments__inner">
-            <h2 class="p-top-departments__title">診療科目</h2>
+            <h2 class="p-top-departments__title top-title">診療科目</h2>
             <ul class="p-top-departments__list">
                 <li class="p-top-departments__item">
                     <a href="<?php echo esc_url(home_url('/departments/internal')); ?>"
@@ -163,7 +161,7 @@ get_header();
     <!-- Section: Hours -->
     <section class="p-top-hours">
         <div class="p-top-hours__inner">
-            <h2 class="p-top-hours__title">診療時間</h2>
+            <h2 class="p-top-hours__title top-title">診療時間</h2>
             <div class="p-top-hours__table-wrap">
                 <table class="p-top-hours__table">
                     <thead>
@@ -209,7 +207,7 @@ get_header();
     <!-- Section: Access -->
     <section class="p-top-access">
         <div class="p-top-access__inner">
-            <h2 class="p-top-access__title">アクセス</h2>
+            <h2 class="p-top-access__title top-title">アクセス</h2>
             <div class="p-top-access__content">
                 <div class="p-top-access__info">
                     <dl class="p-top-access__list">

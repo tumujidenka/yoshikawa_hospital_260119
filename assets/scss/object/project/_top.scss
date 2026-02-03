@@ -3,13 +3,65 @@
 @use "../../foundation/mixin" as *;
 
 // =================================
+// Common Title Style
+// =================================
+.top-title {
+  @include section-title;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  transform: translateX(10%);
+
+  @include pc {
+    transform: translateX(0);
+  }
+
+  // 背面の円形装飾
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #FFAB88;
+    z-index: -1;
+
+    @include pc {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  // マーカー風下線 (::afterで実装して角丸にする)
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%; // 文字の下40%の高さ
+    background-color: rgba(#B8956A, 0.8);
+    transform: translateY(-30%);
+    border-radius: 10px; // 角丸
+    z-index: -1;
+  }
+}
+
+// =================================
 // Main Visual
 // =================================
 .p-top-mv {
   position: relative;
   min-height: 100vh;
   min-height: 100svh;
-  background: $gradient-main;
+  background-color: #F8C8B4; // フォールバック色
+  background-image: url(../images/mv-bg.png);
+  background-size: cover; // アスペクト比を維持しつつ、領域全体を埋める
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -23,13 +75,14 @@
 
   &__content {
     text-align: center;
-    color: $color-accent;
+    color: $color-white;
   }
 
   &__title {
     font-size: $font-size-3xl;
     font-weight: $font-weight-bold;
     line-height: $line-height-tight;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     margin-bottom: $spacing-lg;
 
     @include pc {
@@ -44,6 +97,7 @@
   &__text {
     font-size: $font-size-base;
     line-height: $line-height-base;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     margin-bottom: $spacing-xl;
 
     @include pc {
@@ -62,6 +116,16 @@
       flex-direction: row;
       justify-content: center;
       gap: $spacing-lg;
+    }
+
+    .c-btn {
+      width: 100%;
+      max-width: 280px;
+
+      @include pc {
+        width: auto;
+        max-width: none;
+      }
     }
   }
 
@@ -98,23 +162,21 @@
     @include container;
   }
 
-  &__title {
-    @include section-title;
-    position: relative;
-    display: inline-block;
-    width: 100%;
+  &__header {
+    margin-bottom: $spacing-sm;
+  }
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 120px;
-      height: 60px;
-      background-color: rgba($color-main, 0.1);
-      border-radius: 50%;
-      z-index: -1;
+  &__box {
+    background-color: $color-white;
+    border: 1px solid #CFBA9D; // ベージュ系の枠線
+    border-radius: 60px; // 大きな角丸 (カプセル型)
+    padding: 16px 32px;
+    max-width: 900px;
+    margin: 0 auto $spacing-xl;
+
+    @include pc {
+      padding: $spacing-3xl;
+      border-radius: 100px;
     }
   }
 
@@ -127,16 +189,17 @@
   &__item {
     border-bottom: 1px solid $color-border;
 
-    &:first-child {
-      border-top: 1px solid $color-border;
+    &:last-child {
+      border-bottom: none;
     }
   }
 
   &__link {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: $spacing-sm $spacing-md;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-zero $spacing-md;
     padding: $spacing-md 0;
     text-decoration: none;
     color: $color-text;
@@ -144,7 +207,10 @@
 
     @include pc {
       flex-wrap: nowrap;
+      flex-direction: row;
       padding: $spacing-lg 0;
+      gap: $spacing-sm $spacing-md;
+      align-items: center;
     }
 
     &:hover {
@@ -156,17 +222,6 @@
     font-size: $font-size-sm;
     color: $color-text-light;
     min-width: 80px;
-  }
-
-  &__category {
-    display: inline-block;
-    padding: $spacing-xs $spacing-sm;
-    background-color: $color-main;
-    color: $color-accent;
-    font-size: $font-size-xs;
-    border-radius: $border-radius-sm;
-    min-width: 60px;
-    text-align: center;
   }
 
   &__item-title {
