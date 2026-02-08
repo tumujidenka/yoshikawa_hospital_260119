@@ -118,36 +118,36 @@ get_header();
             <ul class="p-top-departments__list">
                 <li class="p-top-departments__item">
                     <a href="<?php echo esc_url(home_url('/departments/internal')); ?>"
-                        class="p-top-departments__link">内科</a>
-                </li>
-                <li class="p-top-departments__item">
-                    <a href="<?php echo esc_url(home_url('/departments/surgery')); ?>"
                         class="p-top-departments__link">外科</a>
                 </li>
                 <li class="p-top-departments__item">
-                    <a href="<?php echo esc_url(home_url('/departments/proctology')); ?>"
-                        class="p-top-departments__link">肛門外科</a>
-                </li>
-                <li class="p-top-departments__item">
-                    <a href="<?php echo esc_url(home_url('/departments/orthopedics')); ?>"
-                        class="p-top-departments__link">整形外科</a>
-                </li>
-                <li class="p-top-departments__item">
-                    <a href="<?php echo esc_url(home_url('/departments/urology')); ?>"
+                    <a href="<?php echo esc_url(home_url('/departments/surgery')); ?>"
                         class="p-top-departments__link">泌尿器科</a>
                 </li>
                 <li class="p-top-departments__item">
-                    <a href="<?php echo esc_url(home_url('/departments/dermatology')); ?>"
+                    <a href="<?php echo esc_url(home_url('/departments/proctology')); ?>"
+                        class="p-top-departments__link">内科</a>
+                </li>
+                <li class="p-top-departments__item">
+                    <a href="<?php echo esc_url(home_url('/departments/orthopedics')); ?>"
                         class="p-top-departments__link">皮膚科</a>
                 </li>
                 <li class="p-top-departments__item">
-                    <a href="<?php echo esc_url(home_url('/departments/rehabilitation')); ?>"
+                    <a href="<?php echo esc_url(home_url('/departments/urology')); ?>"
+                        class="p-top-departments__link">肛門外科</a>
+                </li>
+                <li class="p-top-departments__item">
+                    <a href="<?php echo esc_url(home_url('/departments/dermatology')); ?>"
                         class="p-top-departments__link">リハビリテーション科</a>
+                </li>
+                <li class="p-top-departments__item">
+                    <a href="<?php echo esc_url(home_url('/departments/rehabilitation')); ?>"
+                        class="p-top-departments__link">整形外科</a>
                 </li>
             </ul>
             <div class="p-top-departments__more">
                 <a href="<?php echo esc_url(home_url('/departments')); ?>"
-                    class="c-btn c-btn--secondary c-btn--arrow">診療案内を見る</a>
+                    class="c-btn c-btn--departments c-btn--arrow">診療案内を見る</a>
             </div>
         </div>
     </section>

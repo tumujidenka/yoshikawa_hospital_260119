@@ -31,6 +31,7 @@ $breakpoint-md-pc: 1100px;
     border-radius: 50%;
     background-color: #FFAB88;
     z-index: -1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
     @include pc {
       width: 120px;
@@ -393,46 +394,91 @@ $breakpoint-md-pc: 1100px;
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: $spacing-md;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl $spacing-3xl;
     list-style: none;
-    padding: 0;
+    padding: $spacing-3xl $spacing-lg;
     margin: 0;
+    border: 2px solid $color-accent;
+    border-radius: 64px;
+    background-color: $color-bg-white;
+
+    @media (max-width: 950px) {
+      gap: $spacing-xl $spacing-lg;
+    }
 
     @include pc {
-      grid-template-columns: repeat(4, 1fr);
-      gap: $spacing-lg;
-    }
-  }
-
-  &__item {
-    &:last-child {
-      @include sp {
-        grid-column: span 2;
-      }
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
   &__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: $spacing-lg $spacing-md;
-    background-color: $color-bg-white;
-    border: 2px solid $color-main;
-    border-radius: $border-radius-lg;
+    display: block;
+    position: relative;
+    padding: 0 0 10px 60px;
     text-decoration: none;
+    font-size: 16px;
     color: $color-text;
     font-weight: $font-weight-medium;
-    transition: all $transition-base;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
 
     @include pc {
-      padding: $spacing-xl $spacing-lg;
+      padding: 0 0 6px 70px;
+      font-size: 24px;
     }
 
+
+    @media (min-width:768px) and (max-width: 1024px) {
+      padding: 0 0 6px 60px;
+      font-size: 20px;
+    }
+
+
     &:hover {
+      opacity: 0.7;
+      background-color: transparent;
+      color: $color-text;
+    }
+
+    // 左側の円
+    &::before {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: 6px;
+      width: 45px;
+      height: 45px;
       background-color: $color-main;
-      color: $color-accent;
+      border-radius: 50%;
+      z-index: 1;
+
+      @include pc {
+        top: 4px;
+      }
+
+      @media (min-width:768px) and (max-width: 1024px) {
+        top: -3px;
+      }
+    }
+
+    // 下の線
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 25px; // 円の中心
+      width: calc(100% - 25px);
+      height: 10px;
+      background-color: $color-main;
+      border-radius: 0 10px 10px 0;
+      z-index: 0;
+
+      @include pc {
+        left: 30px;
+        width: calc(100% - 30px);
+      }
     }
   }
 
@@ -447,7 +493,7 @@ $breakpoint-md-pc: 1100px;
 // =================================
 .p-top-hours {
   padding: $spacing-3xl 0;
-  background-color: $color-bg-white;
+  background-color: $color-bg;
 
   @include pc {
     padding: $spacing-4xl 0;
