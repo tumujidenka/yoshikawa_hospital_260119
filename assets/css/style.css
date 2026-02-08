@@ -761,7 +761,7 @@ body.admin-bar .l-header {
   border-radius: 9999px;
   transition: all 0.3s ease;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 2px solid #B8956A;
 }
 @media screen and (min-width: 768px) {
   .c-btn {
@@ -829,14 +829,12 @@ body.admin-bar .l-header {
   transform: rotate(45deg);
   margin-left: 4px;
 }
-.c-btn--news {
+.c-btn--news, .c-btn--features {
   background-color: #F4A886;
   color: #FFFFFF;
-  border-color: #F4A886;
 }
-.c-btn--news:hover {
+.c-btn--news:hover, .c-btn--features:hover {
   background-color: #f08657;
-  border-color: #f08657;
 }
 .c-btn--phone {
   background-color: #FFAB88;
@@ -864,7 +862,7 @@ body.admin-bar .l-header {
 
 .top-title {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   color: #333333;
   text-align: center;
   margin-bottom: 32px;
@@ -1109,7 +1107,7 @@ body.admin-bar .l-header {
 
 .p-top-features {
   padding: 64px 0;
-  background-color: #FFFFFF;
+  background-color: #FFF9F5;
 }
 @media screen and (min-width: 768px) {
   .p-top-features {
@@ -1128,7 +1126,7 @@ body.admin-bar .l-header {
 }
 .p-top-features__title {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   color: #333333;
   text-align: center;
   margin-bottom: 32px;
@@ -1140,52 +1138,103 @@ body.admin-bar .l-header {
   }
 }
 .p-top-features__list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
 }
 @media screen and (min-width: 768px) {
   .p-top-features__list {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
+    flex-direction: row;
+    gap: 0;
   }
 }
 .p-top-features__item {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 32px;
-  background-color: #FFF9F5;
-  border-radius: 16px;
+  padding-top: 15px;
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(to bottom right, #FDA983 55%, #F2CCBC);
+  border-radius: 50%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  aspect-ratio: 1/1;
+}
+@media screen and (min-width: 768px) {
+  .p-top-features__item {
+    width: 400px;
+    height: auto;
+    margin-left: -60px;
+    padding-top: 70px;
+  }
+  .p-top-features__item:first-child {
+    margin-left: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1100px) {
+  .p-top-features__item {
+    padding: 20px;
+    padding-top: 40px;
+  }
 }
 .p-top-features__item:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 .p-top-features__icon {
-  width: 100px;
+  width: 200px;
   height: 100px;
-  margin: 0 auto 24px;
-  background-color: #FFAB88;
+  margin: 0 auto;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.p-top-features__icon svg {
-  width: 48px;
-  height: 48px;
-  color: #B8956A;
+.p-top-features__icon img {
+  width: 200px;
+  height: auto;
+}
+@media (min-width: 768px) and (max-width: 1100px) {
+  .p-top-features__icon img {
+    width: 140px;
+  }
 }
 .p-top-features__item-title {
   font-size: 20px;
   font-weight: 700;
   color: #333333;
   margin-bottom: 16px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) and (max-width: 1100px) {
+  .p-top-features__item-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 768px) {
+  .p-top-features__item-title {
+    height: 50px;
+  }
 }
 .p-top-features__item-text {
   font-size: 16px;
   color: #666666;
   line-height: 1.8;
+}
+@media (min-width: 768px) and (max-width: 1100px) {
+  .p-top-features__item-text {
+    font-size: 14px;
+  }
 }
 .p-top-features__more {
   text-align: center;
@@ -1213,7 +1262,7 @@ body.admin-bar .l-header {
 }
 .p-top-departments__title {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   color: #333333;
   text-align: center;
   margin-bottom: 32px;
@@ -1291,7 +1340,7 @@ body.admin-bar .l-header {
 }
 .p-top-hours__title {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   color: #333333;
   text-align: center;
   margin-bottom: 32px;
@@ -1368,7 +1417,7 @@ body.admin-bar .l-header {
 }
 .p-top-access__title {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   color: #333333;
   text-align: center;
   margin-bottom: 32px;

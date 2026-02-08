@@ -2,6 +2,9 @@
 @use "../../foundation/variables" as *;
 @use "../../foundation/mixin" as *;
 
+$breakpoint-md-pc: 1100px;
+
+
 // =================================
 // Common Title Style
 // =================================
@@ -251,7 +254,7 @@
 // =================================
 .p-top-features {
   padding: $spacing-3xl 0;
-  background-color: $color-bg-white;
+  background-color: $color-bg;
 
   @include pc {
     padding: $spacing-4xl 0;
@@ -266,22 +269,49 @@
   }
 
   &__list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: $spacing-xl;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: $spacing-lg;
 
     @include pc {
-      grid-template-columns: repeat(3, 1fr);
-      gap: $spacing-2xl;
+      flex-direction: row;
+      gap: 0; // ネガティブマージンで重ねるためgapは0
     }
   }
 
   &__item {
+    box-shadow: $shadow-lg; // 影を追加
     text-align: center;
     padding: $spacing-xl;
-    background-color: $color-bg;
-    border-radius: $border-radius-lg;
+    padding-top: 15px;
+    width: 280px;
+    height: 280px;
+    background: linear-gradient(to bottom right, #FDA983 55%, #F2CCBC);
+    border-radius: 50%;
     transition: transform $transition-base, box-shadow $transition-base;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    aspect-ratio: 1 / 1; // 正円を維持
+
+    @include pc {
+      width: 400px;
+      height: auto;
+      margin-left: -60px; // 重ね合わせ
+      padding-top: 70px;
+
+      &:first-child {
+        margin-left: 0; // 最初の要素は重ねない
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: $breakpoint-md-pc) {
+      padding: 20px;
+      padding-top: 40px;
+    }
 
     &:hover {
       transform: translateY(-4px);
@@ -290,17 +320,19 @@
   }
 
   &__icon {
-    width: 100px;
+    width: 200px;
     height: 100px;
-    margin: 0 auto $spacing-lg;
-    background-color: $color-main;
+    margin: 0 auto;
     border-radius: 50%;
     @include flex-center;
 
-    svg {
-      width: 48px;
-      height: 48px;
-      color: $color-accent;
+    img {
+      width: 200px;
+      height: auto;
+
+      @media (min-width: 768px) and (max-width: $breakpoint-md-pc) {
+        width: 140px;
+      }
     }
   }
 
@@ -309,12 +341,29 @@
     font-weight: $font-weight-bold;
     color: $color-text;
     margin-bottom: $spacing-md;
+    height: 70px;
+    display: flex;
+    justify-content: center; // 水平中央
+    align-items: center; // 垂直中央
+
+    @media (min-width: 768px) and (max-width: $breakpoint-md-pc) {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      height: 50px;
+    }
   }
 
   &__item-text {
     font-size: $font-size-base;
     color: $color-text-light;
     line-height: $line-height-base;
+
+    @media (min-width: 768px) and (max-width: $breakpoint-md-pc) {
+      font-size: 14px;
+    }
   }
 
   &__more {

@@ -14,7 +14,7 @@
   border-radius: $border-radius-full;
   transition: all $transition-base;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 2px solid $color-accent;
 
   @include pc {
     padding: $spacing-md $spacing-2xl;
@@ -104,14 +104,13 @@
   }
 
   // News Button (オレンジ系背景)
-  &--news {
+  &--news,
+  &--features {
     background-color: #F4A886;
     color: $color-white;
-    border-color: #F4A886;
 
     &:hover {
       background-color: darken(#F4A886, 10%);
-      border-color: darken(#F4A886, 10%);
     }
   }
 

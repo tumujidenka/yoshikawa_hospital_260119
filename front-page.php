@@ -81,38 +81,32 @@ get_header();
             <div class="p-top-features__list">
                 <div class="p-top-features__item">
                     <div class="p-top-features__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                        </svg>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/feature_1.svg" alt="救急体制"
+                            width="100" height="100">
                     </div>
-                    <h3 class="p-top-features__item-title">救急体制</h3>
-                    <p class="p-top-features__item-text">24時間対応の救急体制で、急な症状にも迅速に対応いたします。</p>
+                    <h3 class="p-top-features__item-title">時間外や夜間休日の<br>救急医療体制</h3>
+                    <p class="p-top-features__item-text">急患対応は常時受付</p>
                 </div>
                 <div class="p-top-features__item">
                     <div class="p-top-features__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" />
-                        </svg>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/feature_2.svg" alt="入院対応"
+                            width="100" height="100">
                     </div>
-                    <h3 class="p-top-features__item-title">入院対応</h3>
-                    <p class="p-top-features__item-text">入院設備を完備し、安心して療養いただける環境を整えています。</p>
+                    <h3 class="p-top-features__item-title">かかりつけ医療から<br>入院対応まで</h3>
+                    <p class="p-top-features__item-text">一般病床22床<br>医療療養病床50床</p>
                 </div>
                 <div class="p-top-features__item">
                     <div class="p-top-features__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-8-2h4v2h-4V4zM4 20V8h16v12H4zm8-10c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-                        </svg>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/feature_3.svg" alt="院内設備"
+                            width="100" height="100">
                     </div>
-                    <h3 class="p-top-features__item-title">院内設備</h3>
-                    <p class="p-top-features__item-text">最新の医療機器を備え、質の高い医療サービスを提供します。</p>
+                    <h3 class="p-top-features__item-title">院内薬局完備</h3>
+                    <p class="p-top-features__item-text">薬剤師がその場で調剤、<br>お求めやすい価格</p>
                 </div>
             </div>
             <div class="p-top-features__more">
                 <a href="<?php echo esc_url(home_url('/features')); ?>"
-                    class="c-btn c-btn--secondary c-btn--arrow">もっと見る</a>
+                    class="c-btn c-btn--features c-btn--arrow">もっと見る</a>
             </div>
         </div>
     </section>
