@@ -209,27 +209,42 @@ get_header();
         <div class="p-top-access__inner">
             <h2 class="p-top-access__title top-title">アクセス</h2>
             <div class="p-top-access__content">
-                <div class="p-top-access__info">
-                    <dl class="p-top-access__list">
-                        <div class="p-top-access__item">
-                            <dt class="p-top-access__dt">住所</dt>
-                            <dd class="p-top-access__dd">〒000-0000<br>○○県○○市○○町1-2-3</dd>
+                <div class="p-top-access__info-box">
+                    <div class="p-top-access__item">
+                        <div class="p-top-access__head">
+                            <span class="p-top-access__icon p-top-access__icon--address">📍</span>
+                            <h3 class="p-top-access__sub-title">住所</h3>
                         </div>
-                        <div class="p-top-access__item">
-                            <dt class="p-top-access__dt">電話番号</dt>
-                            <dd class="p-top-access__dd">
-                                <a href="tel:0120-000-000" class="p-top-access__tel">0120-000-000</a>
-                            </dd>
+                        <p class="p-top-access__text">
+                            〒550-0025<br>
+                            大阪府大阪市西区九条南3-29-14
+                        </p>
+                    </div>
+                    <div class="p-top-access__item">
+                        <div class="p-top-access__head">
+                            <span class="p-top-access__icon p-top-access__icon--train">🕒</span>
+                            <h3 class="p-top-access__sub-title">交通アクセス</h3>
                         </div>
-                        <div class="p-top-access__item">
-                            <dt class="p-top-access__dt">交通アクセス</dt>
-                            <dd class="p-top-access__dd">○○駅から徒歩5分<br>○○バス停から徒歩3分<br>駐車場20台完備</dd>
+                        <ul class="p-top-access__list">
+                            <li>阪神なんば線、地下鉄中央線九条駅<br>徒歩6分</li>
+                            <li>大阪環状線、地下鉄中央線弁天町<br>徒歩8分</li>
+                            <li>大阪シティバス辰巳橋バス停<br>徒歩1分</li>
+                        </ul>
+                    </div>
+                    <div class="p-top-access__item">
+                        <div class="p-top-access__head">
+                            <span class="p-top-access__icon p-top-access__icon--phone">📞</span>
+                            <h3 class="p-top-access__sub-title">お電話でのお問い合わせ</h3>
                         </div>
-                    </dl>
+                        <div class="p-top-access__text">
+                            <p class="p-top-access__tel">TEL：06-6583-4114</p>
+                            <p class="p-top-access__fax">FAX：06-6583-4126</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="p-top-access__map">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.8280303808788!2d139.76493!3d35.6812362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQwJzUyLjQiTiAxMznCsDQ1JzUzLjgiRQ!5e0!3m2!1sja!2sjp!4v1234567890123"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.2737007231212!2d135.46616277605105!3d34.673041072929585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e64a0807f5ff%3A0xb9332bb72b6f147d!2z44CSNTUwLTAwMjUg5aSn6Ziq5bqc5aSn6Ziq5biC6KW_5Yy65Lmd5p2h5Y2X77yT5LiB55uu77yS77yZ4oiS77yR77yU!5e0!3m2!1sja!2sjp!4v1770592536694!5m2!1sja!2sjp"
                         width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>

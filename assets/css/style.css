@@ -1512,70 +1512,93 @@ body.admin-bar .l-header {
 .p-top-access__content {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 16px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .p-top-access__content {
     flex-direction: row;
-    gap: 48px;
   }
 }
-@media screen and (min-width: 768px) {
-  .p-top-access__info {
-    flex: 1;
+.p-top-access__info-box {
+  border: 2px solid #B8956A;
+  border-radius: 40px;
+  padding: 24px;
+  background-color: #FFFFFF;
+}
+@media screen and (min-width: 1024px) {
+  .p-top-access__info-box {
+    width: 45%;
+  }
+}
+.p-top-access__item {
+  margin-bottom: 32px;
+}
+.p-top-access__item:last-child {
+  margin-bottom: 0;
+}
+.p-top-access__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.p-top-access__icon {
+  font-size: 20px;
+}
+.p-top-access__sub-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333333;
+}
+.p-top-access__text, .p-top-access__list {
+  margin: 0;
+  padding-left: 0;
+  color: #333333;
+}
+@media screen and (min-width: 1024px) {
+  .p-top-access__text, .p-top-access__list {
+    padding-left: 16px;
   }
 }
 .p-top-access__list {
-  margin: 0;
+  list-style: none;
+  padding-left: 8px;
 }
-.p-top-access__item {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 16px 0;
-  border-bottom: 1px solid #E5E5E5;
+.p-top-access__list li {
+  margin-bottom: 4px;
 }
-@media screen and (min-width: 768px) {
-  .p-top-access__item {
-    flex-direction: row;
-    gap: 24px;
+@media screen and (min-width: 1024px) {
+  .p-top-access__list {
+    list-style: disc;
+    padding-left: calc(16px + 1.2em);
   }
 }
-.p-top-access__item:first-child {
-  padding-top: 0;
-}
-.p-top-access__dt {
-  font-weight: 700;
-  color: #FFAB88;
-  min-width: 100px;
-}
-.p-top-access__dd {
-  margin: 0;
-  line-height: 1.8;
-}
 .p-top-access__tel {
-  font-size: 20px;
   font-weight: 700;
-  color: #FFAB88;
-  text-decoration: none;
+  margin: 0;
 }
-.p-top-access__tel:hover {
-  text-decoration: underline;
+.p-top-access__fax {
+  color: #666666;
+  margin: 0;
 }
-@media screen and (min-width: 768px) {
+.p-top-access__map {
+  width: 100%;
+  border-radius: 40px;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+}
+@media screen and (min-width: 1024px) {
   .p-top-access__map {
-    flex: 1;
+    width: 55%;
+    height: auto;
+    aspect-ratio: auto;
   }
 }
 .p-top-access__map iframe {
+  display: block;
   width: 100%;
-  height: 250px;
-  border-radius: 16px;
-}
-@media screen and (min-width: 768px) {
-  .p-top-access__map iframe {
-    height: 300px;
-  }
+  height: 100%;
+  min-height: 300px;
 }
 
 .p-top-cta {
