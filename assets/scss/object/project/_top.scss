@@ -508,6 +508,13 @@ $breakpoint-md-pc: 1100px;
   }
 
   &__table-wrap {
+    border: 2px solid $color-accent;
+    border-radius: 64px;
+    overflow: hidden;
+    background-color: $color-bg-white;
+  }
+
+  &__table-scroll {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -517,47 +524,76 @@ $breakpoint-md-pc: 1100px;
     min-width: 600px;
     border-collapse: collapse;
     text-align: center;
+    font-size: $font-size-2xl;
+
+    tbody tr:first-child {
+      border-bottom: 2px solid $color-accent;
+    }
+
+    @media (max-width: 768px) {
+      font-size: $font-size-lg;
+    }
   }
 
   &__th,
   &__td {
-    padding: $spacing-md;
-    border: 1px solid $color-border;
+    padding: $spacing-md $spacing-sm;
+    border: none;
 
-    @include pc {
-      padding: $spacing-lg;
-    }
+    @include pc {}
   }
 
   &__th {
-    background-color: $color-main;
-    color: $color-accent;
-    font-weight: $font-weight-medium;
+    background-color: #F4A886;
+    color: $color-white;
+    font-weight: $font-weight-bold;
+    text-align: center;
+
+    &:first-child {
+      width: 25%;
+    }
 
     &--holiday {
-      background-color: $color-main-dark;
+      background-color: #F4A886;
     }
   }
 
   &__td {
     background-color: $color-bg-white;
+    color: $color-text;
+    vertical-align: middle;
+    font-weight: $font-weight-bold;
+    font-size: 1.2em;
 
     &--time {
-      background-color: $color-bg;
+      background-color: transparent;
       font-weight: $font-weight-medium;
       white-space: nowrap;
+      text-align: center;
+      padding-left: $spacing-xl;
+      font-size: $font-size-2xl;
+
+      @media (max-width: 768px) {
+        font-size: $font-size-lg;
+      }
     }
 
     &--closed {
-      color: $color-text-light;
+      color: $color-text;
     }
   }
 
-  &__note {
-    margin-top: $spacing-lg;
-    font-size: $font-size-sm;
+  &__notes {
+    margin-top: $spacing-xl;
+    font-size: $font-size-2xl;
     color: $color-text-light;
-    text-align: center;
+    text-align: left;
+    padding-left: $spacing-2xl;
+
+    @media (max-width: 768px) {
+      font-size: $font-size-lg;
+      padding-left: $spacing-sm;
+    }
   }
 }
 

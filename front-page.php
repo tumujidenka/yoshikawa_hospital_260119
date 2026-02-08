@@ -157,44 +157,50 @@ get_header();
         <div class="p-top-hours__inner">
             <h2 class="p-top-hours__title top-title">診療時間</h2>
             <div class="p-top-hours__table-wrap">
-                <table class="p-top-hours__table">
-                    <thead>
-                        <tr>
-                            <th class="p-top-hours__th">診療時間</th>
-                            <th class="p-top-hours__th">月</th>
-                            <th class="p-top-hours__th">火</th>
-                            <th class="p-top-hours__th">水</th>
-                            <th class="p-top-hours__th">木</th>
-                            <th class="p-top-hours__th">金</th>
-                            <th class="p-top-hours__th">土</th>
-                            <th class="p-top-hours__th p-top-hours__th--holiday">日・祝</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="p-top-hours__td p-top-hours__td--time">9:00-13:00</td>
-                            <td class="p-top-hours__td">○</td>
-                            <td class="p-top-hours__td">○</td>
-                            <td class="p-top-hours__td">○</td>
-                            <td class="p-top-hours__td">○</td>
-                            <td class="p-top-hours__td">○</td>
-                            <td class="p-top-hours__td">○</td>
-                            <td class="p-top-hours__td p-top-hours__td--closed">ー</td>
-                        </tr>
-                        <tr>
-                            <td class="p-top-hours__td p-top-hours__td--time">14:00-19:00</td>
-                            <td class="p-top-hours__td">○</td>
-                            <td class="p-top-hours__td">○</td>
-                            <td class="p-top-hours__td">○</td>
-                            <td class="p-top-hours__td">○</td>
-                            <td class="p-top-hours__td">○</td>
-                            <td class="p-top-hours__td p-top-hours__td--closed">ー</td>
-                            <td class="p-top-hours__td p-top-hours__td--closed">ー</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="p-top-hours__table-scroll">
+                    <table class="p-top-hours__table">
+                        <thead>
+                            <tr>
+                                <th class="p-top-hours__th">診療時間</th>
+                                <th class="p-top-hours__th">月</th>
+                                <th class="p-top-hours__th">火</th>
+                                <th class="p-top-hours__th">水</th>
+                                <th class="p-top-hours__th">木</th>
+                                <th class="p-top-hours__th">金</th>
+                                <th class="p-top-hours__th">土</th>
+                                <th class="p-top-hours__th p-top-hours__th--holiday">日/祝</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="p-top-hours__td p-top-hours__td--time">9:00-13:00</td>
+                                <td class="p-top-hours__td">○</td>
+                                <td class="p-top-hours__td">○</td>
+                                <td class="p-top-hours__td">○</td>
+                                <td class="p-top-hours__td">○</td>
+                                <td class="p-top-hours__td">○</td>
+                                <td class="p-top-hours__td">○</td>
+                                <td class="p-top-hours__td p-top-hours__td--closed">ー</td>
+                            </tr>
+                            <tr>
+                                <td class="p-top-hours__td p-top-hours__td--time">14:00-19:00</td>
+                                <td class="p-top-hours__td">○</td>
+                                <td class="p-top-hours__td">○</td>
+                                <td class="p-top-hours__td">○</td>
+                                <td class="p-top-hours__td">○</td>
+                                <td class="p-top-hours__td">○</td>
+                                <td class="p-top-hours__td p-top-hours__td--closed">ー</td>
+                                <td class="p-top-hours__td p-top-hours__td--closed">ー</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <p class="p-top-hours__note">※受付は診療終了の30分前までとなります。</p>
+            <div class="p-top-hours__notes">
+                <p class="p-top-hours__note">※急患対応は常時行っています</p>
+                <p class="p-top-hours__note">※受付は午前・午後とも15分前までにお願いします</p>
+                <p class="p-top-hours__note">休診日：日曜日・祝日</p>
+            </div>
         </div>
     </section>
 
