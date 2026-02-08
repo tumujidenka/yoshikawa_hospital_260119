@@ -257,11 +257,11 @@ get_header();
     <section class="p-top-cta">
         <div class="p-top-cta__inner">
             <h2 class="p-top-cta__title">ご予約・お問い合わせはこちら</h2>
-            <p class="p-top-cta__text">お気軽にお電話ください。<br class="u-sp-only">スタッフが丁寧に対応いたします。</p>
+            <p class="p-top-cta__text">診療のご予約やご相談など、お気軽にお問い合わせください</p>
             <div class="p-top-cta__buttons">
-                <a href="tel:0120-000-000" class="c-btn c-btn--phone c-btn--lg">0120-000-000</a>
+                <a href="tel:06-6583-4114" class="c-btn c-btn--lg p-top-cta__btn p-top-cta__btn--tel">06-6583-4114</a>
                 <a href="<?php echo esc_url(home_url('/contact')); ?>"
-                    class="c-btn c-btn--secondary c-btn--lg">お問い合わせフォーム</a>
+                    class="c-btn c-btn--lg p-top-cta__btn p-top-cta__btn--contact">お問い合わせフォーム</a>
             </div>
         </div>
     </section>

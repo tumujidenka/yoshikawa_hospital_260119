@@ -1624,8 +1624,9 @@ body.admin-bar .l-header {
 .p-top-cta__title {
   font-size: 24px;
   font-weight: 700;
-  color: #B8956A;
+  color: #FFFFFF;
   margin-bottom: 16px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 @media screen and (min-width: 768px) {
   .p-top-cta__title {
@@ -1635,8 +1636,9 @@ body.admin-bar .l-header {
 }
 .p-top-cta__text {
   font-size: 16px;
-  color: #B8956A;
+  color: #FFFFFF;
   margin-bottom: 32px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 @media screen and (min-width: 768px) {
   .p-top-cta__text {
@@ -1656,6 +1658,57 @@ body.admin-bar .l-header {
     justify-content: center;
     gap: 24px;
   }
+}
+.p-top-cta__btn {
+  width: 100%;
+  max-width: 320px;
+}
+@media screen and (min-width: 768px) {
+  .p-top-cta__btn {
+    width: auto;
+    min-width: 300px;
+  }
+}
+.p-top-cta__btn--tel {
+  background-color: transparent;
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .p-top-cta__btn--tel {
+    font-size: 18px;
+  }
+}
+.p-top-cta__btn--tel::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: #FFFFFF;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 24 24'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 24 24'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+.p-top-cta__btn--tel:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  opacity: 1;
+}
+.p-top-cta__btn--contact {
+  background-color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  color: #FFAB88;
+  font-weight: 700;
+}
+.p-top-cta__btn--contact:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #FFAB88;
+  opacity: 1;
 }
 
 @media screen and (min-width: 768px) {
