@@ -10,7 +10,15 @@ get_header(); ?>
     <div class="p-medical-fv">
         <div class="p-medical-fv__inner">
             <h1 class="p-medical-fv__title">診療科目・診療内容</h1>
-            <p class="p-medical-fv__lead">当院では、地域の皆様の健康を守るため、<br class="u-sp-only">幅広い診療科目と充実したサービスを提供しています</p>
+            <p class="p-medical-fv__lead">当院では、地域の皆様の健康を守るため、<br>幅広い診療科目と充実したサービスを提供しています</p>
+        </div>
+        <!-- Wave Shape -->
+        <div class="p-medical-fv__wave">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path
+                    d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
+                    fill="#FFF9F5" />
+            </svg>
         </div>
     </div>
 

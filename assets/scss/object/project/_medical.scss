@@ -7,15 +7,35 @@
 
 .p-medical-fv {
     position: relative;
-    background: $gradient-main;
+    background-color: $color-bg;
+    background-image: url(../images/mv-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: $spacing-4xl 0 $spacing-3xl;
     text-align: center;
+    height: 50vh;
     color: $color-white;
+
+    // Center content
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include pc {
+        height: 70vh;
+    }
+
+    &__inner {
+        @include container;
+        width: 100%; // Ensure it takes full width up to container max-width
+    }
 
     &__title {
         font-size: $font-size-2xl;
         font-weight: $font-weight-bold;
         margin-bottom: $spacing-sm;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
         @include pc {
             font-size: $font-size-3xl;
@@ -27,25 +47,30 @@
         font-size: $font-size-sm;
         font-weight: $font-weight-medium;
         line-height: $line-height-base;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
         @include pc {
             font-size: $font-size-base;
         }
     }
 
-    // Wave shape divider at the bottom (optional, mimicking top page style if needed)
-    &::after {
-        content: "";
+    // Wave Shape
+    &__wave {
         position: absolute;
-        bottom: -1px;
+        bottom: 0;
         left: 0;
         width: 100%;
-        height: 40px;
-        background-color: $color-white;
-        clip-path: ellipse(60% 80% at 50% 100%);
+        line-height: 0;
 
-        @include pc {
+        svg {
+            display: block;
+            width: 100%;
             height: 80px;
+            margin-bottom: -1px;
+
+            @include pc {
+                height: 120px;
+            }
         }
     }
 }
@@ -53,6 +78,7 @@
 .p-medical-subjects,
 .p-medical-others {
     padding: $spacing-3xl 0;
+    background-color: $color-bg;
 
     @include pc {
         padding: $spacing-4xl 0;
@@ -64,17 +90,29 @@
 }
 
 .p-medical-heading {
+    position: relative;
     font-size: $font-size-xl;
     font-weight: $font-weight-bold;
     color: $color-text;
-    padding-left: $spacing-sm;
-    border-left: 6px solid $color-main;
+    padding-left: $spacing-md; // Increase padding to accommodate the rounded line
     margin-bottom: $spacing-xl;
+
+    // Use pseudo-element for rounded border
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 6px;
+        height: 100%;
+        background-color: $color-main;
+        border-radius: 3px; // Rounded corners (half of width)
+    }
 
     @include pc {
         font-size: $font-size-2xl;
         margin-bottom: $spacing-2xl;
-        padding-left: $spacing-md;
+        padding-left: $spacing-lg;
     }
 }
 
@@ -92,55 +130,111 @@
 
 .p-medical-item {
     position: relative;
-    padding-top: $spacing-lg;
+    padding-top: 0;
+    margin-bottom: $spacing-xl;
+
+    @include pc {
+        margin-bottom: 0;
+    }
 
     &__head {
-        position: absolute;
-        top: 0;
-        left: $spacing-md;
-        background-color: $color-main; // Light Orange
-        color: $color-accent; // Darker text
+        position: relative;
+        top: auto;
+        left: auto;
+        background-color: transparent;
+        color: $color-text;
         font-weight: $font-weight-bold;
-        font-size: $font-size-lg;
-        padding: $spacing-xs $spacing-xl;
-        border-radius: 9999px; // Pill shape
+        font-size: $font-size-2xl;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+        margin-bottom: $spacing-md;
+        padding-left: 20px;
+
+        @include pc {
+            font-size: 28px;
+            margin-bottom: $spacing-lg;
+        }
+    }
+
+    &__title {
+        display: inline-block;
+        position: relative;
         z-index: 1;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.1em;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -40px;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #FFAB88;
+            z-index: -1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+            @include pc {
+                width: 90px;
+                height: 90px;
+                left: -40px;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background-color: rgba(#B8956A, 0.8);
+            transform: translateY(-30%);
+            border-radius: 10px;
+            z-index: -1;
+        }
     }
 
     &__body {
-        background-color: $color-bg;
-        padding: $spacing-xl $spacing-md $spacing-md;
-        border-radius: $border-radius-lg;
-        height: 100%;
+        position: relative;
+        background-color: transparent;
+        padding: $spacing-sm 0 $spacing-sm $spacing-lg;
+        border-radius: 0;
+        margin-left: 15px; // Align with the left edge of the text (roughly)
+
+        // Use pseudo-element for rounded border
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background-color: #FFDBD0;
+            border-radius: 3px;
+        }
 
         @include pc {
-            padding: $spacing-2xl $spacing-lg $spacing-lg;
+            padding: $spacing-md 0 $spacing-md $spacing-xl;
+            margin-left: 20px;
+
+            &::before {
+                width: 8px;
+                border-radius: 4px;
+            }
         }
     }
 
     &__text {
-        font-size: $font-size-sm;
+        font-size: $font-size-base;
         color: $color-text;
-        line-height: $line-height-base;
+        line-height: 1.8;
         margin: 0;
 
         @include pc {
-            font-size: $font-size-base;
-        }
-    }
-}
-
-// Others section adjustments if items are smaller
-.p-medical-others {
-    .p-medical-item {
-        &__head {
-            font-size: $font-size-base;
-            padding: $spacing-xs $spacing-lg;
-
-            @include pc {
-                font-size: $font-size-lg;
-            }
+            font-size: $font-size-lg;
         }
     }
 }
