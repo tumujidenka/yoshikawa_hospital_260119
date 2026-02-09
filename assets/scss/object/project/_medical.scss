@@ -1,0 +1,146 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
+
+/* =================================
+   Medical Page
+   ================================= */
+
+.p-medical-fv {
+    position: relative;
+    background: $gradient-main;
+    padding: $spacing-4xl 0 $spacing-3xl;
+    text-align: center;
+    color: $color-white;
+
+    &__title {
+        font-size: $font-size-2xl;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-sm;
+
+        @include pc {
+            font-size: $font-size-3xl;
+            margin-bottom: $spacing-md;
+        }
+    }
+
+    &__lead {
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
+        line-height: $line-height-base;
+
+        @include pc {
+            font-size: $font-size-base;
+        }
+    }
+
+    // Wave shape divider at the bottom (optional, mimicking top page style if needed)
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background-color: $color-white;
+        clip-path: ellipse(60% 80% at 50% 100%);
+
+        @include pc {
+            height: 80px;
+        }
+    }
+}
+
+.p-medical-subjects,
+.p-medical-others {
+    padding: $spacing-3xl 0;
+
+    @include pc {
+        padding: $spacing-4xl 0;
+    }
+
+    &__inner {
+        @include container;
+    }
+}
+
+.p-medical-heading {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-text;
+    padding-left: $spacing-sm;
+    border-left: 6px solid $color-main;
+    margin-bottom: $spacing-xl;
+
+    @include pc {
+        font-size: $font-size-2xl;
+        margin-bottom: $spacing-2xl;
+        padding-left: $spacing-md;
+    }
+}
+
+.p-medical-list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+
+    @include pc {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $spacing-2xl $spacing-xl;
+    }
+}
+
+.p-medical-item {
+    position: relative;
+    padding-top: $spacing-lg;
+
+    &__head {
+        position: absolute;
+        top: 0;
+        left: $spacing-md;
+        background-color: $color-main; // Light Orange
+        color: $color-accent; // Darker text
+        font-weight: $font-weight-bold;
+        font-size: $font-size-lg;
+        padding: $spacing-xs $spacing-xl;
+        border-radius: 9999px; // Pill shape
+        z-index: 1;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    &__body {
+        background-color: $color-bg;
+        padding: $spacing-xl $spacing-md $spacing-md;
+        border-radius: $border-radius-lg;
+        height: 100%;
+
+        @include pc {
+            padding: $spacing-2xl $spacing-lg $spacing-lg;
+        }
+    }
+
+    &__text {
+        font-size: $font-size-sm;
+        color: $color-text;
+        line-height: $line-height-base;
+        margin: 0;
+
+        @include pc {
+            font-size: $font-size-base;
+        }
+    }
+}
+
+// Others section adjustments if items are smaller
+.p-medical-others {
+    .p-medical-item {
+        &__head {
+            font-size: $font-size-base;
+            padding: $spacing-xs $spacing-lg;
+
+            @include pc {
+                font-size: $font-size-lg;
+            }
+        }
+    }
+}
