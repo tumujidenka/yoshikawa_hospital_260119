@@ -1,0 +1,1038 @@
+/* ==============================================
+   基本設定（ベーススタイル）
+   ============================================== */
+
+/* ページ全体の設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+    color: #333;
+    /* 基本の文字色（濃いグレー） */
+    line-height: 1.6;
+    /* 行間を少し広げて読みやすく */
+    background-color: #fff;
+    /* 背景色は白 */
+}
+
+/* リンクの設定 */
+a {
+    text-decoration: none;
+    /* 下線を消す */
+    color: inherit;
+    /* 親要素の色を引き継ぐ */
+}
+
+/* 画像の設定 */
+img {
+    max-width: 100%;
+    /* 親要素からはみ出さないようにする */
+    height: auto;
+}
+
+/* ==============================================
+   共通デザイン設定
+   ============================================== */
+
+/* セクション（情報のまとまり）ごとの余白設定 */
+section {
+    padding: 60px 20px;
+    /* 上下に60px、左右に20pxの余白 */
+    max-width: 1000px;
+    /* 横幅の最大値を1000pxに制限（広がりすぎないように） */
+    margin: 0 auto;
+    /* 中央寄せ */
+}
+
+/* セクションタイトルのデザイン */
+.section-title-wrapper {
+    position: relative;
+    margin-bottom: 40px;
+    /* タイトルの下に余白 */
+}
+
+.section-title {
+    display: inline-block;
+    background-color: #fca583;
+    /* 背景色（オレンジ） */
+    color: #fff;
+    /* 文字色（白） */
+    padding: 10px 40px;
+    /* 内側の余白 */
+    border-radius: 50px;
+    /* 角を丸くする */
+    font-size: 20px;
+    position: relative;
+    z-index: 1;
+    /* 重なり順を手前に */
+}
+
+/* タイトルの後ろにある薄い丸（装飾） */
+.section-title-wrapper::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #ffe4d9;
+    /* 薄いオレンジ */
+    border-radius: 50%;
+    /* 完全な丸 */
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    z-index: 0;
+    /* 重なり順を奥に */
+}
+
+/* ==============================================
+   (1) ヘッダーエリア
+   ============================================== */
+/* ==============================================
+   (1) ヘッダーエリア
+   ============================================== */
+/* ==============================================
+   (1) ヘッダーエリア
+   ============================================== */
+.site-header {
+    width: 100%;
+    /* 背景色（ナビゲーション部分の背景色） */
+    background-color: #ffcea0;
+    /* 画像に合わせた濃いめの肌色/薄いオレンジ */
+}
+
+/* --- ナビゲーションバー --- */
+.site-nav {
+    /* 背景色を透過ではなく、ヘッダーと同じ色で塗りつぶす */
+    background: #ffcea0;
+    padding: 15px 0;
+    font-size: 14px;
+    color: #555;
+    position: relative;
+    z-index: 10;
+    /* 最前面に */
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+    /* メニュー項目の間隔 */
+}
+
+.nav-menu li a {
+    color: #555;
+    transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: #d66a4f;
+}
+
+.nav-phone {
+    font-size: 16px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* レスポンシブ対応：スマホではメニューを非表示（簡易対応） */
+@media (max-width: 900px) {
+    .nav-menu {
+        display: none;
+        /* 今回は非表示にします */
+    }
+}
+
+
+/* --- ヒーローエリア（タイトル部分） --- */
+.hero-area {
+    /* 背景グラデーション（左上から右下へ） */
+    /* 画像に合わせて、左上を濃いオレンジピンク、右下を薄いベージュホワイトに設定 */
+    background: linear-gradient(120deg, #ffb090 0%, #ffeadd 100%);
+
+    padding: 80px 20px 120px;
+    /* 下の余白を多めに（斜めカット分） */
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    /* はみ出た要素（丸）を隠す */
+
+    /* 下部を斜めにカットする設定 */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* 丸より手前に表示 */
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin: 0 0 10px;
+    letter-spacing: 2px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* 少し影を調整 */
+}
+
+.hero-content p {
+    font-size: 14px;
+    opacity: 1;
+    /* 不透明度を上げる */
+    margin: 0;
+}
+
+/* 背景の丸い装飾 */
+.hero-circle {
+    position: absolute;
+    width: 600px;
+    /* 画像に合わせてサイズを大きく */
+    height: 600px;
+    background-color: rgba(255, 255, 255, 0.25);
+    /* 少し白を強く */
+    border-radius: 50%;
+    bottom: -200px;
+    left: -100px;
+    /* より左下に配置 */
+    z-index: 1;
+}
+
+/* ==============================================
+   (2) アクセスセクション（地図と住所）
+   ============================================== */
+/* ==============================================
+   (2) アクセスセクション（地図と住所）
+   ============================================== */
+
+/* --- 新しいタイトルデザイン --- */
+.section-title-wrapper-new {
+    position: relative;
+    /* width: fit-content; */
+    margin-bottom: 50px;
+    height: 100px;
+    /* 高さ確保 */
+}
+
+/* 背景の丸 */
+.title-circle {
+    position: absolute;
+    width: 140px;
+    /* 丸の大きさ */
+    height: 140px;
+    background-color: #ffcea0;
+    /* 薄いオレンジ */
+    border-radius: 50%;
+    top: -40px;
+    left: 0;
+    z-index: 1;
+}
+
+/* タイトル文字 */
+.section-title-new {
+    position: relative;
+    z-index: 2;
+    /* 丸より手前に */
+    font-size: 32px;
+    color: #6d5f57;
+    /* 茶色がかったグレー */
+    margin: 0;
+    display: inline-block;
+    padding-left: 30px;
+    /* 丸の中に配置するための余白 */
+    padding-top: 30px;
+}
+
+/* タイトルの線（茶色い線） */
+.section-title-new::after {
+    content: '';
+    display: block;
+    width: 100%;
+    /* 文字の幅に合わせる */
+    height: 3px;
+    /* 線の太さ */
+    background-color: #8c7b70;
+    /* 茶色 */
+    margin-top: 5px;
+    /* 文字との隙間 */
+    opacity: 0.7;
+}
+
+/* --- コンテナとレイアウト --- */
+.access-container-new {
+    display: flex;
+    gap: 30px;
+    /* 地図とカードの間隔 */
+    align-items: stretch;
+    /* 高さを揃える */
+}
+
+/* 地図エリア */
+.map-area-new {
+    flex: 1;
+    /* 幅を均等に */
+    border-radius: 20px;
+    overflow: hidden;
+    /* border: 1px solid #ddd; 不要かも */
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 400px;
+    /* 高さを少し高く */
+    background-color: #eee;
+}
+
+/* --- 情報カード（右側） --- */
+.access-info-card {
+    flex: 1;
+    /* 幅を均等に */
+    background-color: #fff;
+    border: 2px solid #ffb090;
+    /* 濃いオレンジの枠線 */
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 上下中央寄せ */
+}
+
+.info-row {
+    display: flex;
+    gap: 20px;
+    /* アイコンと文字の隙間 */
+    margin-bottom: 25px;
+    align-items: flex-start;
+    /* 上端で揃える */
+}
+
+.info-row:last-child {
+    margin-bottom: 0;
+}
+
+/* アイコン部分 */
+.info-icon {
+    color: #ff9a80;
+    /* アイコンの色（サーモンピンク系） */
+    font-size: 20px;
+    width: 25px;
+    /* 幅を固定して縦を揃える */
+    text-align: center;
+    margin-top: 2px;
+}
+
+.info-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #555;
+    font-weight: bold;
+}
+
+.info-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.phone-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* リスト（交通アクセス） */
+.access-list {
+    list-style: none;
+    /* デフォルトの黒丸を消す */
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.access-list li {
+    padding-left: 10px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+/* リストの点の装飾 */
+.access-list li::before {
+    content: '●';
+    /* 小さい丸 */
+    color: #ff9a80;
+    /* オレンジ */
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+    top: -2px;
+    /* 位置調整 */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .access-container-new {
+        flex-direction: column;
+    }
+
+    .map-placeholder {
+        height: 300px;
+    }
+}
+
+/* ==============================================
+   (3) 診療時間セクション
+   ============================================== */
+.hours-container-new {
+    max-width: 1200px;
+    /* テーブルの幅を制限（広げる） */
+    width: 100%;
+    /* 横幅いっぱいを使う */
+    box-sizing: border-box;
+    /* borderを含めた幅計算 */
+    margin: 0 auto 20px;
+    /* 中央寄せ */
+    border: 3px solid #d4a373;
+    /* 外枠：茶色系のベージュ */
+    border-radius: 80px;
+    /* 大きな角丸（50px -> 80pxに変更） */
+    overflow: hidden;
+    /* 角丸からはみ出ないように */
+}
+
+.hours-table-new {
+    width: 100%;
+    border-collapse: collapse;
+    /* 枠線を重ねる */
+    text-align: center;
+    background-color: #fff;
+}
+
+/* --- ヘッダー（曜日行） --- */
+.hours-table-new thead {
+    background-color: #fca583;
+    /* 画像に合わせた濃いめのサーモンオレンジ */
+    color: #fff;
+}
+
+.hours-table-new th,
+.hours-table-new td {
+    padding: 25px 5px;
+    /* 余白を広げて高さを出す（15px -> 25px） */
+    vertical-align: middle;
+}
+
+/* ヘッダーの文字 */
+.hours-table-new thead th {
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+    /* 文字間隔 */
+    padding: 40px 5px;
+    /* ヘッダーはさらに高さを出す（25px -> 40px） */
+}
+
+/* 時間の列（左端） */
+.hours-table-new .label-cell {
+    font-size: 22px;
+    color: #666;
+    font-weight: normal;
+    width: 220px;
+    /* 時間部分の幅を確保 */
+    text-align: center;
+}
+
+/* ◯のサイズ */
+.hours-table-new td {
+    font-size: 24px;
+    color: #555;
+    font-family: sans-serif;
+    /* 丸を見やすく */
+}
+
+/* --- 罫線設定 --- */
+/* 午前と午後の間の線 */
+.am-row th,
+.am-row td {
+    border-bottom: 2px solid #d4a373;
+    /* 枠線と同じ色 */
+}
+
+/* 注釈エリア */
+.hours-note-new {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 13px;
+    color: #777;
+    line-height: 1.8;
+    padding-left: 20px;
+    /* インデント */
+}
+
+/* レスポンシブ対応（スマホ） */
+@media (max-width: 600px) {
+    .hours-container-new {
+        border-radius: 20px;
+        overflow-x: auto;
+        border-width: 2px;
+    }
+
+    .hours-table-new {
+        min-width: 600px;
+        /* 横スクロールさせる */
+    }
+
+    .hours-table-new th,
+    .hours-table-new td {
+        padding: 10px 5px;
+        font-size: 14px;
+    }
+
+    .hours-table-new .label-cell {
+        font-size: 16px;
+        width: 140px;
+    }
+}
+
+/* ==============================================
+   (4) お問い合わせフォーム
+   ============================================== */
+.form-container-new {
+    background-color: #fff;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    /* ほんのりとした影 */
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #eee;
+    /* 薄い枠線 */
+}
+
+/* 2カラムレイアウト（姓・名） */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-col {
+    flex: 1;
+    /* 均等に分割 */
+}
+
+.form-item-new {
+    margin-bottom: 25px;
+}
+
+/* ラベルスタイル */
+.form-container-new label,
+.form-col label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+/* 必須マーク (*) */
+.required-mark {
+    color: #ea5455;
+    /* 赤色 */
+    margin-left: 4px;
+}
+
+/* 入力フィールドスタイル */
+.text-input-new {
+    width: 100%;
+    padding: 15px;
+    background-color: #f2f4f5;
+    /* 薄いグレー */
+    border: 1px solid transparent;
+    /* 枠線なし（透明） */
+    border-radius: 6px;
+    font-size: 14px;
+    color: #555;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.text-input-new::placeholder {
+    color: #999;
+}
+
+.text-input-new:focus {
+    background-color: #fff;
+    border-color: #ffcea0;
+    /* フォーカス時に薄いオレンジの枠線 */
+    outline: none;
+}
+
+/* 送信ボタン */
+.submit-btn-new {
+    background-color: #ff9a80;
+    /* オレンジ */
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    /* 幅いっぱい */
+    display: block;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn-new:hover {
+    background-color: #e07b5a;
+    opacity: 0.9;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+    .form-container-new {
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        /* スマホでは縦並び */
+        gap: 20px;
+    }
+}
+
+/* ==============================================
+   (5) 採用情報セクション
+   ============================================== */
+.recruit-container-new {
+    background-color: #fff;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    /* カードの影 */
+    max-width: 800px;
+    /* フォームと同じ幅 */
+    margin: 0 auto;
+    border: 1px solid #eee;
+}
+
+.recruit-sub-title {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* 募集職種リスト */
+.recruit-job-list {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.recruit-job-card {
+    flex: 1;
+    background-color: #ffe4d9;
+    /* 薄いオレンジ/ピンク背景 */
+    padding: 30px 20px;
+    border-radius: 10px;
+}
+
+.job-title {
+    color: #e07b5a;
+    /* アイコン・タイトルの色 */
+    margin: 0 0 10px 0;
+    font-size: 16px;
+
+}
+
+.job-desc {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* 応募についてエリア */
+.recruit-application-area {
+    background-color: #ffe4d9;
+    /* 職種カードと同じ薄い背景 */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.application-text {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* 電話ボタン */
+.application-phone-btn {
+    display: inline-block;
+    background-color: #ff9a80;
+    /* オレンジ */
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.application-phone-btn:hover {
+    background-color: #e07b5a;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+    .recruit-container-new {
+        padding: 30px 20px;
+    }
+
+    .recruit-job-list {
+        flex-direction: column;
+    }
+}
+
+/* ==============================================
+   (6) CTA（フッター上のエリア）
+   ============================================== */
+/* ==============================================
+   (6) CTA（フッター上のエリア）
+   ============================================== */
+.cta-section-new {
+    background-color: #fca583;
+    /* 濃いオレンジ（画像に合わせる） */
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+    /* 余白を広めに */
+}
+
+.cta-title-new {
+    font-size: 32px;
+    margin: 0 0 15px;
+    font-weight: normal;
+    /* 文字の太さは普通に */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    /* 薄い影 */
+    letter-spacing: 1px;
+}
+
+.cta-desc-new {
+    font-size: 16px;
+    margin: 0 0 40px;
+    opacity: 0.9;
+}
+
+.cta-buttons-new {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    /* ボタンの間隔 */
+}
+
+.cta-btn-new {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    /* 幅を固定 */
+    height: 60px;
+    border-radius: 300px;
+    /* カプセル型 */
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+/* 電話ボタン（左）：透明背景＋白枠 */
+.phone-btn-new {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.phone-btn-new i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.phone-btn-new:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* ホバー時にうっすら白く */
+}
+
+/* フォームボタン（右）：白背景＋オレンジ文字 */
+.web-btn-new {
+    background-color: #fff;
+    border: 2px solid #fff;
+    /* サイズを合わせるために枠線をつける */
+    color: #8c7b70;
+    /* 文字色は少し茶色がかったグレー（画像寄り） */
+}
+
+.web-btn-new:hover {
+    background-color: #f0f0f0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+    .cta-buttons-new {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .cta-btn-new {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* ==============================================
+   (7) フッターエリア
+   ============================================== */
+/* ==============================================
+   (7) フッターエリア
+   ============================================== */
+.site-footer-new {
+    background-color: #fff;
+    padding: 80px 20px 40px;
+    /* 上下の余白 */
+    color: #666;
+    font-size: 14px;
+}
+
+.footer-inner-new {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-col-new {
+    flex: 1;
+    min-width: 280px;
+    /* スマホでの折り返し調整 */
+}
+
+/* カラム共通見出し */
+.footer-heading {
+    font-size: 16px;
+    font-weight: normal;
+    /* 太字にしない */
+    color: #888;
+    margin: 0 0 20px 0;
+}
+
+/* --- 左カラム：病院情報 --- */
+.footer-hospital-name {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+    font-weight: normal;
+    color: #555;
+}
+
+.footer-contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    /* アイコンとテキストの間 */
+    margin-bottom: 15px;
+}
+
+.footer-contact-row i {
+    color: #888;
+    font-size: 16px;
+    margin-top: 3px;
+    width: 20px;
+    /* 幅を揃える */
+    text-align: center;
+}
+
+.footer-contact-row p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* --- 中央カラム：サイトマップ --- */
+.sitemap-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sitemap-list li {
+    margin-bottom: 12px;
+}
+
+.sitemap-list a {
+    color: #666;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.sitemap-list a:hover {
+    color: #fca583;
+}
+
+/* --- 右カラム：診療時間 --- */
+.footer-hours-table {
+    width: 100%;
+    margin-bottom: 15px;
+    border-collapse: collapse;
+}
+
+.footer-hours-table th,
+.footer-hours-table td {
+    text-align: left;
+    padding: 3px 0;
+    font-weight: normal;
+    vertical-align: top;
+}
+
+.footer-hours-table th {
+    white-space: nowrap;
+    /* 折り返さない */
+    padding-right: 10px;
+    color: #666;
+}
+
+.footer-emergency {
+    color: #ff9a80;
+    /* オレンジ（強調） */
+    margin: 0;
+    font-size: 14px;
+    /* font-weight: bold; 画像ではあまり太くないかも */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .site-footer-new {
+        padding: 40px 20px;
+    }
+
+    .footer-inner-new {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer-col-new {
+        width: 100%;
+    }
+}
+
+/* ==============================================
+   スマホ対応（レスポンシブデザイン）調整
+   ============================================== */
+@media (max-width: 768px) {
+
+    /* セクションの余白を少し詰める */
+    section {
+        padding: 40px 20px;
+    }
+
+    /* ヒーローエリアの調整 */
+    .hero-area {
+        padding: 60px 20px 80px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        /* タイトルを少し小さく */
+    }
+
+    /* 各セクションタイトルの調整 */
+    .section-title-wrapper-new {
+        margin-bottom: 30px;
+        height: auto;
+        /* 高さを自動に */
+    }
+
+    .title-circle {
+        width: 100px;
+        height: 100px;
+        top: -20px;
+    }
+
+    .section-title-new {
+        font-size: 24px;
+        /* タイトル文字サイズ調整 */
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+
+    /* アクセスセクション：縦並びは既に適用済み */
+    .map-placeholder {
+        height: 250px;
+        /* 地図の高さをスマホ用に調整 */
+    }
+
+    /* 診療時間：横スクロールは既に適用済み */
+
+    /* フォーム：縦並びは既に適用済み */
+    .form-container-new {
+        padding: 30px 20px;
+    }
+
+    /* 採用情報：縦並びは既に適用済み */
+
+    /* CTAセクション */
+    .cta-section-new {
+        padding: 60px 20px;
+    }
+
+    .cta-title-new {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* さらに小さい画面向け */
+    .hero-content h1 {
+        font-size: 24px;
+    }
+
+    .section-title-new {
+        font-size: 20px;
+    }
+
+    .cta-btn-new {
+        width: 100%;
+        /* ボタンを画面幅いっぱいに */
+        font-size: 16px;
+    }
+}
