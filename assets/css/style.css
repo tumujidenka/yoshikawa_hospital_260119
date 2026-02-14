@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! destyle.css v4.0.0 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 /* Reset box-model and set borders */
 /* ============================================ */
@@ -743,6 +744,122 @@ body.admin-bar .l-header {
 .l-overlay.is-active {
   opacity: 1;
   visibility: visible;
+}
+
+/* ==============================================
+   Layout: Footer
+   ============================================== */
+.site-footer-new {
+  background-color: #fff;
+  padding: 80px 20px 40px;
+  color: #666;
+  font-size: 14px;
+}
+@media (max-width: 768px) {
+  .site-footer-new {
+    padding: 40px 20px;
+  }
+}
+
+.footer-inner-new {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .footer-inner-new {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.footer-col-new {
+  flex: 1;
+  min-width: 280px;
+}
+@media (max-width: 768px) {
+  .footer-col-new {
+    width: 100%;
+  }
+}
+
+.footer-heading {
+  font-size: 16px;
+  font-weight: normal;
+  color: #888;
+  margin: 0 0 20px 0;
+}
+
+/* --- 左カラム：病院情報 --- */
+.footer-hospital-name {
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  font-weight: normal;
+  color: #555;
+}
+
+.footer-contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.footer-contact-row i {
+  color: #888;
+  font-size: 16px;
+  margin-top: 3px;
+  width: 20px;
+  text-align: center;
+}
+.footer-contact-row p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* --- 中央カラム：サイトマップ --- */
+.sitemap-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sitemap-list li {
+  margin-bottom: 12px;
+}
+.sitemap-list a {
+  color: #666;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.sitemap-list a:hover {
+  color: #fca583;
+}
+
+/* --- 右カラム：診療時間 --- */
+.footer-hours-table {
+  width: 100%;
+  margin-bottom: 15px;
+  border-collapse: collapse;
+}
+.footer-hours-table th,
+.footer-hours-table td {
+  text-align: left;
+  padding: 3px 0;
+  font-weight: normal;
+  vertical-align: top;
+}
+.footer-hours-table th {
+  white-space: nowrap;
+  padding-right: 10px;
+  color: #666;
+}
+
+.footer-emergency {
+  color: #ff9a80;
+  margin: 0;
+  font-size: 14px;
 }
 
 .l-main {
@@ -1955,6 +2072,623 @@ body.admin-bar .l-header {
   .p-medical-item__text {
     font-size: 18px;
   }
+}
+
+/* ==============================================
+   共通デザイン設定（アクセスページ）
+   ============================================== */
+/* セクションごとの余白設定 */
+.access-section,
+.hours-section,
+.contact-section,
+.recruit-section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .access-section,
+  .hours-section,
+  .contact-section,
+  .recruit-section {
+    padding: 40px 20px;
+  }
+}
+
+/* セクションタイトルのデザイン */
+.section-title-wrapper-new {
+  position: relative;
+  margin-bottom: 50px;
+  height: 100px;
+}
+@media (max-width: 768px) {
+  .section-title-wrapper-new {
+    margin-bottom: 30px;
+    height: auto;
+  }
+}
+
+/* 背景の丸 */
+.title-circle {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background-color: #ffcea0;
+  border-radius: 50%;
+  top: -40px;
+  left: 0;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .title-circle {
+    width: 100px;
+    height: 100px;
+    top: -20px;
+  }
+}
+
+/* タイトル文字 */
+.section-title-new {
+  position: relative;
+  z-index: 2;
+  font-size: 32px;
+  color: #6d5f57;
+  margin: 0;
+  display: inline-block;
+  padding-left: 30px;
+  padding-top: 30px;
+  /* タイトルの線（茶色い線） */
+}
+@media (max-width: 768px) {
+  .section-title-new {
+    font-size: 24px;
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .section-title-new {
+    font-size: 20px;
+  }
+}
+.section-title-new::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #8c7b70;
+  margin-top: 5px;
+  opacity: 0.7;
+}
+
+/* ==============================================
+   ヒーローエリア（ページタイトル）
+   ============================================== */
+.hero-area {
+  background: linear-gradient(120deg, #ffb090 0%, #ffeadd 100%);
+  padding: 80px 20px 120px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+}
+@media (max-width: 768px) {
+  .hero-area {
+    padding: 60px 20px 80px;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.hero-content h1 {
+  font-size: 36px;
+  margin: 0 0 10px;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 24px;
+  }
+}
+.hero-content p {
+  font-size: 14px;
+  opacity: 1;
+  margin: 0;
+}
+
+/* 背景の丸い装飾 */
+.hero-circle {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  bottom: -200px;
+  left: -100px;
+  z-index: 1;
+}
+
+/* ==============================================
+   (2) アクセスセクション（地図と住所）
+   ============================================== */
+.access-container-new {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+}
+@media (max-width: 768px) {
+  .access-container-new {
+    flex-direction: column;
+  }
+}
+
+/* 地図エリア */
+.map-area-new {
+  flex: 1;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 400px;
+  background-color: #eee;
+}
+.map-placeholder iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+@media (max-width: 768px) {
+  .map-placeholder {
+    height: 250px;
+  }
+}
+
+/* 情報カード（右側） */
+.access-info-card {
+  flex: 1;
+  background-color: #fff;
+  border: 2px solid #ffb090;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  align-items: flex-start;
+}
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-icon {
+  color: #ff9a80;
+  font-size: 20px;
+  width: 25px;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.info-content h3 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: #555;
+  font-weight: bold;
+}
+.info-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.phone-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* リスト（交通アクセス） */
+.access-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.8;
+}
+.access-list li {
+  padding-left: 10px;
+  position: relative;
+  margin-bottom: 5px;
+}
+.access-list li::before {
+  content: "●";
+  color: #ff9a80;
+  position: absolute;
+  left: 0;
+  font-size: 8px;
+  top: -2px;
+}
+
+/* ==============================================
+   (3) 診療時間セクション
+   ============================================== */
+.hours-container-new {
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto 20px;
+  border: 3px solid #d4a373;
+  border-radius: 80px;
+  overflow: hidden;
+}
+@media (max-width: 600px) {
+  .hours-container-new {
+    border-radius: 20px;
+    overflow-x: auto;
+    border-width: 2px;
+  }
+}
+
+.hours-table-new {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  background-color: #fff;
+}
+@media (max-width: 600px) {
+  .hours-table-new {
+    min-width: 600px;
+  }
+}
+.hours-table-new thead {
+  background-color: #fca583;
+  color: #fff;
+}
+.hours-table-new thead th {
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+  padding: 40px 5px;
+}
+.hours-table-new th,
+.hours-table-new td {
+  padding: 25px 5px;
+  vertical-align: middle;
+}
+@media (max-width: 600px) {
+  .hours-table-new th,
+  .hours-table-new td {
+    padding: 10px 5px;
+    font-size: 14px;
+  }
+}
+.hours-table-new .label-cell {
+  font-size: 22px;
+  color: #666;
+  font-weight: normal;
+  width: 220px;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .hours-table-new .label-cell {
+    font-size: 16px;
+    width: 140px;
+  }
+}
+.hours-table-new td {
+  font-size: 24px;
+  color: #555;
+  font-family: sans-serif;
+}
+
+/* 午前と午後の間の線 */
+.am-row th,
+.am-row td {
+  border-bottom: 2px solid #d4a373;
+}
+
+/* 注釈エリア */
+.hours-note-new {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #777;
+  line-height: 1.8;
+  padding-left: 20px;
+}
+
+/* ==============================================
+   (4) お問い合わせフォーム
+   ============================================== */
+.form-container-new {
+  background-color: #fff;
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #eee;
+}
+@media (max-width: 600px) {
+  .form-container-new {
+    padding: 30px 20px;
+  }
+}
+.form-container-new label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.form-col {
+  flex: 1;
+}
+.form-col label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+.form-item-new {
+  margin-bottom: 25px;
+}
+
+.required-mark {
+  color: #ea5455;
+  margin-left: 4px;
+}
+
+.text-input-new {
+  width: 100%;
+  padding: 15px;
+  background-color: #f2f4f5;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #555;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+.text-input-new::placeholder {
+  color: #999;
+}
+.text-input-new:focus {
+  background-color: #fff;
+  border-color: #ffcea0;
+  outline: none;
+}
+
+.submit-btn-new {
+  background-color: #ff9a80;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+.submit-btn-new:hover {
+  background-color: #e07b5a;
+  opacity: 0.9;
+}
+
+/* ==============================================
+   (5) 採用情報セクション
+   ============================================== */
+.recruit-container-new {
+  background-color: #fff;
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #eee;
+}
+@media (max-width: 600px) {
+  .recruit-container-new {
+    padding: 30px 20px;
+  }
+}
+
+.recruit-sub-title {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.recruit-job-list {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+@media (max-width: 600px) {
+  .recruit-job-list {
+    flex-direction: column;
+  }
+}
+
+.recruit-job-card {
+  flex: 1;
+  background-color: #ffe4d9;
+  padding: 30px 20px;
+  border-radius: 10px;
+}
+
+.job-title {
+  color: #e07b5a;
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.job-desc {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.recruit-application-area {
+  background-color: #ffe4d9;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.application-text {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.application-phone-btn {
+  display: inline-block;
+  background-color: #ff9a80;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.application-phone-btn:hover {
+  background-color: #e07b5a;
+}
+
+/* ==============================================
+   (6) CTA（フッター上のエリア）
+   ============================================== */
+.cta-section-new {
+  background-color: #fca583;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+@media (max-width: 768px) {
+  .cta-section-new {
+    padding: 60px 20px;
+  }
+}
+
+.cta-title-new {
+  font-size: 32px;
+  margin: 0 0 15px;
+  font-weight: normal;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+}
+@media (max-width: 768px) {
+  .cta-title-new {
+    font-size: 24px;
+  }
+}
+
+.cta-desc-new {
+  font-size: 16px;
+  margin: 0 0 40px;
+  opacity: 0.9;
+}
+
+.cta-buttons-new {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+@media (max-width: 600px) {
+  .cta-buttons-new {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+.cta-btn-new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 60px;
+  border-radius: 300px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+@media (max-width: 600px) {
+  .cta-btn-new {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+@media (max-width: 480px) {
+  .cta-btn-new {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+/* 電話ボタン */
+.phone-btn-new {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+.phone-btn-new i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.phone-btn-new:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* フォームボタン */
+.web-btn-new {
+  background-color: #fff;
+  border: 2px solid #fff;
+  color: #8c7b70;
+}
+.web-btn-new:hover {
+  background-color: #f0f0f0;
 }
 
 @media screen and (min-width: 768px) {
