@@ -1,0 +1,436 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
+
+/* =================================
+   Guide Page
+   ================================= */
+
+// FV
+.p-guide-fv {
+  position: relative;
+  background-color: $color-bg;
+  background-image: url(../images/mv-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: $spacing-4xl 0 $spacing-3xl;
+  text-align: center;
+  height: 50vh;
+  color: $color-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include pc {
+    height: 70vh;
+  }
+
+  &__inner {
+    @include container;
+    width: 100%;
+  }
+
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-sm;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+    @include pc {
+      font-size: $font-size-3xl;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__lead {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-base;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+    @include pc {
+      font-size: $font-size-base;
+    }
+  }
+
+  &__wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 80px;
+      margin-bottom: -1px;
+
+      @include pc {
+        height: 120px;
+      }
+    }
+  }
+}
+
+// Heading (共通)
+.p-guide-heading {
+  position: relative;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  padding-left: $spacing-md;
+  margin-bottom: $spacing-xl;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background-color: $color-main;
+    border-radius: 3px;
+  }
+
+  @include pc {
+    font-size: $font-size-2xl;
+    margin-bottom: $spacing-2xl;
+    padding-left: $spacing-lg;
+  }
+}
+
+// Subheading
+.p-guide-subheading {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  margin-bottom: $spacing-lg;
+  padding-bottom: $spacing-sm;
+  border-bottom: 2px solid $color-main;
+  display: inline-block;
+
+  @include pc {
+    font-size: $font-size-xl;
+  }
+}
+
+// 外来受診案内
+.p-guide-outpatient {
+  padding: $spacing-3xl 0;
+  background-color: $color-bg;
+
+  @include pc {
+    padding: $spacing-4xl 0;
+  }
+
+  &__inner {
+    @include container;
+  }
+}
+
+// 受付の流れ
+.p-guide-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-2xl;
+  flex-wrap: wrap;
+
+  @include pc {
+    gap: $spacing-lg;
+  }
+
+  &__step {
+    text-align: center;
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(to bottom right, #FDA983, #F2CCBC);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    margin: 0 auto $spacing-sm;
+
+    @include pc {
+      width: 80px;
+      height: 80px;
+      font-size: $font-size-2xl;
+    }
+  }
+
+  &__label {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    color: $color-text;
+
+    @include pc {
+      font-size: $font-size-base;
+    }
+  }
+
+  &__arrow {
+    font-size: $font-size-xl;
+    color: $color-text-light;
+
+    @include pc {
+      font-size: $font-size-2xl;
+    }
+  }
+}
+
+// 持ち物チェックリスト
+.p-guide-checklist {
+  margin-bottom: $spacing-2xl;
+  background-color: $color-white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-xl;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-sm 0;
+    font-size: $font-size-base;
+    color: $color-text;
+    border-bottom: 1px solid $color-border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    @include pc {
+      font-size: $font-size-lg;
+    }
+  }
+
+  &__icon {
+    color: $color-main;
+    font-size: $font-size-xl;
+  }
+}
+
+// 診療時間テーブル
+.p-guide-hours {
+  margin-bottom: $spacing-xl;
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: $color-white;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+
+    thead {
+      background-color: #F4A886;
+      color: $color-white;
+
+      th {
+        padding: $spacing-md $spacing-sm;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-base;
+
+        @include pc {
+          font-size: $font-size-lg;
+          padding: $spacing-lg $spacing-sm;
+        }
+      }
+    }
+
+    tbody {
+      td {
+        padding: $spacing-md $spacing-sm;
+        font-size: $font-size-base;
+        font-weight: $font-weight-bold;
+        color: $color-text;
+        border-bottom: 1px solid $color-border;
+
+        @include pc {
+          font-size: $font-size-lg;
+          padding: $spacing-lg $spacing-sm;
+        }
+      }
+    }
+  }
+
+  &__time {
+    font-weight: $font-weight-medium !important;
+    white-space: nowrap;
+  }
+
+  &__note {
+    margin-top: $spacing-md;
+    font-size: $font-size-sm;
+    color: $color-text-light;
+
+    @include pc {
+      font-size: $font-size-base;
+    }
+  }
+}
+
+// 入院のご案内
+.p-guide-inpatient {
+  padding: $spacing-3xl 0;
+  background-color: $color-bg-white;
+
+  @include pc {
+    padding: $spacing-4xl 0;
+  }
+
+  &__inner {
+    @include container;
+  }
+
+  &__features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-2xl;
+
+    @include pc {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-xl;
+    }
+  }
+
+  &__feature {
+    background-color: $color-white;
+    border-radius: $border-radius-lg;
+    padding: $spacing-xl;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  &__feature-title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $color-text;
+    margin-bottom: $spacing-sm;
+
+    @include pc {
+      font-size: $font-size-xl;
+    }
+  }
+
+  &__feature-text {
+    font-size: $font-size-base;
+    color: $color-text-light;
+    line-height: 1.8;
+  }
+
+  // 病床数
+  &__beds {
+    text-align: center;
+  }
+
+  &__beds-list {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-2xl;
+    flex-wrap: wrap;
+  }
+
+  &__beds-item {
+    background: linear-gradient(to bottom right, #FDA983, #F2CCBC);
+    border-radius: $border-radius-lg;
+    padding: $spacing-xl $spacing-2xl;
+    text-align: center;
+    min-width: 160px;
+  }
+
+  &__beds-number {
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    line-height: 1;
+
+    @include pc {
+      font-size: 64px;
+    }
+  }
+
+  &__beds-unit {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-white;
+  }
+
+  &__beds-label {
+    font-size: $font-size-base;
+    color: $color-white;
+    margin-top: $spacing-sm;
+    font-weight: $font-weight-medium;
+  }
+}
+
+// よくある質問
+.p-guide-faq {
+  padding: $spacing-3xl 0;
+  background-color: $color-bg;
+
+  @include pc {
+    padding: $spacing-4xl 0;
+  }
+
+  &__inner {
+    @include container;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  &__item {
+    background-color: $color-white;
+    border-radius: $border-radius-lg;
+    padding: $spacing-xl;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  &__question {
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    color: $color-text;
+    margin-bottom: $spacing-sm;
+    padding-left: $spacing-lg;
+    position: relative;
+
+    &::before {
+      content: "Q.";
+      position: absolute;
+      left: 0;
+      color: $color-main;
+      font-weight: $font-weight-bold;
+    }
+
+    @include pc {
+      font-size: $font-size-lg;
+    }
+  }
+
+  &__answer {
+    font-size: $font-size-base;
+    color: $color-text-light;
+    line-height: 1.8;
+    padding-left: $spacing-lg;
+    position: relative;
+
+    &::before {
+      content: "A.";
+      position: absolute;
+      left: 0;
+      color: #F4A886;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
