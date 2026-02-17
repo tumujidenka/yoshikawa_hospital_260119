@@ -173,7 +173,7 @@
 // 医師紹介
 .p-about-doctor {
   padding: $spacing-3xl 0;
-  background-color: $color-bg-white;
+  background-color: $color-bg;
 
   @include pc {
     padding: $spacing-4xl 0;
@@ -309,7 +309,7 @@
 // 提携医療機関
 .p-about-partners {
   padding: $spacing-3xl 0;
-  background-color: $color-bg-white;
+  background-color: $color-bg;
 
   @include pc {
     padding: $spacing-4xl 0;
