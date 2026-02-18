@@ -32,25 +32,25 @@
     }
 
     &__title {
-        font-size: $font-size-2xl;
+        font-size: $font-size-3xl;
         font-weight: $font-weight-bold;
         margin-bottom: $spacing-sm;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
         @include pc {
-            font-size: $font-size-3xl;
+            font-size: $font-size-4xl;
             margin-bottom: $spacing-md;
         }
     }
 
     &__lead {
-        font-size: $font-size-sm;
+        font-size: $font-size-base;
         font-weight: $font-weight-medium;
         line-height: $line-height-base;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
         @include pc {
-            font-size: $font-size-base;
+            font-size: $font-size-lg;
         }
     }
 

@@ -1873,26 +1873,26 @@ body.admin-bar .l-header {
   width: 100%;
 }
 .p-medical-fv__title {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   margin-bottom: 8px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 @media screen and (min-width: 768px) {
   .p-medical-fv__title {
-    font-size: 32px;
+    font-size: 40px;
     margin-bottom: 16px;
   }
 }
 .p-medical-fv__lead {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.8;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 @media screen and (min-width: 768px) {
   .p-medical-fv__lead {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .p-medical-fv__wave {
@@ -2196,25 +2196,25 @@ body.admin-bar .l-header {
   z-index: 2;
 }
 .hero-content h1 {
-  font-size: 36px;
+  font-size: 32px;
   margin: 0 0 10px;
   letter-spacing: 2px;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-@media (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .hero-content h1 {
-    font-size: 28px;
-  }
-}
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 24px;
+    font-size: 40px;
   }
 }
 .hero-content p {
-  font-size: 14px;
+  font-size: 16px;
   opacity: 1;
   margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .hero-content p {
+    font-size: 18px;
+  }
 }
 
 /* 背景の丸い装飾 */
@@ -2740,26 +2740,26 @@ body.admin-bar .l-header {
   width: 100%;
 }
 .p-about-fv__title {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   margin-bottom: 8px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 @media screen and (min-width: 768px) {
   .p-about-fv__title {
-    font-size: 32px;
+    font-size: 40px;
     margin-bottom: 16px;
   }
 }
 .p-about-fv__lead {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.8;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 @media screen and (min-width: 768px) {
   .p-about-fv__lead {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .p-about-fv__wave {
@@ -2851,7 +2851,7 @@ body.admin-bar .l-header {
 }
 .p-about-table th,
 .p-about-table td {
-  padding: 16px 24px;
+  padding: 16px 4px;
   border-bottom: 1px solid #E5E5E5;
   text-align: left;
   font-size: 16px;
@@ -2867,7 +2867,7 @@ body.admin-bar .l-header {
   font-weight: 700;
   color: #FFAB88;
   white-space: nowrap;
-  width: 120px;
+  width: 80px;
   vertical-align: top;
 }
 @media screen and (min-width: 768px) {
@@ -3110,26 +3110,26 @@ body.admin-bar .l-header {
   width: 100%;
 }
 .p-guide-fv__title {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   margin-bottom: 8px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 @media screen and (min-width: 768px) {
   .p-guide-fv__title {
-    font-size: 32px;
+    font-size: 40px;
     margin-bottom: 16px;
   }
 }
 .p-guide-fv__lead {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.8;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 @media screen and (min-width: 768px) {
   .p-guide-fv__lead {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .p-guide-fv__wave {

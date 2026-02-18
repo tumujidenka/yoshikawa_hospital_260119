@@ -105,24 +105,24 @@
   z-index: 2;
 
   h1 {
-    font-size: 36px;
+    font-size: $font-size-3xl;
     margin: 0 0 10px;
     letter-spacing: 2px;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
-    @media (max-width: 768px) {
-      font-size: 28px;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 24px;
+    @include pc {
+      font-size: $font-size-4xl;
     }
   }
 
   p {
-    font-size: 14px;
+    font-size: $font-size-base;
     opacity: 1;
     margin: 0;
+
+    @include pc {
+      font-size: $font-size-lg;
+    }
   }
 }
 

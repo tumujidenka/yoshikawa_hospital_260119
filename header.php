@@ -25,9 +25,9 @@
                         <li class="l-header__item"><a href="<?php echo esc_url(home_url('/medical/')); ?>"
                                 class="l-header__link">診療科目</a></li>
                         <li class="l-header__item"><a href="<?php echo esc_url(home_url('/about/')); ?>"
-                                class="l-header__link">医師/病院紹介</a></li>
+                                class="l-header__link">当院について</a></li>
                         <li class="l-header__item"><a href="<?php echo esc_url(home_url('/guide/')); ?>"
-                                class="l-header__link">受診案内</a></li>
+                                class="l-header__link">入院・受診案内</a></li>
                         <li class="l-header__item"><a href="<?php echo esc_url(home_url('/access/')); ?>"
                                 class="l-header__link">アクセス/お問い合わせ</a></li>
                         <li class="l-header__item"><a href="<?php echo esc_url(home_url('/news/')); ?>"

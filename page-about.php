@@ -55,15 +55,17 @@ get_header(); ?>
                         </tr>
                         <tr>
                             <th>指定等</th>
-                            <td>救急指定正面病院・結核予防起因正面機関・<br class="u-sp-only">生活保護指定医療機関</td>
+                            <td>労災指定医療機関・救急指定医療機関・<br class="u-sp-only">結核予防指定医療機関・船員保険医療機関・生活保護指定医療機関</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
             <div class="p-about-overview__message">
-                <p>吉川病院は、100年にわたり地域で皆さまに寄り添い、患者様が住み慣れた地域で安心して暮らし続けられるよう、外来診療のかかりつけとして、入院が必要なケースも含め、きめ細やかな医療とケアを提供しています。</p>
-                <p>急な体調変化や怪我にも24時間体制で対応し、患者様はもちろんご家族も安心できる、そんな医療を目指しています。また、地域の医療機関との連携体制も整え、必要に応じて専門病院やより高次の医療機関をご紹介し、患者様にとって最善の医療につなげる入院対応も可能です。</p>
+                <p>吉川病院は、100年にわたり地域で皆さまに寄り添い、患者様が住み慣れた地域で安心して暮らし続けられるよう、外来診療のかかりつけとして、入院が必要なケースも含め、きめ細やかな医療とケアを提供しています。
+                </p>
+                <p>急な体調変化や怪我にも24時間体制で対応し、患者様はもちろんご家族も安心できる、そんな医療を目指しています。また、地域の医療機関との連携体制も整え、必要に応じて専門病院やより高次の医療機関をご紹介し、患者様にとって最善の医療につなげる入院対応も可能です。
+                </p>
             </div>
         </div>
     </section>
@@ -131,12 +133,11 @@ get_header(); ?>
         <div class="p-about-gallery__inner">
             <h2 class="p-about-heading">院内風景</h2>
             <div class="p-about-gallery__list">
-                <?php for ($i = 1; $i <= 6; $i++) :
+                <?php for ($i = 1; $i <= 6; $i++):
                     $img_src = get_template_directory_uri() . "/assets/images/room{$i}.png";
-                ?>
-                    <div class="p-about-gallery__item">
-                        <img src="<?php echo esc_url($img_src); ?>" alt="院内風景<?php echo $i; ?>" loading="lazy">
-                    </div>
+                    ?>                <div class="p-about-gallery__item">
+                            <img src="<?php echo esc_url($img_src); ?>" alt="院内風景<?php echo $i; ?>" loading="lazy">
+                        </div>
                 <?php endfor; ?>
             </div>
         </div>
