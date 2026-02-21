@@ -1,0 +1,407 @@
+/* ============================================ */
+/* お知らせページ（News Archive）のスタイル設定 */
+/* ============================================ */
+
+/* -------------------------------------------- */
+/* ページヘッダー（タイトルエリア） */
+/* -------------------------------------------- */
+.p-page-header {
+    /* 背景をピンク〜オレンジのグラデーションに設定 */
+    background: linear-gradient(135deg, #FFAB88 0%, #FFC4A8 100%);
+    padding-top: 500px;
+    /* ヘッダーの裏に隠れないよう余白を確保 */
+    padding-bottom: 80px;
+    position: relative;
+    /* 波形画像の配置基準にするためrelativeを指定 */
+    text-align: center;
+    /* テキストを中央揃え */
+    color: #fff;
+    /* テキスト色を白に */
+}
+
+/* PC（画面幅768px以上）での調整 */
+@media screen and (min-width: 768px) {
+    .p-page-header {
+        padding-top: 140px;
+        padding-bottom: 100px;
+    }
+}
+
+.p-page-header__inner {
+    position: relative;
+    z-index: 10;
+    /* 波形画像より手前に表示 */
+    max-width: 1000px;
+    /* コンテンツ幅の最大値を制限 */
+    margin: 0 auto;
+    /* 中央寄せ */
+    padding: 0 20px;
+    /* 左右に余白 */
+}
+
+/* ページタイトル「お知らせ」 */
+.p-page-header__title {
+    font-size: 28px;
+    font-weight: 700;
+    /* 太字 */
+    margin-bottom: 12px;
+    letter-spacing: 0.1em;
+    /* 文字間隔を広げる */
+}
+
+@media screen and (min-width: 768px) {
+    .p-page-header__title {
+        font-size: 40px;
+        /* PCでは文字を大きく */
+    }
+}
+
+/* サブタイトル「院内からの...」 */
+.p-page-header__sub-title {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+    /* 少し透明にして馴染ませる */
+}
+
+@media screen and (min-width: 768px) {
+    .p-page-header__sub-title {
+        font-size: 16px;
+    }
+}
+
+/* 波形の装飾（下部の白い波） */
+.p-page-header__wave {
+    position: absolute;
+    bottom: -1px;
+    /* 隙間ができないよう少し下に配置 */
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    pointer-events: none;
+    /* クリックを透過させる */
+}
+
+.p-page-header__wave svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* -------------------------------------------- */
+/* コンテンツエリア（記事一覧） */
+/* -------------------------------------------- */
+.p-news-archive {
+    padding: 60px 0 100px;
+    background-color: #fff;
+}
+
+.p-news-archive__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    /* スマホでは縦並び */
+}
+
+/* PCレイアウト：左に見出し、右にリスト */
+@media screen and (min-width: 768px) {
+    .p-news-archive__inner {
+        flex-direction: row;
+        /* 横並びにする */
+        gap: 60px;
+        /* 要素間の余白 */
+    }
+}
+
+/* 左側の円形見出しエリア */
+.p-news-archive__heading {
+    flex-shrink: 0;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media screen and (min-width: 768px) {
+    .p-news-archive__heading {
+        width: 200px;
+        /* PCでは幅を固定 */
+        justify-content: flex-start;
+        padding-top: 20px;
+    }
+}
+
+/* スマホ時の装飾（横線） */
+@media screen and (max-width: 767px) {
+    .p-news-archive__heading {
+        position: relative;
+    }
+
+    /* タイトルの右横に線を引く */
+    .p-news-archive__heading::after {
+        content: "";
+        display: block;
+        height: 1px;
+        background: #eee;
+        flex-grow: 1;
+        margin-left: 20px;
+        align-self: center;
+    }
+}
+
+/* 円形のタイトルデザイン */
+.c-circle-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    /* グラデーション背景 */
+    background: linear-gradient(135deg, #ffab88 0%, #ffc4a8 100%);
+    border-radius: 50%;
+    /* 完全な円にする */
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    /* ドロップシャドウ（影） */
+    box-shadow: 0 4px 10px rgba(255, 171, 136, 0.3);
+    position: relative;
+}
+
+@media screen and (min-width: 768px) {
+    .c-circle-title {
+        width: 120px;
+        height: 120px;
+        font-size: 18px;
+    }
+}
+
+.c-circle-title__en {
+    font-size: 11px;
+    font-weight: 400;
+    margin-top: 4px;
+    font-family: sans-serif;
+    opacity: 0.9;
+    text-transform: uppercase;
+    /* 大文字に変換 */
+    letter-spacing: 0.05em;
+}
+
+/* 記事リスト部分 */
+.p-news-archive__content {
+    flex-grow: 1;
+    /* 残りの幅を埋める */
+}
+
+.p-news-list {
+    flex-grow: 1;
+}
+
+/* -------------------------------------------- */
+/* 記事アイテム（1つのニュース） */
+/* -------------------------------------------- */
+.p-news-item {
+    border-bottom: 1px solid #E5E5E5;
+    /* 下線 */
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+/* ホバー時の背景色変化 */
+.p-news-item:hover {
+    background-color: #fafafa;
+}
+
+.p-news-item__link {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* リンクエリアを全体に広げる（クリッカブルエリアの拡大） */
+.p-news-item__link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* 最初のアイテムには上線も引く */
+.p-news-item:first-child {
+    border-top: 1px solid #E5E5E5;
+}
+
+.p-news-item__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.p-news-item__date {
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #333;
+    font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+    .p-news-item__date {
+        font-size: 16px;
+    }
+}
+
+.p-news-item__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.p-news-item__title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #333;
+}
+
+@media screen and (min-width: 768px) {
+    .p-news-item__title {
+        font-size: 18px;
+    }
+}
+
+.p-news-item__text {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+}
+
+@media screen and (min-width: 768px) {
+    .p-news-item__text {
+        font-size: 14px;
+    }
+}
+
+/* -------------------------------------------- */
+/* カテゴリーラベル */
+/* -------------------------------------------- */
+.c-label {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    /* 丸みのある形状 */
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #ccc;
+    /* デフォルト色 */
+    line-height: 1;
+    white-space: nowrap;
+}
+
+@media screen and (min-width: 768px) {
+    .c-label {
+        font-size: 12px;
+        padding: 6px 14px;
+    }
+}
+
+/* 色のバリエーション */
+.c-label--urgent {
+    background-color: #FF9E75;
+    /* 緊急：ピンクオレンジ */
+}
+
+.c-label--info {
+    background-color: #FF9E75;
+    /* お知らせ：ピンクオレンジ */
+}
+
+.c-label--change {
+    background-color: #707070;
+    /* 変更：グレー */
+}
+
+.c-label--event {
+    background-color: #EB5505;
+    /* イベント：濃いオレンジ */
+}
+
+/* -------------------------------------------- */
+/* ページネーション（ページ送り） */
+/* -------------------------------------------- */
+.p-pagination {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    /* 画面幅が狭いときに折り返す */
+}
+
+@media screen and (min-width: 768px) {
+    .p-pagination {
+        margin-top: 60px;
+        gap: 12px;
+    }
+}
+
+.p-pagination__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 4px;
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    color: #333;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+    .p-pagination__link {
+        min-width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+/* ホバー時のスタイル */
+.p-pagination__link:hover {
+    background-color: #FFAB88;
+    /* メインカラー（ピンクオレンジ） */
+    color: #fff;
+    border-color: #FFAB88;
+}
+
+/* 現在のページのスタイル */
+.p-pagination__link--current {
+    background-color: #FFAB88;
+    color: #fff;
+    border-color: #FFAB88;
+    pointer-events: none;
+    /* クリック無効化 */
+}
+
+/* 「前へ」「次へ」ボタンの調整 */
+.p-pagination__link--prev,
+.p-pagination__link--next {
+    border: 1px solid #E5E5E5;
+    width: auto;
+    padding: 0 12px;
+}

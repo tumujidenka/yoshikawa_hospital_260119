@@ -23,13 +23,13 @@
                         <li class="l-header__item"><a href="<?php echo esc_url(home_url('/')); ?>"
                                 class="l-header__link">ホーム</a></li>
                         <li class="l-header__item"><a href="<?php echo esc_url(home_url('/medical/')); ?>"
-                                class="l-header__link">診療科目</a></li>
+                                class="l-header__link">診療科目・診療内容</a></li>
                         <li class="l-header__item"><a href="<?php echo esc_url(home_url('/about/')); ?>"
-                                class="l-header__link">医師/病院紹介</a></li>
+                                class="l-header__link">医師紹介・病院紹介</a></li>
                         <li class="l-header__item"><a href="<?php echo esc_url(home_url('/guide/')); ?>"
-                                class="l-header__link">受診案内</a></li>
+                                class="l-header__link">入院・受診案内</a></li>
                         <li class="l-header__item"><a href="<?php echo esc_url(home_url('/access/')); ?>"
-                                class="l-header__link">アクセス/お問い合わせ</a></li>
+                                class="l-header__link">アクセス・お問い合わせ</a></li>
                         <li class="l-header__item"><a href="<?php echo esc_url(home_url('/news/')); ?>"
                                 class="l-header__news">お知らせ</a></li>
                     </ul>
