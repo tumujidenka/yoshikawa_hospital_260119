@@ -1,1 +1,237 @@
-// Layout Footer
+/* ============================================ */
+/* フッター（画面最下部）のスタイル設定           */
+/* ============================================ */
+
+/*
+  【フッターの構成】
+  .l-footer                 ← フッター全体のラッパー
+    .l-footer__inner        ← 中身を横3カラムに並べるコンテナ
+      .l-footer__col--info     ← 左：病院名・住所・電話
+      .l-footer__col--sitemap  ← 中：サイトマップ
+      .l-footer__col--hours    ← 右：診療時間
+*/
+
+/* フッター全体 */
+.l-footer {
+    /* 背景色：白に変更 */
+    background-color: #ffffff;
+
+    /* 上に太めの区切り線を入れる */
+    border-top: 4px solid #f0957a;
+
+    /* 上下に余白 */
+    padding: 60px 0 40px;
+}
+
+/* フッター内の幅とレイアウトを制限するコンテナ */
+.l-footer__inner {
+    max-width: 1120px;
+    /* コンテンツ幅の最大値 */
+    margin: 0 auto;
+    /* 中央寄せ */
+    padding: 0 20px;
+
+    /*
+      Flexboxで横並びにする
+      スマホでは縦並び（デフォルトのflex-direction: column）
+    */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    /* カラム間の余白 */
+}
+
+/* PC（768px以上）では横3カラムに変更 */
+@media screen and (min-width: 768px) {
+    .l-footer__inner {
+        flex-direction: row;
+        /* 横並び */
+        align-items: flex-start;
+        /* 各カラムを上揃え */
+        gap: 0;
+        /* gapは列ごとに指定するためここではリセット */
+    }
+}
+
+/* ============================================ */
+/* 各カラムの共通スタイル                        */
+/* ============================================ */
+.l-footer__col {
+    /* スマホでは幅いっぱいに広がる */
+    width: 100%;
+}
+
+/* PC：左カラム（病院情報）の幅 */
+@media screen and (min-width: 768px) {
+    .l-footer__col--info {
+        width: 35%;
+        /* 全体の35%を使う */
+        padding-right: 40px;
+    }
+
+    /* 中央カラム（サイトマップ）の幅 */
+    .l-footer__col--sitemap {
+        width: 28%;
+        /* 全体の28%を使う */
+        padding-right: 40px;
+    }
+
+    /* 右カラム（診療時間）の幅 */
+    .l-footer__col--hours {
+        width: 37%;
+        /* 全体の37%を使う */
+    }
+}
+
+/* ============================================ */
+/* 左カラム：病院情報                            */
+/* ============================================ */
+
+/* 病院名テキスト */
+.l-footer__name {
+    font-size: 17px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+}
+
+/* 住所ブロック */
+.l-footer__address {
+    /*
+      font-style: normal にすると
+      address タグのデフォルトのイタリック体が解除される
+    */
+    font-style: normal;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    /* アイコンと住所テキストの間隔 */
+    margin-bottom: 12px;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* 住所アイコン（〒マーク） */
+.l-footer__address-icon {
+    flex-shrink: 0;
+    /* アイコンが縮まないようにする */
+    margin-top: 2px;
+    color: #f0957a;
+    /* メインカラー */
+    font-size: 14px;
+}
+
+/* 電話番号リンク */
+.l-footer__tel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #333;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    /* 下線を消す */
+    letter-spacing: 0.03em;
+}
+
+/* 電話アイコン */
+.l-footer__tel-icon {
+    /* SVGなので色は継承させるか、ここで指定 */
+    margin-right: 4px;
+}
+
+/* ============================================ */
+/* 中央・右カラム共通：見出しタイトル            */
+/* ============================================ */
+.l-footer__col-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+}
+
+/* ============================================ */
+/* 中央カラム：サイトマップ                      */
+/* ============================================ */
+.l-footer__nav-list {
+    /* リストのデフォルトスタイル（点・インデント）を消す */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    /* 各リンクを縦に並べる */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* リンク間の余白 */
+}
+
+/* ナビゲーションリンク */
+.l-footer__nav-link {
+    color: #555;
+    font-size: 14px;
+    text-decoration: none;
+    /* 下線を消す */
+    line-height: 1.4;
+
+    /* ホバー時のアニメーション */
+    transition: color 0.2s ease;
+}
+
+/* マウスを乗せたとき（ホバー）にメインカラーに変わる */
+.l-footer__nav-link:hover {
+    color: #f0957a;
+}
+
+/* ============================================ */
+/* 右カラム：診療時間                            */
+/* ============================================ */
+.l-footer__hours-list {
+    /* dl タグのデフォルトマージンを消す */
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* 各行の間隔 */
+    margin-bottom: 14px;
+}
+
+/* 1行分（dt + dd のセット） */
+.l-footer__hours-row {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+/* 曜日ラベル（月〜金、土、休診日） */
+.l-footer__hours-day {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    min-width: 46px;
+    /* 曜日の幅を揃えるために最小幅を設定 */
+}
+
+/* 時間テキスト */
+.l-footer__hours-time {
+    font-size: 13px;
+    color: #555;
+    /* dd タグのデフォルトpaddingを消す */
+    margin: 0;
+    padding: 0;
+}
+
+/* ＊急患対応は常時 のオレンジ色テキスト */
+.l-footer__hours-note {
+    font-size: 13px;
+    /* メインカラー（オレンジ系）で目立たせる */
+    color: #e07050;
+    font-weight: 600;
+    line-height: 1.5;
+}
