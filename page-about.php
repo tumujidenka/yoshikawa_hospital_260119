@@ -24,7 +24,7 @@ get_header(); ?>
     <!-- 病院紹介セクション -->
     <section class="p-about-overview">
         <div class="p-about-overview__inner">
-            <h2 class="p-about-heading">病院紹介</h2>
+            <h2 class="p-about-heading top-title">病院紹介</h2>
 
             <div class="p-about-overview__info-table">
                 <table class="p-about-table">
@@ -73,55 +73,104 @@ get_header(); ?>
     <!-- 医師紹介セクション -->
     <section class="p-about-doctor">
         <div class="p-about-doctor__inner">
-            <h2 class="p-about-heading">医師紹介</h2>
+            <h2 class="p-about-doctor__title top-title">医師紹介</h2>
             <div class="p-about-doctor__list">
                 <!-- 院長 -->
-                <div class="p-about-doctor__card p-about-doctor__card--main">
-                    <div class="p-about-doctor__photo">
-                        <div class="p-about-doctor__photo-placeholder">
-                            <span>院長写真</span>
-                        </div>
+                <div class="p-about-doctor__card">
+                    <div class="p-about-doctor__icon-area">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="40"
+                            height="40">
+                            <path
+                                d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+                        </svg>
                     </div>
                     <div class="p-about-doctor__info">
-                        <p class="p-about-doctor__role">院長</p>
-                        <h3 class="p-about-doctor__name">吉川 守</h3>
-                        <p class="p-about-doctor__specialty">外科、肛門外科</p>
+                        <div class="p-about-doctor__header">
+                            <h3 class="p-about-doctor__name">吉川 守</h3>
+                            <span class="p-about-doctor__role">院長</span>
+                        </div>
+                        <p class="p-about-doctor__specialty">外科、内科、肛門外科、その他の疾患</p>
+                        <div class="p-about-doctor__qualifications">
+                            <span class="p-about-doctor__qualifications-label">資格</span>
+                            <ul>
+                                <li>医学博士</li>
+                                <li>日本外科学会認定医</li>
+                                <li>日本医師会認定産業医</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <!-- 医師2 -->
-                <div class="p-about-doctor__card">
-                    <div class="p-about-doctor__photo">
-                        <div class="p-about-doctor__photo-placeholder">
-                            <span>医師写真</span>
-                        </div>
+                <!-- 常勤医師 -->
+                <div class="p-about-doctor__card p-about-doctor__card--sub">
+                    <div class="p-about-doctor__icon-area">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="40"
+                            height="40">
+                            <path
+                                d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+                        </svg>
                     </div>
                     <div class="p-about-doctor__info">
-                        <h3 class="p-about-doctor__name">新谷 俊太郎</h3>
-                        <p class="p-about-doctor__specialty">内科</p>
+                        <div class="p-about-doctor__header">
+                            <h3 class="p-about-doctor__name">新谷 慎太郎</h3>
+                            <span class="p-about-doctor__role">常勤医師</span>
+                        </div>
+                        <p class="p-about-doctor__specialty">外科、内科、リハビリテーション科</p>
+                        <div class="p-about-doctor__qualifications">
+                            <span class="p-about-doctor__qualifications-label">資格</span>
+                            <ul>
+                                <li>医学博士</li>
+                                <li>日本外科学会認定医</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <!-- 医師3 -->
-                <div class="p-about-doctor__card">
-                    <div class="p-about-doctor__photo">
-                        <div class="p-about-doctor__photo-placeholder">
-                            <span>医師写真</span>
-                        </div>
+                <!-- 非常勤医師1 -->
+                <div class="p-about-doctor__card p-about-doctor__card--sub">
+                    <div class="p-about-doctor__icon-area">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="40"
+                            height="40">
+                            <path
+                                d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+                        </svg>
                     </div>
                     <div class="p-about-doctor__info">
-                        <h3 class="p-about-doctor__name">吉川 伸哉</h3>
-                        <p class="p-about-doctor__specialty">外科</p>
+                        <div class="p-about-doctor__header">
+                            <h3 class="p-about-doctor__name">吉川 博昭</h3>
+                            <span class="p-about-doctor__role">非常勤医師</span>
+                        </div>
+                        <p class="p-about-doctor__specialty">救急診療（外科、内科）、ペインクリニック内科</p>
+                        <div class="p-about-doctor__qualifications">
+                            <span class="p-about-doctor__qualifications-label">資格</span>
+                            <ul>
+                                <li>医学博士</li>
+                                <li>日本ペインクリニック学会認定専門医</li>
+                                <li>日本医師会認定産業医</li>
+                                <li>日本麻酔科学学会認定専門医</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <!-- 医師4 -->
-                <div class="p-about-doctor__card">
-                    <div class="p-about-doctor__photo">
-                        <div class="p-about-doctor__photo-placeholder">
-                            <span>医師写真</span>
-                        </div>
+                <!-- 非常勤医師2 -->
+                <div class="p-about-doctor__card p-about-doctor__card--sub">
+                    <div class="p-about-doctor__icon-area">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="40"
+                            height="40">
+                            <path
+                                d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+                        </svg>
                     </div>
                     <div class="p-about-doctor__info">
-                        <h3 class="p-about-doctor__name">吉川 勇人</h3>
-                        <p class="p-about-doctor__specialty">外科</p>
+                        <div class="p-about-doctor__header">
+                            <h3 class="p-about-doctor__name">吉川 秀人</h3>
+                            <span class="p-about-doctor__role">非常勤医師</span>
+                        </div>
+                        <p class="p-about-doctor__specialty">循環器内科</p>
+                        <div class="p-about-doctor__qualifications">
+                            <span class="p-about-doctor__qualifications-label">資格</span>
+                            <ul>
+                                <li>循環器学会認定専門医</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -131,14 +180,38 @@ get_header(); ?>
     <!-- 院内風景セクション -->
     <section class="p-about-gallery">
         <div class="p-about-gallery__inner">
-            <h2 class="p-about-heading">院内風景</h2>
+            <h2 class="p-about-heading top-title">院内風景</h2>
             <div class="p-about-gallery__list">
-                <?php for ($i = 1; $i <= 6; $i++):
-                    $img_src = get_template_directory_uri() . "/assets/images/room{$i}.png";
-                    ?>                <div class="p-about-gallery__item">
-                            <img src="<?php echo esc_url($img_src); ?>" alt="院内風景<?php echo $i; ?>" loading="lazy">
-                        </div>
-                <?php endfor; ?>
+                <!-- 1列目、1〜2行目（2行分結合） -->
+                <div class="p-about-gallery__item grid-item1">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/room1.png'); ?>"
+                        alt="院内風景1" loading="lazy">
+                </div>
+                <!-- 2列目、1行目 -->
+                <div class="p-about-gallery__item grid-item2">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/room2.png'); ?>"
+                        alt="院内風景2" loading="lazy">
+                </div>
+                <!-- 2列目、2行目 -->
+                <div class="p-about-gallery__item grid-item3">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/room3.png'); ?>"
+                        alt="院内風景3" loading="lazy">
+                </div>
+                <!-- 1列目、3行目 -->
+                <div class="p-about-gallery__item grid-item4">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/room4.png'); ?>"
+                        alt="院内風景4" loading="lazy">
+                </div>
+                <!-- 1列目、4行目 -->
+                <div class="p-about-gallery__item grid-item5">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/room5.png'); ?>"
+                        alt="院内風景5" loading="lazy">
+                </div>
+                <!-- 2列目、3〜4行目（2行分結合） -->
+                <div class="p-about-gallery__item grid-item6">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/room6.png'); ?>"
+                        alt="院内風景6" loading="lazy">
+                </div>
             </div>
         </div>
     </section>
@@ -146,14 +219,14 @@ get_header(); ?>
     <!-- 提携医療機関セクション -->
     <section class="p-about-partners">
         <div class="p-about-partners__inner">
-            <h2 class="p-about-heading">提携医療機関</h2>
+            <h2 class="p-about-heading top-title">提携医療機関</h2>
             <div class="p-about-partners__list">
                 <div class="p-about-partners__item">多根総合病院</div>
                 <div class="p-about-partners__item">日本生命病院</div>
                 <div class="p-about-partners__item">エキサイカイ病院</div>
                 <div class="p-about-partners__item">富永病院</div>
             </div>
-            <p class="p-about-partners__note">高度な検査や専門的な治療が必要な際は、提携医療機関へのご紹介も行っております。連携によりスムーズな診療をサポートいたします。</p>
+            <p class="p-about-partners__note">高度な検査や専門的な治療が必要な際は、提携医療機関へのご紹介も行っております。<br>連携によりスムーズな診療をサポートいたします。</p>
         </div>
     </section>
 

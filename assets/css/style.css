@@ -1007,8 +1007,8 @@ body.admin-bar .l-header {
   content: "";
   position: absolute;
   top: 50%;
-  left: 20%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  transform: translate(-30%, -50%);
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -2782,28 +2782,12 @@ body.admin-bar .l-header {
 }
 
 .p-about-heading {
-  position: relative;
-  font-size: 20px;
-  font-weight: 700;
-  color: #333333;
-  padding-left: 16px;
   margin-bottom: 32px;
-}
-.p-about-heading::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background-color: #FFAB88;
-  border-radius: 3px;
+  transform: none;
 }
 @media screen and (min-width: 768px) {
   .p-about-heading {
-    font-size: 24px;
     margin-bottom: 48px;
-    padding-left: 24px;
   }
 }
 
@@ -2898,80 +2882,189 @@ body.admin-bar .l-header {
     padding: 0 80px;
   }
 }
+.p-about-doctor__title {
+  margin-bottom: 32px;
+  transform: none;
+}
+@media screen and (min-width: 768px) {
+  .p-about-doctor__title {
+    margin-bottom: 48px;
+  }
+}
 .p-about-doctor__list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 30px;
 }
 @media screen and (min-width: 768px) {
   .p-about-doctor__list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 48px;
   }
 }
 .p-about-doctor__card {
   background-color: #FFFFFF;
-  border-radius: 16px;
-  padding: 32px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E8CDC1;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+.p-about-doctor__card--sub {
+  padding: 20px;
+  border-color: #e0e0e0;
+  gap: 16px;
+}
+.p-about-doctor__card--sub .p-about-doctor__icon-area {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  background-color: #e0e0e0;
 }
 @media screen and (min-width: 768px) {
-  .p-about-doctor__card--main {
-    grid-column: span 2;
-    display: flex;
-    align-items: center;
-    gap: 48px;
-    text-align: left;
+  .p-about-doctor__card--sub .p-about-doctor__icon-area {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
   }
 }
-.p-about-doctor__photo {
-  margin-bottom: 24px;
+.p-about-doctor__card--sub .p-about-doctor__icon-area svg {
+  width: 24px;
+  height: 24px;
 }
 @media screen and (min-width: 768px) {
-  .p-about-doctor__card--main .p-about-doctor__photo {
-    margin-bottom: 0;
-    flex-shrink: 0;
+  .p-about-doctor__card--sub .p-about-doctor__icon-area svg {
+    width: 30px;
+    height: 30px;
   }
 }
-.p-about-doctor__photo-placeholder {
-  width: 160px;
-  height: 160px;
-  background-color: #f0e8e2;
+.p-about-doctor__card--sub .p-about-doctor__name {
+  font-size: 18px;
+}
+@media screen and (min-width: 768px) {
+  .p-about-doctor__card--sub .p-about-doctor__name {
+    font-size: 20px;
+  }
+}
+.p-about-doctor__card--sub .p-about-doctor__role {
+  background-color: #f0f0f0;
+  color: #333333;
+}
+.p-about-doctor__icon-area {
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  background-color: #FFAB88;
   border-radius: 50%;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666666;
-  font-size: 14px;
+  color: #FFFFFF;
 }
 @media screen and (min-width: 768px) {
-  .p-about-doctor__photo-placeholder {
-    width: 200px;
-    height: 200px;
+  .p-about-doctor__icon-area {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
   }
 }
-.p-about-doctor__role {
-  font-size: 14px;
-  color: #FFAB88;
-  font-weight: 700;
-  margin-bottom: 4px;
+.p-about-doctor__icon-area svg {
+  width: 36px;
+  height: 36px;
+}
+@media screen and (min-width: 768px) {
+  .p-about-doctor__icon-area svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+.p-about-doctor__info {
+  flex: 1;
+}
+.p-about-doctor__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
 }
 .p-about-doctor__name {
   font-size: 20px;
   font-weight: 700;
   color: #333333;
-  margin-bottom: 8px;
 }
 @media screen and (min-width: 768px) {
   .p-about-doctor__name {
     font-size: 24px;
   }
 }
+.p-about-doctor__role {
+  display: inline-block;
+  background-color: #FFAB88;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+@media screen and (min-width: 768px) {
+  .p-about-doctor__role {
+    font-size: 14px;
+    padding: 3px 14px;
+  }
+}
 .p-about-doctor__specialty {
-  font-size: 16px;
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+@media screen and (min-width: 768px) {
+  .p-about-doctor__specialty {
+    font-size: 16px;
+  }
+}
+.p-about-doctor__qualifications {
+  margin-top: 8px;
+}
+.p-about-doctor__qualifications-label {
+  font-size: 12px;
   color: #666666;
+  display: block;
+  margin-bottom: 4px;
+}
+@media screen and (min-width: 768px) {
+  .p-about-doctor__qualifications-label {
+    font-size: 14px;
+  }
+}
+.p-about-doctor__qualifications ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.p-about-doctor__qualifications li {
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.8;
+  padding-left: 14px;
+  position: relative;
+}
+.p-about-doctor__qualifications li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #FFAB88;
+}
+@media screen and (min-width: 768px) {
+  .p-about-doctor__qualifications li {
+    font-size: 16px;
+  }
 }
 
 .p-about-gallery {
@@ -2995,12 +3088,15 @@ body.admin-bar .l-header {
 }
 .p-about-gallery__list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 16px;
+  width: 70%;
+  margin: 0 auto;
 }
 @media screen and (min-width: 768px) {
   .p-about-gallery__list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
     gap: 24px;
   }
 }
@@ -3010,14 +3106,38 @@ body.admin-bar .l-header {
 }
 .p-about-gallery__item img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
 @media screen and (min-width: 768px) {
-  .p-about-gallery__item img {
-    height: 250px;
+  .p-about-gallery__item {
+    min-height: 200px;
   }
+}
+.p-about-gallery .grid-item1 {
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+.p-about-gallery .grid-item2 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.p-about-gallery .grid-item3 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.p-about-gallery .grid-item4 {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+.p-about-gallery .grid-item5 {
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+.p-about-gallery .grid-item6 {
+  grid-column: 2/3;
+  grid-row: 3/5;
 }
 
 .p-about-partners {
@@ -3042,31 +3162,55 @@ body.admin-bar .l-header {
 .p-about-partners__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-bottom: 32px;
-}
-@media screen and (min-width: 768px) {
-  .p-about-partners__list {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
+  gap: 30px 0;
+  width: 70%;
+  margin: 0 auto;
 }
 .p-about-partners__item {
-  background-color: #FFFFFF;
-  border: 2px solid #FFAB88;
-  border-radius: 16px;
-  padding: 24px;
-  text-align: center;
-  font-weight: 700;
+  position: relative;
+  padding: 4px 24px 4px 32px;
+  text-align: left;
+  font-weight: 500;
   color: #333333;
-  font-size: 16px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
 }
 @media screen and (min-width: 768px) {
   .p-about-partners__item {
-    font-size: 18px;
+    font-size: 24px;
+    padding: 4px 24px 4px 32px;
   }
 }
+.p-about-partners__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 12px;
+  height: 12px;
+  background-color: #FFAB88;
+  border-radius: 50%;
+}
+@media screen and (min-width: 768px) {
+  .p-about-partners__item::before {
+    bottom: 3px;
+    width: 24px;
+    height: 24px;
+  }
+}
+.p-about-partners__item::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 10px;
+  width: 80%;
+  height: 4px;
+  background-color: #FFAB88;
+  border-radius: 2px;
+}
 .p-about-partners__note {
+  margin-top: 64px;
   font-size: 16px;
   color: #666666;
   line-height: 1.8;

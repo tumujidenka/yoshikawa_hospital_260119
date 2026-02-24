@@ -75,28 +75,11 @@
 
 // Heading (共通)
 .p-about-heading {
-  position: relative;
-  font-size: $font-size-xl;
-  font-weight: $font-weight-bold;
-  color: $color-text;
-  padding-left: $spacing-md;
   margin-bottom: $spacing-xl;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 6px;
-    height: 100%;
-    background-color: $color-main;
-    border-radius: 3px;
-  }
+  transform: none; // .top-titleのtranslateX(10%)をリセット
 
   @include pc {
-    font-size: $font-size-2xl;
     margin-bottom: $spacing-2xl;
-    padding-left: $spacing-lg;
   }
 }
 
@@ -183,85 +166,200 @@
     @include container;
   }
 
+  // タイトル（top-titleスタイル）
+  &__title {
+    margin-bottom: $spacing-xl;
+    transform: none; // .top-titleのtranslateX(10%)をリセット
+
+    @include pc {
+      margin-bottom: $spacing-2xl;
+    }
+  }
+
   &__list {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $spacing-xl;
+    gap: 30px;
 
     @include pc {
       grid-template-columns: repeat(2, 1fr);
-      gap: $spacing-2xl;
     }
   }
 
   &__card {
     background-color: $color-white;
-    border-radius: $border-radius-lg;
-    padding: $spacing-xl;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E8CDC1;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-lg;
 
-    &--main {
-      @include pc {
-        grid-column: span 2;
-        display: flex;
-        align-items: center;
-        gap: $spacing-2xl;
-        text-align: left;
+    &--sub {
+      padding: 20px;
+      border-color: #e0e0e0;
+      gap: $spacing-md;
+
+      .p-about-doctor__icon-area {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        background-color: #e0e0e0;
+
+        @include pc {
+          width: 60px;
+          height: 60px;
+          min-width: 60px;
+        }
+
+        svg {
+          width: 24px;
+          height: 24px;
+
+          @include pc {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+
+      .p-about-doctor__name {
+        font-size: $font-size-lg;
+
+        @include pc {
+          font-size: $font-size-xl;
+        }
+      }
+
+      .p-about-doctor__role {
+        background-color: #f0f0f0;
+        color: $color-text;
       }
     }
   }
 
-  &__photo {
-    margin-bottom: $spacing-lg;
-
-    .p-about-doctor__card--main & {
-      @include pc {
-        margin-bottom: 0;
-        flex-shrink: 0;
-      }
-    }
-  }
-
-  &__photo-placeholder {
-    width: 160px;
-    height: 160px;
-    background-color: #f0e8e2;
+  // アイコンエリア
+  &__icon-area {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    background-color: #FFAB88;
     border-radius: 50%;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: $color-text-light;
-    font-size: $font-size-sm;
+    color: $color-white;
 
     @include pc {
-      width: 200px;
-      height: 200px;
+      width: 80px;
+      height: 80px;
+      min-width: 80px;
+    }
+
+    svg {
+      width: 36px;
+      height: 36px;
+
+      @include pc {
+        width: 40px;
+        height: 40px;
+      }
     }
   }
 
-  &__role {
-    font-size: $font-size-sm;
-    color: $color-main;
-    font-weight: $font-weight-bold;
-    margin-bottom: $spacing-xs;
+  &__info {
+    flex: 1;
+  }
+
+  // 名前 + 役職バッジ
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-sm;
+    flex-wrap: wrap;
   }
 
   &__name {
     font-size: $font-size-xl;
     font-weight: $font-weight-bold;
     color: $color-text;
-    margin-bottom: $spacing-sm;
 
     @include pc {
       font-size: $font-size-2xl;
     }
   }
 
+  &__role {
+    display: inline-block;
+    background-color: #FFAB88;
+    color: $color-white;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    padding: 2px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+
+    @include pc {
+      font-size: $font-size-sm;
+      padding: 3px 14px;
+    }
+  }
+
   &__specialty {
-    font-size: $font-size-base;
-    color: $color-text-light;
+    font-size: $font-size-sm;
+    color: $color-text;
+    margin-bottom: $spacing-md;
+    line-height: 1.6;
+
+    @include pc {
+      font-size: $font-size-base;
+    }
+  }
+
+  // 資格リスト
+  &__qualifications {
+    margin-top: $spacing-sm;
+
+    &-label {
+      font-size: $font-size-xs;
+      color: $color-text-light;
+      display: block;
+      margin-bottom: $spacing-xs;
+
+      @include pc {
+        font-size: $font-size-sm;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      font-size: $font-size-sm;
+      color: $color-text;
+      line-height: 1.8;
+      padding-left: 14px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #FFAB88;
+      }
+
+      @include pc {
+        font-size: $font-size-base;
+      }
+    }
   }
 }
 
@@ -280,11 +378,14 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: $spacing-md;
+    width: 70%;
+    margin: 0 auto;
 
     @include pc {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, auto);
       gap: $spacing-lg;
     }
   }
@@ -295,15 +396,46 @@
 
     img {
       width: 100%;
-      height: 200px;
+      height: 100%;
       object-fit: cover;
       display: block;
+    }
 
-      @include pc {
-        height: 250px;
-      }
+    @include pc {
+      min-height: 200px;
     }
   }
+
+  .grid-item1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+
+  .grid-item2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .grid-item3 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .grid-item4 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .grid-item5 {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+
+  .grid-item6 {
+    grid-column: 2 / 3;
+    grid-row: 3 / 5;
+  }
+
 }
 
 // 提携医療機関
@@ -321,32 +453,65 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: $spacing-md;
-    margin-bottom: $spacing-xl;
+    grid-template-columns: 1fr;
+    gap: 30px 0;
+    width: 100%;
+    margin: 0 auto;
 
     @include pc {
-      grid-template-columns: repeat(4, 1fr);
-      gap: $spacing-lg;
+      grid-template-columns: repeat(2, 1fr);
+      width: 70%;
     }
   }
 
   &__item {
-    background-color: $color-white;
-    border: 2px solid $color-main;
-    border-radius: $border-radius-lg;
-    padding: $spacing-lg;
-    text-align: center;
-    font-weight: $font-weight-bold;
+    position: relative;
+    padding: $spacing-xs $spacing-lg $spacing-xs $spacing-xl;
+    text-align: left;
+    font-weight: $font-weight-medium;
     color: $color-text;
-    font-size: $font-size-base;
+    font-size: $font-size-2xl;
+    display: flex;
+    align-items: center;
 
     @include pc {
-      font-size: $font-size-lg;
+      font-size: $font-size-2xl;
+      padding: $spacing-xs $spacing-lg $spacing-xs $spacing-xl;
+    }
+
+    // オレンジ系の丸
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 3px;
+      width: 12px;
+      height: 12px;
+      background-color: #FFAB88;
+      border-radius: 50%;
+
+      @include pc {
+        bottom: 3px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    // 疑似要素による下線
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 3px;
+      left: 10px;
+      width: 80%;
+      height: 4px;
+      background-color: #FFAB88;
+      border-radius: 2px;
     }
   }
 
   &__note {
+    margin-top: 64px;
     font-size: $font-size-base;
     color: $color-text-light;
     line-height: 1.8;
