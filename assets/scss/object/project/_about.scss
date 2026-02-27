@@ -496,8 +496,8 @@
     &::before {
       content: "";
       position: absolute;
-      left: 20px;
-      bottom: 0px;
+      left: -2px;
+      bottom: 1px;
       width: 12px;
       height: 12px;
       background-color: #FFAB88;
@@ -507,6 +507,7 @@
         bottom: 3px;
         width: 24px;
         height: 24px;
+        left: 0;
       }
     }
 
@@ -517,12 +518,14 @@
       background-color: #FFAB88;
       border-radius: 2px;
       bottom: 0px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80%;
+      left: 0;
+      width: 100%;
       height: 4px;
 
       @include pc {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
         bottom: 3px;
         left: 10px;
         transform: none;
