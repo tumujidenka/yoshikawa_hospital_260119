@@ -44,7 +44,7 @@
     }
 
     &__lead {
-        font-size: $font-size-base;
+        font-size: $font-size-xs;
         font-weight: $font-weight-medium;
         line-height: $line-height-base;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -124,7 +124,7 @@
     @include pc {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: $spacing-2xl $spacing-xl;
+        gap: $spacing-2xl $spacing-4xl;
     }
 }
 
@@ -161,67 +161,83 @@
         display: inline-block;
         position: relative;
         z-index: 1;
-        letter-spacing: 0.1em;
+        color: $color-text;
+        font-size: $font-size-base;
+        padding-left: 24px;
 
+        @include pc {
+            font-size: $font-size-2xl;
+            font-weight: $font-weight-medium;
+            width: auto;
+            padding: $spacing-xs 0 $spacing-xs $spacing-xl;
+        }
+
+        // オレンジ系の丸
         &::before {
             content: "";
             position: absolute;
-            top: 50%;
-            left: -40px;
-            transform: translateY(-50%);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            left: -2px;
+            bottom: 1px;
+            width: 12px;
+            height: 12px;
             background-color: #FFAB88;
-            z-index: -1;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            transform: none;
+            top: auto;
+            box-shadow: none;
+            z-index: 1;
 
             @include pc {
-                width: 90px;
-                height: 90px;
-                left: -40px;
+                bottom: 3px;
+                width: 24px;
+                height: 24px;
+                left: 0;
             }
         }
 
+        // 疑似要素による下線
         &::after {
             content: "";
             position: absolute;
-            bottom: 0;
+            background-color: #FFAB88;
+            border-radius: 2px;
+            bottom: 0px;
             left: 0;
             width: 100%;
-            height: 30%;
-            background-color: rgba(#B8956A, 0.8);
-            transform: translateY(-30%);
-            border-radius: 10px;
-            z-index: -1;
+            height: 4px;
+            transform: none;
+            z-index: 1;
+
+            @include pc {
+                bottom: 3px;
+                left: 10px;
+                height: 4px;
+            }
         }
     }
 
     &__body {
         position: relative;
         background-color: transparent;
-        padding: $spacing-sm 0 $spacing-sm $spacing-lg;
+        padding-left: $spacing-md;
         border-radius: 0;
         margin-left: 15px; // Align with the left edge of the text (roughly)
-
-        // Use pseudo-element for rounded border
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 6px;
-            height: 100%;
-            background-color: #FFDBD0;
-            border-radius: 3px;
-        }
+        margin-top: 32px;
 
         @include pc {
-            padding: $spacing-md 0 $spacing-md $spacing-xl;
+            margin-top: 40px;
             margin-left: 20px;
 
             &::before {
-                width: 8px;
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 6px;
+                height: 100%;
+                background-color: $color-text-light;
+                border-radius: 3px;
+                width: 3px;
                 border-radius: 4px;
             }
         }
@@ -235,6 +251,81 @@
 
         @include pc {
             font-size: $font-size-lg;
+        }
+    }
+}
+
+// 診療科目セクションのタイトルは top-title 風（大きな丸・マーカー下線）に上書き
+.p-medical-subjects {
+    .p-medical-item__title {
+        position: relative;
+        display: inline-block;
+        z-index: 1;
+        padding: 0;
+
+        @include pc {
+            padding: 0;
+        }
+
+        // 背面の大きな円形装飾
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(-30%, -50%);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #FFAB88;
+            z-index: -1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            bottom: auto;
+
+            @include pc {
+                width: 100px;
+                height: 100px;
+                left: 0;
+            }
+        }
+
+        // マーカー風下線
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background-color: rgba(#B8956A, 0.8);
+            transform: translateY(-30%);
+            border-radius: 10px;
+            z-index: -1;
+
+            @include pc {
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 30%;
+            }
+        }
+    }
+
+    .p-medical-item__body {
+        &::before {
+            background-color: $color-main;
+            width: 6px;
+        }
+    }
+}
+
+// その他診療セクションのタイトルは width: 100% に
+.p-medical-others {
+    .p-medical-item__title {
+        width: 100%;
+
+        @include pc {
+            width: 100%;
         }
     }
 }
