@@ -5,16 +5,22 @@ Template Name: Access & Contact
 get_header();
 ?>
 
-<!-- ヒーローエリア（ページタイトル） -->
-<div class="hero-area">
-    <div class="hero-content">
-        <h1>アクセス・お問い合わせ</h1>
-        <p>当院へのアクセス方法とお問い合わせ先をご案内いたします</p>
+<!-- ページFV -->
+<div class="c-page-fv">
+    <div class="c-page-fv__inner">
+        <h1 class="c-page-fv__title">アクセス・お問い合わせ</h1>
+        <p class="c-page-fv__lead">当院へのアクセス方法とお問い合わせ先をご案内いたします</p>
     </div>
-    <div class="hero-circle"></div>
+    <div class="c-page-fv__wave">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path
+                d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
+                fill="#FFFFFF" />
+        </svg>
+    </div>
 </div>
 
-<main>
+<main class="l-main">
 
     <!-- (2) アクセスセクション（地図と住所） -->
     <section class="access-section">

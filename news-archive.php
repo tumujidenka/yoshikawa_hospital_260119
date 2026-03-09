@@ -14,26 +14,20 @@ get_header();
 <!-- メインコンテンツエリアの開始 -->
 <main class="l-main">
 
-    <!-- ページヘッダーセクション -->
-    <!-- 「お知らせ」という大きなタイトルと背景画像（グラデーション）を表示するエリアです -->
-    <section class="p-page-header">
-        <div class="p-page-header__inner">
-            <h1 class="p-page-header__title">お知らせ</h1>
-            <p class="p-page-header__sub-title">院内からの最新情報やお知らせをご確認いただけます</p>
-            <!-- 装飾用の円形要素（背景デザイン） -->
-            <div class="p-page-header__circle"></div>
+    <!-- ページFV -->
+    <div class="c-page-fv">
+        <div class="c-page-fv__inner">
+            <h1 class="c-page-fv__title">お知らせ</h1>
+            <p class="c-page-fv__lead">院内からの最新情報やお知らせをご確認いただけます</p>
         </div>
-
-        <!-- 波形の装飾（SVG画像） -->
-        <!-- ページヘッダー下部の波打つデザインを実現しています -->
-        <div class="p-page-header__wave">
+        <div class="c-page-fv__wave">
             <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                 <path
                     d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
                     fill="#FFFFFF" />
             </svg>
         </div>
-    </section>
+    </div>
 
     <!-- ニュース記事一覧セクション -->
     <section class="p-news-archive">
