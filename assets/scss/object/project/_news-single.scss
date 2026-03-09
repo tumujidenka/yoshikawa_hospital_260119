@@ -1,0 +1,159 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
+
+/* ============================================ */
+/* ニュース詳細ページ（single.php）のスタイル   */
+/* ============================================ */
+
+.p-news-single {
+    padding: 48px 0 80px;
+    background-color: #fff;
+
+    @include pc {
+        padding: 72px 0 120px;
+    }
+
+    &__inner {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* メタ情報（日付・カテゴリラベル） */
+    &__meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    /* 記事タイトル（h1） */
+    &__title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #333;
+        line-height: 1.5;
+        letter-spacing: 0.05em;
+        margin-bottom: 36px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #efefef;
+
+        @include pc {
+            font-size: 30px;
+            margin-bottom: 48px;
+        }
+    }
+
+    /* 本文エリア */
+    &__body {
+        font-size: 15px;
+        color: #444;
+        line-height: 1.9;
+        margin-bottom: 48px;
+
+        @include pc {
+            font-size: 16px;
+            margin-bottom: 64px;
+        }
+
+        /* 本文中の見出し（h1〜h3）：アクセントボーダー付き */
+        h1,
+        h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            border-bottom: 3px solid $color-main;
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+
+            @include pc {
+                font-size: 22px;
+                margin-top: 56px;
+            }
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            border-left: 4px solid $color-main;
+            padding-left: 12px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+
+            @include pc {
+                font-size: 18px;
+                margin-top: 40px;
+            }
+        }
+
+        p {
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        ul,
+        ol {
+            padding-left: 1.5em;
+            margin-bottom: 20px;
+
+            li {
+                margin-bottom: 8px;
+                line-height: 1.8;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+
+        a {
+            color: $color-main;
+            text-decoration: underline;
+
+            &:hover {
+                opacity: 0.75;
+            }
+        }
+    }
+
+    /* 一覧に戻るボタンエリア */
+    &__back {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__back-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 40px;
+        border: 2px solid $color-main;
+        border-radius: 999px;
+        background-color: #fff;
+        color: $color-main;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        transition: background-color 0.2s ease, color 0.2s ease;
+
+        @include pc {
+            font-size: 15px;
+            padding: 16px 56px;
+        }
+
+        &:hover {
+            background-color: $color-main;
+            color: #fff;
+        }
+    }
+}

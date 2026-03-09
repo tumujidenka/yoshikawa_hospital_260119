@@ -1,0 +1,566 @@
+/* ============================================ */
+/* お知らせページ（News Archive）のスタイル設定  */
+/* ============================================ */
+
+/*
+  【SCSSの書き方メモ】
+  このファイルは「SCSS」という書き方をしています。
+  普通のCSSと見た目は似ていますが、
+  ・ネスト（入れ子）で書けるので階層がわかりやすい
+  ・変数や計算もできる
+  という点が違います。
+  コンパイル（変換）するとstyle.cssになります。
+*/
+
+/* ============================================ */
+/* ページヘッダー（キービジュアル）              */
+/* 上部のサーモンピンクのグラデーションエリア     */
+/* ============================================ */
+.p-page-header {
+    /*
+      background: linear-gradient は「グラデーション背景」
+      135deg = 斜め方向（左上→右下）
+    */
+    background: linear-gradient(135deg, #f0957a 0%, #f5a98b 40%, #f8bb9d 70%, #faccaa 100%);
+
+    /* ヘッダーナビ（固定）の高さ分だけ上に余白をとる */
+    padding-top: 120px;
+    padding-bottom: 80px;
+
+    /*
+      position: relative にしておくと、
+      内部の円装飾にposition: absoluteが使えるようになる
+    */
+    position: relative;
+
+    /* テキストを中央揃えにする */
+    text-align: center;
+
+    /* テキスト色を白に */
+    color: #fff;
+
+    /*
+      overflow: hidden にすると、
+      はみ出た装飾（大きな円）がエリア外に見えなくなる
+    */
+    overflow: hidden;
+}
+
+/* PC（画面幅768px以上）でのページヘッダー調整 */
+@media screen and (min-width: 768px) {
+    .p-page-header {
+        padding-top: 160px;
+        /* PCはより余裕をもたせる */
+        padding-bottom: 100px;
+    }
+}
+
+/* -------------------------------------------- */
+/* 装飾：左下の白い大きな半透明の円              */
+/* スクリーンショットで左下に見える白い丸         */
+/* -------------------------------------------- */
+.p-page-header__circle {
+    /*
+      position: absolute にすると、
+      親要素（.p-page-header）を基準に
+      好きな場所に配置できる
+    */
+    position: absolute;
+
+    /* 左端からマイナス方向にずらして半分だけ見せる */
+    left: -60px;
+
+    /* 下からマイナス方向にずらして半分だけ見せる */
+    bottom: -60px;
+
+    /* 円のサイズ（スマホ） */
+    width: 300px;
+    height: 300px;
+
+    /* border-radius: 50% で正円になる */
+    border-radius: 50%;
+
+    /*
+      rgba(255, 255, 255, 0.2) = 透明度20%の白
+      「薄く透けた白い円」になる
+    */
+    background-color: rgba(255, 255, 255, 0.2);
+
+    /* テキストより後ろに配置する */
+    z-index: 0;
+}
+
+/* PC（768px以上）での円のサイズ調整 */
+@media screen and (min-width: 768px) {
+    .p-page-header__circle {
+        width: 500px;
+        height: 500px;
+        left: -80px;
+        bottom: -80px;
+    }
+}
+
+/* -------------------------------------------- */
+/* タイトルテキストエリア                        */
+/* -------------------------------------------- */
+.p-page-header__inner {
+    /*
+      position: relative + z-index: 1 で
+      円装飾（z-index: 0）より前面にテキストを出す
+    */
+    position: relative;
+    z-index: 1;
+
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ページタイトル「お知らせ」 */
+.p-page-header__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 0.1em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 768px) {
+    .p-page-header__title {
+        font-size: 44px;
+    }
+}
+
+/* サブタイトル「当院からの最新情報や...」 */
+.p-page-header__sub-title {
+    font-size: 13px;
+    font-weight: 400;
+    opacity: 0.85;
+    line-height: 1.7;
+    letter-spacing: 0.05em;
+}
+
+@media screen and (min-width: 768px) {
+    .p-page-header__sub-title {
+        font-size: 15px;
+    }
+}
+
+/* ============================================ */
+/* ニュース一覧セクション全体のラッパー          */
+/* ============================================ */
+.p-news-archive {
+    padding: 40px 0 80px;
+    background-color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+    .p-news-archive {
+        padding: 60px 0 100px;
+    }
+}
+
+/* ============================================ */
+/* コンテンツ幅とレイアウトを制御するラッパー    */
+/* ============================================ */
+.p-news-archive__inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 16px;
+
+    /*
+      スマホでは縦に積み上げるレイアウト
+      Flexboxのflex-directionをcolumn（縦）に指定
+    */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* 円バッジとカードの間の余白 */
+}
+
+/* PCレイアウト：左に円形見出し、右に記事リスト */
+@media screen and (min-width: 768px) {
+    .p-news-archive__inner {
+        flex-direction: column;
+        /* 縦並びに維持 */
+        align-items: center;
+        /* コンテンツエリア全体を中央へ */
+        padding: 0 20px;
+    }
+}
+
+/* ============================================ */
+/* 左側：円形「お知らせ」見出しバッジ            */
+/* ============================================ */
+.p-news-archive__heading {
+    flex-shrink: 0;
+
+    /* スマホでもリストの左上に揃えるため flex-start にします */
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media screen and (min-width: 768px) {
+    .p-news-archive__heading {
+        width: auto;
+        justify-content: flex-start;
+        padding-top: 0;
+        /* 重なりを解消し、リストの左端に揃える */
+        margin-bottom: 8px;
+        margin-left: 0;
+        position: relative;
+        z-index: 10;
+    }
+}
+
+/*
+  円形タイトルバッジ（「お知らせ」と「News」が入った丸）
+  ページヘッダーと同じグラデーションで統一感を出す
+*/
+.c-circle-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #f0957a 0%, #f5a98b 40%, #fbbc9e 100%);
+
+    /* border-radius: 50% で正円にする */
+    border-radius: 50%;
+
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    /* 影を画像に合わせて少し薄めに */
+    box-shadow: 0 2px 10px rgba(240, 149, 122, 0.25);
+
+    /*
+      position: relative にすることで
+      ::after 疑似要素（茶色の線）を
+      この円の中を基準に配置できるようになる
+    */
+    position: relative;
+}
+
+/*
+  「お知らせ」テキストの下に茶色の装飾線を追加する
+  ::after は「この要素の直後」に仮想の要素を作るCSS機能
+  実際のHTMLには存在しない「見た目だけの線」を描ける
+*/
+.c-circle-title::after {
+    content: "";
+    /* content が必須（空でもOK） */
+    display: block;
+    width: 32px;
+    /* 線の長さ */
+    height: 2px;
+    /* 線の太さ */
+
+    /*
+      スクリーンショットの茶色に近い色
+    */
+    background-color: rgba(60, 30, 10, 0.35);
+    border-radius: 1px;
+    /* 線の端を少し丸く */
+
+    /* テキストとの間隔をぴったりにする */
+    margin-top: 6px;
+}
+
+@media screen and (min-width: 768px) {
+    .c-circle-title {
+        width: 120px;
+        height: 120px;
+        font-size: 16px;
+    }
+}
+
+/* 英語サブテキスト「News」 */
+.c-circle-title__en {
+    font-size: 10px;
+    font-weight: 400;
+    margin-top: 4px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    /* 英字を大文字に変換 */
+    letter-spacing: 0.08em;
+}
+
+/* ============================================ */
+/* 右側：記事リスト＋ページネーションのラッパー  */
+/* ============================================ */
+.p-news-archive__content {
+    /* PCでの最大幅を指定して全体を中央寄せにする */
+    width: 100%;
+    max-width: 900px;
+}
+
+/* ============================================ */
+/* 記事リストのカードコンテナ                    */
+/*                                              */
+/* 【ポイント】                                  */
+/* PC・スマホ両方で白い角丸カード（影付き）表示   */
+/* ============================================ */
+.p-news-list {
+    width: 100%;
+
+    /*
+      カードデザイン（PC・スマホ共通）
+      background: 白い背景
+      border-radius: 角を丸くする（16pxで大きめの丸）
+      box-shadow: 影をつけて浮き上がって見せる
+        書き方: box-shadow: X方向 Y方向 ぼかし範囲 広がり 色
+    */
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+
+    /* カードの内側に余白を設ける */
+    padding: 0 24px;
+
+    /* 薄いグレーの枠線でカードの輪郭をつける */
+    /*
+      border: カードの外枠
+      rgba(0, 0, 0, 0.18) = 透明度18%の黒 → スクリーンショットの薄いグレー枠に近い
+      0.06 だと薄すぎたので少し濃くした
+    */
+    border: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+/* ============================================ */
+/* 個別記事アイテム                              */
+/* ============================================ */
+.p-news-item {
+    /* 記事の下に区切り線を入れる */
+    border-bottom: 1px solid #efefef;
+
+    padding: 24px 0;
+
+    /* Flexboxで縦に並べる */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    /* ホバー時のアニメーション設定 */
+    transition: background-color 0.2s ease;
+
+    position: relative;
+}
+
+/* 最初のアイテムには上の区切り線も追加 */
+.p-news-item:first-child {
+    border-top: 1px solid #efefef;
+}
+
+/*
+  最後のアイテムの下線を消す
+  カードの角丸の内側に線が残らないようにするため
+  （PC・スマホ両方共通）
+*/
+.p-news-list .p-news-item:last-child {
+    border-bottom: none;
+}
+
+/* マウスを乗せたとき背景を薄く変える */
+.p-news-item:hover {
+    background-color: #fdf9f7;
+}
+
+/* リンクのスタイルリセット */
+.p-news-item__link {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 記事全体をクリックできるようにするトリック */
+.p-news-item__link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* 日付とラベルが並ぶ行 */
+.p-news-item__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    /* 幅が狭いとき折り返す */
+}
+
+/* 日付テキスト */
+.p-news-item__date {
+    font-weight: 700;
+    color: #333;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+}
+
+@media screen and (min-width: 768px) {
+    .p-news-item__date {
+        font-size: 15px;
+    }
+}
+
+/* タイトルと本文が並ぶ行 */
+.p-news-item__body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* 記事タイトル */
+.p-news-item__title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #333;
+}
+
+@media screen and (min-width: 768px) {
+    .p-news-item__title {
+        font-size: 17px;
+    }
+}
+
+/* 記事の概要テキスト */
+.p-news-item__text {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.7;
+}
+
+@media screen and (min-width: 768px) {
+    .p-news-item__text {
+        font-size: 14px;
+    }
+}
+
+/* ============================================ */
+/* カテゴリーラベル（バッジ）                    */
+/* 記事の種類を視覚的に区別するための色付きタグ   */
+/* ============================================ */
+.c-label {
+    display: inline-block;
+    padding: 4px 12px;
+
+    /*
+      border-radius に大きな値を指定すると
+      カプセル型（角丸）になる
+    */
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #ccc;
+    /* デフォルト背景色 */
+
+    line-height: 1.4;
+    white-space: nowrap;
+    /* 折り返さない */
+}
+
+@media screen and (min-width: 768px) {
+    .c-label {
+        font-size: 12px;
+        padding: 4px 14px;
+    }
+}
+
+/* ラベルの色バリエーション */
+
+/* 休診・緊急のお知らせ：メインカラー（ピンクオレンジ） */
+.c-label--urgent {
+    background-color: #f0957a;
+}
+
+/* 一般的なお知らせ */
+.c-label--info {
+    background-color: #f0957a;
+}
+
+/* 診療時間変更など：グレー系 */
+.c-label--change {
+    background-color: #7a7a7a;
+}
+
+/* イベント開催：濃いオレンジ */
+.c-label--event {
+    background-color: #d96530;
+}
+
+/* ============================================ */
+/* ページネーション（ページ送りボタン）          */
+/* ============================================ */
+.p-pagination {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 768px) {
+    .p-pagination {
+        margin-top: 64px;
+        gap: 10px;
+    }
+}
+
+/* 共通のページネーションリンクスタイル */
+.p-pagination__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 6px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    color: #333;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    background-color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+    .p-pagination__link {
+        min-width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+/* ホバー時のスタイル */
+.p-pagination__link:hover {
+    background-color: #f0957a;
+    color: #fff;
+    border-color: #f0957a;
+}
+
+/* 現在表示中のページ */
+.p-pagination__link--current {
+    background-color: #f0957a;
+    color: #fff;
+    border-color: #f0957a;
+    pointer-events: none;
+    /* クリック無効 */
+    cursor: default;
+}
+
+/* 「前へ」「次へ」ボタン */
+.p-pagination__link--prev,
+.p-pagination__link--next {
+    width: auto;
+    padding: 0 14px;
+}
