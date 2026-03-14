@@ -29,24 +29,25 @@ get_header(); ?>
             <!-- 受付の流れ -->
             <h3 class="p-guide-subheading">受付の流れ</h3>
             <div class="p-guide-flow">
-                <div class="p-guide-flow__step">
-                    <div class="p-guide-flow__icon">1</div>
-                    <p class="p-guide-flow__label">受付</p>
+                <div class="p-guide-flow__card">
+                    <div class="p-guide-flow__num">1</div>
+                    <p class="p-guide-flow__title">来院・受付</p>
+                    <p class="p-guide-flow__desc">保険証をご持参の上、受付にお声がけください</p>
                 </div>
-                <div class="p-guide-flow__arrow">&rarr;</div>
-                <div class="p-guide-flow__step">
-                    <div class="p-guide-flow__icon">2</div>
-                    <p class="p-guide-flow__label">問診</p>
+                <div class="p-guide-flow__card">
+                    <div class="p-guide-flow__num">2</div>
+                    <p class="p-guide-flow__title">問診票記入</p>
+                    <p class="p-guide-flow__desc">症状や既往歴などをご記入いただきます</p>
                 </div>
-                <div class="p-guide-flow__arrow">&rarr;</div>
-                <div class="p-guide-flow__step">
-                    <div class="p-guide-flow__icon">3</div>
-                    <p class="p-guide-flow__label">診察</p>
+                <div class="p-guide-flow__card">
+                    <div class="p-guide-flow__num">3</div>
+                    <p class="p-guide-flow__title">診察</p>
+                    <p class="p-guide-flow__desc">医師による診察・検査を行います</p>
                 </div>
-                <div class="p-guide-flow__arrow">&rarr;</div>
-                <div class="p-guide-flow__step">
-                    <div class="p-guide-flow__icon">4</div>
-                    <p class="p-guide-flow__label">お会計</p>
+                <div class="p-guide-flow__card">
+                    <div class="p-guide-flow__num">4</div>
+                    <p class="p-guide-flow__title">お会計・お薬</p>
+                    <p class="p-guide-flow__desc">受付でお会計を行い、処方箋をお渡しします</p>
                 </div>
             </div>
 
@@ -54,20 +55,52 @@ get_header(); ?>
             <h3 class="p-guide-subheading">持ち物</h3>
             <div class="p-guide-checklist">
                 <div class="p-guide-checklist__item">
-                    <span class="p-guide-checklist__icon">&#9745;</span>
-                    <span>健康保険証</span>
+                    <div class="p-guide-checklist__icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                    </div>
+                    <span class="p-guide-checklist__name">健康保険証</span>
+                    <span class="p-guide-checklist__badge p-guide-checklist__badge--required">必須</span>
                 </div>
                 <div class="p-guide-checklist__item">
-                    <span class="p-guide-checklist__icon">&#9745;</span>
-                    <span>各種医療証（お持ちの方）</span>
+                    <div class="p-guide-checklist__icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                    </div>
+                    <span class="p-guide-checklist__name">各種医療証</span>
+                    <span class="p-guide-checklist__hint">お持ちの方</span>
                 </div>
                 <div class="p-guide-checklist__item">
-                    <span class="p-guide-checklist__icon">&#9745;</span>
-                    <span>お薬手帳（お持ちの方）</span>
+                    <div class="p-guide-checklist__icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    </div>
+                    <span class="p-guide-checklist__name">お薬手帳</span>
+                    <span class="p-guide-checklist__hint">お持ちの方</span>
                 </div>
                 <div class="p-guide-checklist__item">
-                    <span class="p-guide-checklist__icon">&#9745;</span>
-                    <span>紹介状（お持ちの方）</span>
+                    <div class="p-guide-checklist__icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <span class="p-guide-checklist__name">紹介状</span>
+                    <span class="p-guide-checklist__hint">お持ちの方</span>
+                </div>
+            </div>
+
+            <!-- 受付時間 -->
+            <h3 class="p-guide-subheading">受付時間</h3>
+            <div class="p-guide-reception">
+                <p class="p-guide-reception__message">
+                    午前・午後ともに診療終了時刻の<span class="p-guide-reception__highlight">15分前</span>までにお願い致します。
+                </p>
+                <div class="p-guide-reception__card">
+                    <h4 class="p-guide-reception__card-title">予約について</h4>
+                    <p class="p-guide-reception__card-text">
+                        診察の予約はお問い合わせフォームよりメッセージをお願いします。<br>
+                        予約なしの当日受診も可能ですが、受診状況により待ち時間が発生することがあることをご理解ください。
+                    </p>
+                    <div class="p-guide-reception__card-link-wrap">
+                        <a href="<?php echo esc_url(home_url('/access/')); ?>#contact" class="p-guide-reception__card-link">
+                            お問い合わせフォームへ →
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -110,7 +143,6 @@ get_header(); ?>
                         </tr>
                     </tbody>
                 </table>
-                <p class="p-guide-hours__note">午前・午後とも受付は診療時間の15分前までにお願いします。</p>
             </div>
         </div>
     </section>
