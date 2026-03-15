@@ -11,21 +11,6 @@ get_header();
 
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
 
-        <!-- ページFV -->
-        <div class="c-page-fv">
-            <div class="c-page-fv__inner">
-                <h1 class="c-page-fv__title">お知らせ</h1>
-                <p class="c-page-fv__lead">院内からの最新情報やお知らせをご確認いただけます</p>
-            </div>
-            <div class="c-page-fv__wave">
-                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path
-                        d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-                        fill="#FFFFFF" />
-                </svg>
-            </div>
-        </div>
-
         <!-- 記事詳細セクション -->
         <section class="p-news-single">
             <div class="p-news-single__inner">

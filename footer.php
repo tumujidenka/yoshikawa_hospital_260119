@@ -22,6 +22,7 @@
                 <li><a href="<?php echo esc_url(home_url('/medical/')); ?>">診療科目・診療内容</a></li>
                 <li><a href="<?php echo esc_url(home_url('/about/')); ?>">当院について</a></li>
                 <li><a href="<?php echo esc_url(home_url('/guide/')); ?>">入院・受診案内</a></li>
+                <li><a href="<?php echo esc_url(home_url('/news/')); ?>">お知らせ</a></li>
                 <li><a href="<?php echo esc_url(home_url('/access/')); ?>">アクセス・お問い合わせ</a></li>
             </ul>
         </div>

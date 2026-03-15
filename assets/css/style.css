@@ -3548,7 +3548,7 @@ body.admin-bar .l-header {
 /* ============================================ */
 .p-news-archive {
   padding: 40px 0 80px;
-  background-color: #fff;
+  background-color: #FFF9F5;
 }
 
 @media screen and (min-width: 768px) {
@@ -3560,29 +3560,21 @@ body.admin-bar .l-header {
 /* コンテンツ幅とレイアウトを制御するラッパー    */
 /* ============================================ */
 .p-news-archive__inner {
-  max-width: 1120px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 16px;
-  /*
-    スマホでは縦に積み上げるレイアウト
-    Flexboxのflex-directionをcolumn（縦）に指定
-  */
+  padding: 0 20px;
+}
+@media screen and (min-width: 768px) {
+  .p-news-archive__inner {
+    padding: 0 80px;
+  }
+}
+.p-news-archive__inner {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  /* 円バッジとカードの間の余白 */
 }
 
-/* PCレイアウト：左に円形見出し、右に記事リスト */
-@media screen and (min-width: 768px) {
-  .p-news-archive__inner {
-    flex-direction: column;
-    /* 縦並びに維持 */
-    align-items: center;
-    /* コンテンツエリア全体を中央へ */
-    padding: 0 20px;
-  }
-}
 /* ============================================ */
 /* 左側：円形「お知らせ」見出しバッジ            */
 /* ============================================ */
@@ -3716,28 +3708,26 @@ body.admin-bar .l-header {
 /* 個別記事アイテム                              */
 /* ============================================ */
 .p-news-item {
-  /* 記事の下に区切り線を入れる */
   border-bottom: 1px solid #efefef;
-  padding: 24px 0;
-  /* Flexboxで縦に並べる */
+  padding: 28px 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  /* ホバー時のアニメーション設定 */
+  gap: 12px;
   transition: background-color 0.2s ease;
   position: relative;
 }
 
+@media screen and (min-width: 768px) {
+  .p-news-item {
+    padding: 40px 12px;
+  }
+}
 /* 最初のアイテムには上の区切り線も追加 */
 .p-news-item:first-child {
   border-top: 1px solid #efefef;
 }
 
-/*
-  最後のアイテムの下線を消す
-  カードの角丸の内側に線が残らないようにするため
-  （PC・スマホ両方共通）
-*/
+/* 最後のアイテムの下線を消す */
 .p-news-list .p-news-item:last-child {
   border-bottom: none;
 }
@@ -3764,38 +3754,44 @@ body.admin-bar .l-header {
   z-index: 1;
 }
 
-/* 日付とラベルが並ぶ行 */
+/* 1行目：日付とカテゴリラベルが横並び */
 .p-news-item__header {
   display: flex;
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
-  /* 幅が狭いとき折り返す */
 }
 
 /* 日付テキスト */
 .p-news-item__date {
   font-weight: 700;
   color: #333;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.03em;
+  white-space: nowrap;
 }
 
 @media screen and (min-width: 768px) {
   .p-news-item__date {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
-/* タイトルと本文が並ぶ行 */
+/* 2行目以降：タイトルと本文（左インデントで日付から視覚的に区別） */
 .p-news-item__body {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  padding-left: 4px;
 }
 
+@media screen and (min-width: 768px) {
+  .p-news-item__body {
+    padding-left: 8px;
+  }
+}
 /* 記事タイトル */
 .p-news-item__title {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.6;
   color: #333;
@@ -3803,7 +3799,7 @@ body.admin-bar .l-header {
 
 @media screen and (min-width: 768px) {
   .p-news-item__title {
-    font-size: 17px;
+    font-size: 18px;
   }
 }
 /* 記事の概要テキスト */
@@ -3825,19 +3821,14 @@ body.admin-bar .l-header {
 .c-label {
   display: inline-block;
   padding: 4px 12px;
-  /*
-    border-radius に大きな値を指定すると
-    カプセル型（角丸）になる
-  */
   border-radius: 999px;
+  border: 1px solid rgba(240, 149, 122, 0.5);
   font-size: 11px;
   font-weight: 700;
   color: #fff;
   background-color: #ccc;
-  /* デフォルト背景色 */
   line-height: 1.4;
   white-space: nowrap;
-  /* 折り返さない */
 }
 
 @media screen and (min-width: 768px) {
@@ -3850,11 +3841,13 @@ body.admin-bar .l-header {
 /* 休診・緊急のお知らせ：メインカラー（ピンクオレンジ） */
 .c-label--urgent {
   background-color: #f0957a;
+  border-color: rgba(240, 149, 122, 0.5);
 }
 
 /* 一般的なお知らせ */
 .c-label--info {
   background-color: #f0957a;
+  border-color: rgba(240, 149, 122, 0.5);
 }
 
 /* 診療時間変更など：グレー系 */
@@ -3919,9 +3912,10 @@ body.admin-bar .l-header {
 
 /* 現在表示中のページ */
 .p-pagination__link--current {
-  background-color: #f0957a;
-  color: #fff;
-  border-color: #f0957a;
+  background-color: #FDECE4;
+  color: #333;
+  border-color: #FDECE4;
+  font-weight: 700;
   pointer-events: none;
   /* クリック無効 */
   cursor: default;
@@ -4707,4 +4701,6 @@ body.admin-bar .l-header {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -61,6 +61,7 @@
                     class="l-drawer__link">診療案内</a></li>
             <li class="l-drawer__item"><a href="<?php echo esc_url(home_url('/guide/')); ?>"
                     class="l-drawer__link">入院・受診案内</a></li>
+            <li class="l-drawer__item"><a href="<?php echo esc_url(home_url('/news/')); ?>" class="l-drawer__link">お知らせ</a></li>
             <li class="l-drawer__item"><a href="<?php echo esc_url(home_url('/access/')); ?>"
                     class="l-drawer__link">アクセス</a></li>
         </ul>
