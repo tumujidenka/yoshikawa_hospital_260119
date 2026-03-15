@@ -92,7 +92,7 @@ get_header();
                                 <div class="p-news-item__header">
                                     <!-- 日付表示 -->
                                     <time class="p-news-item__date"
-                                        datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+                                        datetime="<?php echo esc_attr( get_the_date('Y-m-d') ); ?>"><?php echo esc_html( get_the_date('Y.m.d') ); ?></time>
 
                                     <!-- カテゴリーラベル表示（カテゴリーがある場合のみ） -->
                                     <?php if ($cat_name): ?>
@@ -104,8 +104,8 @@ get_header();
                                 <div class="p-news-item__body">
                                     <!-- 記事タイトルとリンク -->
                                     <h3 class="p-news-item__title">
-                                        <a href="<?php the_permalink(); ?>" class="p-news-item__link">
-                                            <?php the_title(); ?>
+                                        <a href="<?php echo esc_url( get_permalink() ); ?>" class="p-news-item__link">
+                                            <?php echo esc_html( get_the_title() ); ?>
                                         </a>
                                     </h3>
                                     <!-- 記事の抜粋文（本文の出だし） -->
@@ -131,7 +131,7 @@ get_header();
 
                     // 「前へ」リンク（2ページ目以降に表示）
                     if ($current_page > 1) {
-                        echo '<a href="' . get_pagenum_link($current_page - 1) . '" class="p-pagination__link p-pagination__link--prev">&lt; 前へ</a>';
+                        echo '<a href="' . esc_url( get_pagenum_link($current_page - 1) ) . '" class="p-pagination__link p-pagination__link--prev">&lt; 前へ</a>';
                     }
 
                     // ページ番号リンクの生成（1, 2, 3...）
@@ -141,13 +141,13 @@ get_header();
                             echo '<span class="p-pagination__link p-pagination__link--current">' . $i . '</span>';
                         } else {
                             // 他のページへのリンク
-                            echo '<a href="' . get_pagenum_link($i) . '" class="p-pagination__link">' . $i . '</a>';
+                            echo '<a href="' . esc_url( get_pagenum_link($i) ) . '" class="p-pagination__link">' . esc_html( $i ) . '</a>';
                         }
                     }
 
                     // 「次へ」リンク（最終ページでなければ表示）
                     if ($current_page < $the_query->max_num_pages) {
-                        echo '<a href="' . get_pagenum_link($current_page + 1) . '" class="p-pagination__link p-pagination__link--next">次へ &gt;</a>';
+                        echo '<a href="' . esc_url( get_pagenum_link($current_page + 1) ) . '" class="p-pagination__link p-pagination__link--next">次へ &gt;</a>';
                     }
                     echo '</div>';
                 }

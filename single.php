@@ -39,8 +39,8 @@ get_header();
 
                 <!-- メタ情報（日付・カテゴリ） -->
                 <div class="p-news-single__meta">
-                    <time class="p-news-item__date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
-                        <?php echo get_the_date('Y.m.d'); ?>
+                    <time class="p-news-item__date" datetime="<?php echo esc_attr( get_the_date('Y-m-d') ); ?>">
+                        <?php echo esc_html( get_the_date('Y.m.d') ); ?>
                     </time>
                     <?php if ($cat_name): ?>
                         <span class="c-label <?php echo esc_attr($cat_class); ?>">
@@ -50,7 +50,7 @@ get_header();
                 </div>
 
                 <!-- 記事タイトル -->
-                <h1 class="p-news-single__title"><?php the_title(); ?></h1>
+                <h1 class="p-news-single__title"><?php echo esc_html( get_the_title() ); ?></h1>
 
                 <!-- 記事本文 -->
                 <div class="p-news-single__body">
