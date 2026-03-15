@@ -32,22 +32,22 @@ get_header(); ?>
                 <div class="p-guide-flow__card">
                     <div class="p-guide-flow__num">1</div>
                     <p class="p-guide-flow__title">来院・受付</p>
-                    <p class="p-guide-flow__desc">保険証をご持参の上、受付にお声がけください</p>
+                    <p class="p-guide-flow__desc">保険証をご持参の上、<br>受付にお声がけください</p>
                 </div>
                 <div class="p-guide-flow__card">
                     <div class="p-guide-flow__num">2</div>
                     <p class="p-guide-flow__title">問診票記入</p>
-                    <p class="p-guide-flow__desc">症状や既往歴などをご記入いただきます</p>
+                    <p class="p-guide-flow__desc">症状や既往歴などを<br>ご記入いただきます</p>
                 </div>
                 <div class="p-guide-flow__card">
                     <div class="p-guide-flow__num">3</div>
                     <p class="p-guide-flow__title">診察</p>
-                    <p class="p-guide-flow__desc">医師による診察・検査を行います</p>
+                    <p class="p-guide-flow__desc">医師による診察・検査を<br>行います</p>
                 </div>
                 <div class="p-guide-flow__card">
                     <div class="p-guide-flow__num">4</div>
                     <p class="p-guide-flow__title">お会計・お薬</p>
-                    <p class="p-guide-flow__desc">受付でお会計を行い、処方箋をお渡しします</p>
+                    <p class="p-guide-flow__desc">受付でお会計を行い、<br>処方箋をお渡しします</p>
                 </div>
             </div>
 
@@ -56,28 +56,45 @@ get_header(); ?>
             <div class="p-guide-checklist">
                 <div class="p-guide-checklist__item">
                     <div class="p-guide-checklist__icon-wrap">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
                     </div>
                     <span class="p-guide-checklist__name">健康保険証</span>
                     <span class="p-guide-checklist__badge p-guide-checklist__badge--required">必須</span>
                 </div>
                 <div class="p-guide-checklist__item">
                     <div class="p-guide-checklist__icon-wrap">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
                     </div>
                     <span class="p-guide-checklist__name">各種医療証</span>
                     <span class="p-guide-checklist__hint">お持ちの方</span>
                 </div>
                 <div class="p-guide-checklist__item">
                     <div class="p-guide-checklist__icon-wrap">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
                     </div>
                     <span class="p-guide-checklist__name">お薬手帳</span>
                     <span class="p-guide-checklist__hint">お持ちの方</span>
                 </div>
                 <div class="p-guide-checklist__item">
                     <div class="p-guide-checklist__icon-wrap">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
                     </div>
                     <span class="p-guide-checklist__name">紹介状</span>
                     <span class="p-guide-checklist__hint">お持ちの方</span>
@@ -97,95 +114,62 @@ get_header(); ?>
                         予約なしの当日受診も可能ですが、受診状況により待ち時間が発生することがあることをご理解ください。
                     </p>
                     <div class="p-guide-reception__card-link-wrap">
-                        <a href="<?php echo esc_url(home_url('/access/')); ?>#contact" class="p-guide-reception__card-link">
+                        <a href="<?php echo esc_url(home_url('/access/')); ?>#contact"
+                            class="p-guide-reception__card-link">
                             お問い合わせフォームへ →
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- 診療時間 -->
-            <h3 class="p-guide-subheading">診療時間</h3>
-            <div class="p-guide-hours">
-                <table class="p-guide-hours__table">
-                    <thead>
-                        <tr>
-                            <th>診療時間</th>
-                            <th>月</th>
-                            <th>火</th>
-                            <th>水</th>
-                            <th>木</th>
-                            <th>金</th>
-                            <th>土</th>
-                            <th>日/祝</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="p-guide-hours__time">9:00-13:00</td>
-                            <td>○</td>
-                            <td>○</td>
-                            <td>○</td>
-                            <td>○</td>
-                            <td>○</td>
-                            <td>○</td>
-                            <td>ー</td>
-                        </tr>
-                        <tr>
-                            <td class="p-guide-hours__time">14:00-19:00</td>
-                            <td>○</td>
-                            <td>○</td>
-                            <td>○</td>
-                            <td>○</td>
-                            <td>○</td>
-                            <td>ー</td>
-                            <td>ー</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
     </section>
 
     <!-- 入院のご案内セクション -->
     <section class="p-guide-inpatient">
         <div class="p-guide-inpatient__inner">
-            <h2 class="p-guide-heading">入院のご案内</h2>
+            <h2 class="p-guide-inpatient__title top-title">入院について</h2>
 
             <div class="p-guide-inpatient__features">
                 <div class="p-guide-inpatient__feature">
-                    <h3 class="p-guide-inpatient__feature-title">急性入院対応</h3>
-                    <p class="p-guide-inpatient__feature-text">急な体調変化や怪我など、緊急性の高い症状に対しても速やかに入院対応いたします。</p>
+                    <h3 class="p-guide-inpatient__feature-title p-medical-item__title">長期入院対応</h3>
+                    <p class="p-guide-inpatient__feature-text">医療療養病床を備え、急性期を終えても引き続き長期入院いただける体制を整えています</p>
                 </div>
                 <div class="p-guide-inpatient__feature">
-                    <h3 class="p-guide-inpatient__feature-title">医療療養病棟</h3>
-                    <p class="p-guide-inpatient__feature-text">長期的な療養が必要な方に、じっくりと向き合いながら治療・ケアを行います。</p>
+                    <h3 class="p-guide-inpatient__feature-title p-medical-item__title">医師常駐</h3>
+                    <p class="p-guide-inpatient__feature-text">医師が常駐しておりますので、急変時の対応もスピーディーです</p>
                 </div>
                 <div class="p-guide-inpatient__feature">
-                    <h3 class="p-guide-inpatient__feature-title">院内調理</h3>
-                    <p class="p-guide-inpatient__feature-text">管理栄養士による院内調理で、温かく栄養バランスの取れた食事をご提供いたします。</p>
+                    <h3 class="p-guide-inpatient__feature-title p-medical-item__title">院内調理</h3>
+                    <p class="p-guide-inpatient__feature-text">管理栄養士がご要望に合わせて院内調理して提供しておりますので、お気軽にご相談ください</p>
                 </div>
                 <div class="p-guide-inpatient__feature">
-                    <h3 class="p-guide-inpatient__feature-title">リハビリテーション</h3>
-                    <p class="p-guide-inpatient__feature-text">理学療法士・作業療法士が入院中のリハビリテーションをサポートいたします。</p>
+                    <h3 class="p-guide-inpatient__feature-title p-medical-item__title">リハビリテーション</h3>
+                    <p class="p-guide-inpatient__feature-text">
+                        長期入院中のADL低下や廃用を予防するため、リハビリテーションに力を入れています。特に高齢患者様の運動機能維持・回復のための早期介入を得意としておりますので、お気軽にご相談ください</p>
                 </div>
             </div>
 
             <!-- 病床数 -->
             <div class="p-guide-inpatient__beds">
-                <h3 class="p-guide-subheading">病床数</h3>
+                <h3 class="p-guide-heading">病床数</h3>
                 <div class="p-guide-inpatient__beds-list">
                     <div class="p-guide-inpatient__beds-item">
-                        <span class="p-guide-inpatient__beds-number">22</span>
-                        <span class="p-guide-inpatient__beds-unit">床</span>
                         <p class="p-guide-inpatient__beds-label">一般病床</p>
+                        <span class="p-guide-inpatient__beds-number">22床</span>
                     </div>
                     <div class="p-guide-inpatient__beds-item">
-                        <span class="p-guide-inpatient__beds-number">50</span>
-                        <span class="p-guide-inpatient__beds-unit">床</span>
                         <p class="p-guide-inpatient__beds-label">医療療養病床</p>
+                        <span class="p-guide-inpatient__beds-number">50床</span>
                     </div>
                 </div>
+            </div>
+
+            <!-- 入院時の持ち物 -->
+            <div class="p-guide-inpatient__items">
+                <h3 class="p-guide-heading">入院時の持ち物</h3>
+                <p class="p-guide-inpatient__items-text">
+                    入院時の持ち物については、事前にスタッフよりご説明させていただきます。ご不明な点がございましたら、お気軽にお問い合わせください。</p>
             </div>
         </div>
     </section>
