@@ -15,82 +15,66 @@ get_header();
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
             <path
                 d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-                fill="#FFFFFF" />
+                fill="#FFF9F5" />
         </svg>
     </div>
 </div>
 
-<main class="l-main">
+<main class="l-main p-access-main">
 
     <!-- (2) アクセスセクション（地図と住所） -->
     <section class="access-section">
-        <div class="section-title-wrapper-new">
-            <div class="title-circle"></div>
-            <h2 class="section-title-new">アクセス</h2>
-        </div>
+        <h2 class="p-top-news__title top-title">アクセス</h2>
 
-        <div class="access-container-new">
-            <!-- 左側：地図エリア -->
-            <div class="map-area-new">
-                <div class="map-placeholder">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.569429532655!2d135.47355537574287!3d34.66555597293219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e7a8a6423519%3A0xe53e97022066c8f2!2z44CSNTUwLTAwMjUg5aSn6Ziq5bqc5aSn6Ziq5biC6KW_5Yy65Lmd5p2h5Y2X77yT5LiB55uu77yS77yZ4oiS77yR77yU!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="p-top-access__content">
+            <div class="p-top-access__info-box">
+                <div class="p-top-access__item">
+                    <div class="p-top-access__head">
+                        <span class="p-top-access__icon p-top-access__icon--address">📍</span>
+                        <h3 class="p-top-access__sub-title">住所</h3>
+                    </div>
+                    <p class="p-top-access__text">
+                        〒550-0025<br>
+                        大阪府大阪市西区九条南3-29-14
+                    </p>
+                </div>
+                <div class="p-top-access__item">
+                    <div class="p-top-access__head">
+                        <span class="p-top-access__icon p-top-access__icon--train">🕒</span>
+                        <h3 class="p-top-access__sub-title">交通アクセス</h3>
+                    </div>
+                    <ul class="p-top-access__list">
+                        <li>阪神なんば線、地下鉄中央線九条駅<br>徒歩6分</li>
+                        <li>大阪環状線、地下鉄中央線弁天町<br>徒歩8分</li>
+                        <li>大阪シティバス辰巳橋バス停<br>徒歩1分</li>
+                    </ul>
+                </div>
+                <div class="p-top-access__item">
+                    <div class="p-top-access__head">
+                        <span class="p-top-access__icon p-top-access__icon--parking">🅿️</span>
+                        <h3 class="p-top-access__sub-title">駐車場</h3>
+                    </div>
+                    <div class="p-top-access__text">
+                        <p>駐車場の詳細については、<br>お電話でお問い合わせください</p>
+                    </div>
+                </div>
+                <div class="p-top-access__item">
+                    <div class="p-top-access__head">
+                        <span class="p-top-access__icon p-top-access__icon--phone">📞</span>
+                        <h3 class="p-top-access__sub-title">お電話でのお問い合わせ</h3>
+                    </div>
+                    <div class="p-top-access__text">
+                        <p class="p-top-access__tel">TEL：06-6583-4114</p>
+                        <p class="p-top-access__fax">FAX：06-6583-4126</p>
+                    </div>
                 </div>
             </div>
-
-            <!-- 右側：住所などの情報カード -->
-            <div class="access-info-card">
-
-                <!-- 住所 -->
-                <div class="info-row">
-                    <div class="info-icon">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="info-content">
-                        <h3>住所</h3>
-                        <p>〒550-0025<br>大阪府大阪市西区九条南3-29-14</p>
-                    </div>
-                </div>
-
-                <!-- 交通アクセス -->
-                <div class="info-row">
-                    <div class="info-icon">
-                        <i class="fa-regular fa-clock"></i>
-                    </div>
-                    <div class="info-content">
-                        <h3>交通アクセス</h3>
-                        <ul class="access-list">
-                            <li>阪神なんば線、地下鉄中央線九条駅 徒歩6分</li>
-                            <li>大阪環状線、地下鉄中央線弁天町 徒歩8分</li>
-                            <li>大阪シティバス辰巳橋バス停 徒歩1分</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 駐車場 -->
-                <div class="info-row">
-                    <div class="info-icon">
-                        <i class="fa-solid fa-square-parking"></i>
-                    </div>
-                    <div class="info-content">
-                        <h3>駐車場</h3>
-                        <p>駐車場の詳細については、お電話でお問い合わせください</p>
-                    </div>
-                </div>
-
-                <!-- お電話 -->
-                <div class="info-row">
-                    <div class="info-icon">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-                    <div class="info-content">
-                        <h3>お電話</h3>
-                        <p class="phone-text">06-6583-4114</p>
-                    </div>
-                </div>
-
+            <div class="p-top-access__map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.2737007231212!2d135.46616277605105!3d34.673041072929585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e64a0807f5ff%3A0xb9332bb72b6f147d!2z44CSNTUwLTAwMjUg5aSn6Ziq5bqc5aSn6Ziq5biC6KW_5Yy65Lmd5p2h5Y2X77yT5LiB55uu77yS77yZ4oiS77yR77yU!5e0!3m2!1sja!2sjp!4v1770592536694!5m2!1sja!2sjp"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
     </section>
@@ -98,131 +82,69 @@ get_header();
 
     <!-- (3) 診療時間セクション -->
     <section class="hours-section">
-        <div class="section-title-wrapper-new">
-            <div class="title-circle"></div>
-            <h2 class="section-title-new">診療時間・休診日</h2>
-        </div>
+        <h2 class="p-top-news__title top-title">診療時間・休診日</h2>
 
-        <div class="hours-container-new">
-            <table class="hours-table-new">
-                <thead>
-                    <tr>
-                        <th class="label-cell">曜日</th>
-                        <th>月</th>
-                        <th>火</th>
-                        <th>水</th>
-                        <th>木</th>
-                        <th>金</th>
-                        <th>土</th>
-                        <th>日・祝</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="am-row">
-                        <th class="label-cell">9:00-13:00</th>
-                        <td>◯</td>
-                        <td>◯</td>
-                        <td>◯</td>
-                        <td>◯</td>
-                        <td>◯</td>
-                        <td>◯</td>
-                        <td></td>
-                    </tr>
-                    <tr class="pm-row">
-                        <th class="label-cell">14:00-19:00</th>
-                        <td>◯</td>
-                        <td>◯</td>
-                        <td>◯</td>
-                        <td>◯</td>
-                        <td>◯</td>
-                        <td>－</td>
-                        <td>－</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="p-top-hours__table-wrap">
+            <div class="p-top-hours__table-scroll">
+                <table class="p-top-hours__table">
+                    <thead>
+                        <tr>
+                            <th class="p-top-hours__th">診療時間</th>
+                            <th class="p-top-hours__th">月</th>
+                            <th class="p-top-hours__th">火</th>
+                            <th class="p-top-hours__th">水</th>
+                            <th class="p-top-hours__th">木</th>
+                            <th class="p-top-hours__th">金</th>
+                            <th class="p-top-hours__th">土</th>
+                            <th class="p-top-hours__th p-top-hours__th--holiday">日/祝</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-top-hours__td p-top-hours__td--time">9:00-13:00</td>
+                            <td class="p-top-hours__td">○</td>
+                            <td class="p-top-hours__td">○</td>
+                            <td class="p-top-hours__td">○</td>
+                            <td class="p-top-hours__td">○</td>
+                            <td class="p-top-hours__td">○</td>
+                            <td class="p-top-hours__td">○</td>
+                            <td class="p-top-hours__td p-top-hours__td--closed">ー</td>
+                        </tr>
+                        <tr>
+                            <td class="p-top-hours__td p-top-hours__td--time">14:00-19:00</td>
+                            <td class="p-top-hours__td">○</td>
+                            <td class="p-top-hours__td">○</td>
+                            <td class="p-top-hours__td">○</td>
+                            <td class="p-top-hours__td">○</td>
+                            <td class="p-top-hours__td">○</td>
+                            <td class="p-top-hours__td p-top-hours__td--closed">ー</td>
+                            <td class="p-top-hours__td p-top-hours__td--closed">ー</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
-        <div class="hours-note-new">
-            <p>※急患対応は常時行っております</p>
-            <p>※受付は午前・午後とも15分前までにお願いします</p>
-            <p>休診日：日曜日・祝日</p>
+        <div class="p-top-hours__notes">
+            <p class="p-top-hours__note">※急患対応は常時行っています</p>
+            <p class="p-top-hours__note">※受付は午前・午後とも15分前までにお願いします</p>
+            <p class="p-top-hours__note">休診日：日曜日・祝日</p>
         </div>
     </section>
 
 
     <!-- (4) お問い合わせフォームセクション -->
     <section class="contact-section">
-        <div class="section-title-wrapper-new">
-            <div class="title-circle"></div>
-            <h2 class="section-title-new">お問い合わせフォーム</h2>
-        </div>
+        <h2 class="p-top-news__title top-title">お問い合わせフォーム</h2>
 
         <div class="form-container-new">
-            <form action="#" method="post">
-
-                <!-- お名前（姓・名） -->
-                <div class="form-row">
-                    <div class="form-col">
-                        <label for="name-sei">お名前（姓） <span class="required-mark">*</span></label>
-                        <input type="text" id="name-sei" name="name-sei" placeholder="山田" class="text-input-new">
-                    </div>
-                    <div class="form-col">
-                        <label for="name-mei">お名前（名） <span class="required-mark">*</span></label>
-                        <input type="text" id="name-mei" name="name-mei" placeholder="太郎" class="text-input-new">
-                    </div>
-                </div>
-
-                <!-- ふりがな（姓・名） -->
-                <div class="form-row">
-                    <div class="form-col">
-                        <label for="kana-sei">ふりがな（姓） <span class="required-mark">*</span></label>
-                        <input type="text" id="kana-sei" name="kana-sei" placeholder="やまだ" class="text-input-new">
-                    </div>
-                    <div class="form-col">
-                        <label for="kana-mei">ふりがな（名） <span class="required-mark">*</span></label>
-                        <input type="text" id="kana-mei" name="kana-mei" placeholder="たろう" class="text-input-new">
-                    </div>
-                </div>
-
-                <!-- 生年月日 -->
-                <div class="form-item-new">
-                    <label for="birthdate">生年月日 <span class="required-mark">*</span></label>
-                    <input type="text" id="birthdate" name="birthdate" placeholder="1980/01/01" class="text-input-new">
-                </div>
-
-                <!-- メールアドレス -->
-                <div class="form-item-new">
-                    <label for="email">メールアドレス <span class="required-mark">*</span></label>
-                    <input type="email" id="email" name="email" placeholder="example@email.com" class="text-input-new">
-                </div>
-
-                <!-- 電話番号 -->
-                <div class="form-item-new">
-                    <label for="phone">電話番号 <span class="required-mark">*</span></label>
-                    <input type="tel" id="phone" name="phone" placeholder="090-1234-5678" class="text-input-new">
-                </div>
-
-                <!-- ご相談内容 -->
-                <div class="form-item-new">
-                    <label for="message">ご相談内容 <span class="required-mark">*</span></label>
-                    <textarea id="message" name="message" rows="5" placeholder="ご相談内容をご記入ください" class="text-input-new"></textarea>
-                </div>
-
-                <div class="form-submit-new">
-                    <button type="submit" class="submit-btn-new">送信する</button>
-                </div>
-
-            </form>
+            <?php echo do_shortcode('[contact-form-7 id="0d83ae3" title="お問い合わせ"]'); ?>
         </div>
     </section>
 
 
     <!-- (5) 採用情報セクション -->
     <section class="recruit-section">
-        <div class="section-title-wrapper-new">
-            <div class="title-circle"></div>
-            <h2 class="section-title-new">採用情報</h2>
-        </div>
+        <h2 class="p-top-news__title top-title">採用情報</h2>
 
         <div class="recruit-container-new">
 
