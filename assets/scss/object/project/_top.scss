@@ -752,7 +752,7 @@ $breakpoint-md-pc: 1100px;
     font-size: $font-size-base;
     color: $color-white;
     margin-bottom: $spacing-xl;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 
     @include pc {
       font-size: $font-size-lg;

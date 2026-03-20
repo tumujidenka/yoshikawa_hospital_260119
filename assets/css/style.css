@@ -1207,12 +1207,22 @@ body.admin-bar .l-header {
     max-width: none;
   }
 }
+@media screen and (max-width: 767px) {
+  .p-top-mv {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
+  }
+}
 .p-top-mv__wave {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   line-height: 0;
+}
+@media screen and (max-width: 767px) {
+  .p-top-mv__wave {
+    display: none;
+  }
 }
 .p-top-mv__wave svg {
   width: 100%;
@@ -1853,7 +1863,7 @@ body.admin-bar .l-header {
   font-size: 16px;
   color: #FFFFFF;
   margin-bottom: 32px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 @media screen and (min-width: 768px) {
   .p-top-cta__text {
