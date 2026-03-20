@@ -78,16 +78,26 @@
     padding: 4px 12px;
     border-radius: 20px;
     text-decoration: none;
-    transition: opacity $transition-base;
+    font-weight: $font-weight-medium;
 
-    // Override list item link styles
     &::after {
-      display: none;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $color-text;
+      transition: width $transition-base;
+
     }
 
     &:hover {
-      opacity: 0.8;
-      color: $color-text-white;
+      font-weight: $font-weight-bold;
+
+      &::after {
+        width: 100%;
+      }
     }
   }
 
@@ -151,12 +161,12 @@
           left: 0;
           width: 0;
           height: 2px;
-          background-color: $color-main;
+          background-color: $color-text;
           transition: width $transition-base;
         }
 
         &:hover {
-          color: $color-main;
+          font-weight: $font-weight-bold;
 
           &::after {
             width: 100%;

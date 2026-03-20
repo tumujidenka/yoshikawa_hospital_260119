@@ -50,3 +50,5 @@ wp-config.php
 settings.local.json
 入院・受診案内.png
 医師紹介・病院紹介.png
+*.json
+node_modules
