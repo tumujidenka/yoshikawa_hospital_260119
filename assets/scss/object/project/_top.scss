@@ -104,6 +104,10 @@ $breakpoint-md-pc: 1100px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     margin-bottom: $spacing-xl;
 
+    @media screen and (max-width: 434px) {
+      font-size: 14px;
+    }
+
     @include pc {
       font-size: $font-size-lg;
       margin-bottom: $spacing-2xl;

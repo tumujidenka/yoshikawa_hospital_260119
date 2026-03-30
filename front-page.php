@@ -10,10 +10,10 @@ get_header();
                     <span class="p-top-mv__title-main">ご家族の近くで</span>
                     <span class="p-top-mv__title-main">安心の医療を</span>
                 </h1>
-                <p class="p-top-mv__text">交通の利便のよい大阪市内。<br>
-                    地域で暮らすご家族が<br class="u-sp-only">通いやすい立地で、<br class="u-sp-only">外来診療のかかりつけとして<br
-                        class="u-sp-only">72床の入院環境も含め、<br>
-                    きめ細やかな医療とケアを<br class="u-sp-only">提供しています。</p>
+                <p class="p-top-mv__text u-pc-only">交通の利便のよい大阪市内。<br>
+                    地域で暮らすご家族が通いやすい立地で、外来診療のかかりつけとして72床の入院環境も含め、<br>
+                    きめ細やかな医療とケアを提供しています。</p>
+                <p class="p-top-mv__text u-sp-only">大阪市内の通いやすい立地で、<br>外来診療から入院まで、<br>きめ細やかな医療とケアをご提供します。</p>
                 <div class="p-top-mv__buttons">
                     <a href="<?php echo esc_url(home_url('/contact')); ?>"
                         class="c-btn c-btn--primary c-btn--lg">予約・お問い合わせ</a>
