@@ -282,7 +282,7 @@ $breakpoint-md-pc: 1100px;
 
     @include pc {
       flex-direction: row;
-      gap: 0; // ネガティブマージンで重ねるためgapは0
+      gap: $spacing-md; // ネガティブマージンで重ねるためgapは0
     }
   }
 
@@ -295,7 +295,7 @@ $breakpoint-md-pc: 1100px;
     height: 280px;
     background: linear-gradient(to bottom right, #FDA983 55%, #F2CCBC);
     border-radius: 50%;
-    transition: transform $transition-base, box-shadow $transition-base;
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -303,25 +303,14 @@ $breakpoint-md-pc: 1100px;
     aspect-ratio: 1 / 1; // 正円を維持
 
     @include pc {
-      width: 400px;
-      height: auto;
       margin-left: -60px; // 重ね合わせ
-      padding-top: 70px;
 
       &:first-child {
         margin-left: 0; // 最初の要素は重ねない
       }
     }
 
-    @media (min-width: 768px) and (max-width: $breakpoint-md-pc) {
-      padding: 20px;
-      padding-top: 40px;
-    }
 
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: $shadow-lg;
-    }
   }
 
   &__icon {
@@ -344,7 +333,7 @@ $breakpoint-md-pc: 1100px;
   &__item-title {
     font-size: $font-size-xl;
     font-weight: $font-weight-bold;
-    color: $color-text;
+    color: #5C2E00;
     margin-bottom: $spacing-md;
     height: 70px;
     display: flex;
@@ -363,7 +352,7 @@ $breakpoint-md-pc: 1100px;
 
   &__item-text {
     font-size: $font-size-base;
-    color: $color-text-light;
+    color: #7B4020;
     line-height: $line-height-base;
 
     @media (min-width: 768px) and (max-width: $breakpoint-md-pc) {
