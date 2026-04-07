@@ -506,7 +506,7 @@ $breakpoint-md-pc: 1100px;
 
   &__table-wrap {
     border: 2px solid $color-accent;
-    border-radius: 64px;
+    border-radius: 16px;
     overflow: hidden;
     background-color: $color-bg-white;
   }
@@ -523,12 +523,15 @@ $breakpoint-md-pc: 1100px;
     text-align: center;
     font-size: $font-size-2xl;
 
-    tbody tr:first-child {
+    thead {
       border-bottom: 2px solid $color-accent;
     }
 
-    @media (max-width: 768px) {
-      font-size: $font-size-lg;
+
+
+    @media (max-width: 767px) {
+      min-width: unset;
+      font-size: 12px;
     }
   }
 
@@ -537,7 +540,9 @@ $breakpoint-md-pc: 1100px;
     padding: $spacing-md $spacing-sm;
     border: none;
 
-    @include pc {}
+    @media (max-width: 767px) {
+      padding: 8px 2px;
+    }
   }
 
   &__th {
@@ -570,8 +575,9 @@ $breakpoint-md-pc: 1100px;
       padding-left: $spacing-xl;
       font-size: $font-size-2xl;
 
-      @media (max-width: 768px) {
-        font-size: $font-size-lg;
+      @media (max-width: 767px) {
+        font-size: 12px;
+        padding-left: $spacing-xs;
       }
     }
 

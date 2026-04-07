@@ -1609,7 +1609,7 @@ body.admin-bar .l-header {
 }
 .p-top-hours__table-wrap {
   border: 2px solid #B8956A;
-  border-radius: 64px;
+  border-radius: 16px;
   overflow: hidden;
   background-color: #FFFFFF;
 }
@@ -1624,17 +1624,24 @@ body.admin-bar .l-header {
   text-align: center;
   font-size: 24px;
 }
-.p-top-hours__table tbody tr:first-child {
+.p-top-hours__table thead {
   border-bottom: 2px solid #B8956A;
 }
-@media (max-width: 768px) {
+
+@media (max-width: 767px) {
   .p-top-hours__table {
-    font-size: 18px;
+    min-width: unset;
+    font-size: 12px;
   }
 }
 .p-top-hours__th, .p-top-hours__td {
   padding: 16px 8px;
   border: none;
+}
+@media (max-width: 767px) {
+  .p-top-hours__th, .p-top-hours__td {
+    padding: 8px 2px;
+  }
 }
 .p-top-hours__th {
   background-color: #F4A886;
@@ -1663,9 +1670,10 @@ body.admin-bar .l-header {
   padding-left: 32px;
   font-size: 24px;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .p-top-hours__td--time {
-    font-size: 18px;
+    font-size: 12px;
+    padding-left: 4px;
   }
 }
 .p-top-hours__td--closed {
