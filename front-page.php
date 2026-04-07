@@ -15,7 +15,7 @@ get_header();
                     きめ細やかな医療とケアを提供しています。</p>
                 <p class="p-top-mv__text u-sp-only">大阪市内の通いやすい立地で、<br>外来診療から入院まで、<br>きめ細やかな医療とケアをご提供します。</p>
                 <div class="p-top-mv__buttons">
-                    <a href="<?php echo esc_url(home_url('/contact')); ?>"
+                    <a href="<?php echo esc_url(home_url('/access')); ?>"
                         class="c-btn c-btn--primary c-btn--lg">予約・お問い合わせ</a>
                     <a href="<?php echo esc_url(home_url('/about')); ?>"
                         class="c-btn c-btn--outline c-btn--lg">診療案内を見る</a>
