@@ -370,7 +370,7 @@
   &__features {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $spacing-lg;
+    gap: 0 $spacing-lg;
     margin-bottom: $spacing-2xl;
 
     @include pc {

@@ -51,10 +51,10 @@ get_header();
                             $news_query->the_post();
                             ?>
                             <li class="p-top-news__item">
-                                <a href="<?php echo esc_url( get_permalink() ); ?>" class="p-top-news__link">
+                                <a href="<?php echo esc_url(get_permalink()); ?>" class="p-top-news__link">
                                     <time class="p-top-news__date"
                                         datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>"><?php echo esc_html(get_the_date('Y.m.d')); ?></time>
-                                    <span class="p-top-news__item-title"><?php echo esc_html( get_the_title() ); ?></span>
+                                    <span class="p-top-news__item-title"><?php echo esc_html(get_the_title()); ?></span>
                                 </a>
                             </li>
                             <?php
@@ -81,31 +81,31 @@ get_header();
             <div class="p-top-features__list">
                 <div class="p-top-features__item">
                     <div class="p-top-features__icon">
-                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/feature_1.svg" alt="救急体制"
-                            width="100" height="100">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/feature_1.svg"
+                            alt="救急体制" width="100" height="100">
                     </div>
                     <h3 class="p-top-features__item-title">時間外や夜間休日の<br>救急医療体制</h3>
                     <p class="p-top-features__item-text">急患対応は常時受付</p>
                 </div>
                 <div class="p-top-features__item">
                     <div class="p-top-features__icon">
-                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/feature_2.svg" alt="入院対応"
-                            width="100" height="100">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/feature_2.svg"
+                            alt="入院対応" width="100" height="100">
                     </div>
                     <h3 class="p-top-features__item-title">かかりつけ医療から<br>入院対応まで</h3>
                     <p class="p-top-features__item-text">一般病床22床<br>医療療養病床50床</p>
                 </div>
                 <div class="p-top-features__item">
                     <div class="p-top-features__icon">
-                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/feature_3.svg" alt="院内設備"
-                            width="100" height="100">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/feature_3.svg"
+                            alt="院内設備" width="100" height="100">
                     </div>
                     <h3 class="p-top-features__item-title">院内薬局完備</h3>
                     <p class="p-top-features__item-text">薬剤師がその場で調剤、<br>お求めやすい価格</p>
                 </div>
             </div>
             <div class="p-top-features__more">
-                <a href="<?php echo esc_url(home_url('/features')); ?>"
+                <a href="<?php echo esc_url(home_url('/about')); ?>"
                     class="c-btn c-btn--features c-btn--arrow">もっと見る</a>
             </div>
         </div>
@@ -116,34 +116,13 @@ get_header();
         <div class="p-top-departments__inner">
             <h2 class="p-top-departments__title top-title">診療科目</h2>
             <ul class="p-top-departments__list">
-                <li class="p-top-departments__item">
-                    <a href="<?php echo esc_url(home_url('/departments/internal')); ?>"
-                        class="p-top-departments__link">内科</a>
-                </li>
-                <li class="p-top-departments__item">
-                    <a href="<?php echo esc_url(home_url('/departments/surgery')); ?>"
-                        class="p-top-departments__link">外科</a>
-                </li>
-                <li class="p-top-departments__item">
-                    <a href="<?php echo esc_url(home_url('/departments/proctology')); ?>"
-                        class="p-top-departments__link">肛門外科</a>
-                </li>
-                <li class="p-top-departments__item">
-                    <a href="<?php echo esc_url(home_url('/departments/orthopedics')); ?>"
-                        class="p-top-departments__link">整形外科</a>
-                </li>
-                <li class="p-top-departments__item">
-                    <a href="<?php echo esc_url(home_url('/departments/urology')); ?>"
-                        class="p-top-departments__link">泌尿器科</a>
-                </li>
-                <li class="p-top-departments__item">
-                    <a href="<?php echo esc_url(home_url('/departments/dermatology')); ?>"
-                        class="p-top-departments__link">皮膚科</a>
-                </li>
-                <li class="p-top-departments__item">
-                    <a href="<?php echo esc_url(home_url('/departments/rehabilitation')); ?>"
-                        class="p-top-departments__link">リハビリテーション科</a>
-                </li>
+                <li class="p-top-departments__item"><span class="p-top-departments__link">内科</span></li>
+                <li class="p-top-departments__item"><span class="p-top-departments__link">外科</span></li>
+                <li class="p-top-departments__item"><span class="p-top-departments__link">肛門外科</span></li>
+                <li class="p-top-departments__item"><span class="p-top-departments__link">整形外科</span></li>
+                <li class="p-top-departments__item"><span class="p-top-departments__link">泌尿器科</span></li>
+                <li class="p-top-departments__item"><span class="p-top-departments__link">皮膚科</span></li>
+                <li class="p-top-departments__item"><span class="p-top-departments__link">リハビリテーション科</span></li>
             </ul>
             <div class="p-top-departments__more">
                 <a href="<?php echo esc_url(home_url('/departments')); ?>"

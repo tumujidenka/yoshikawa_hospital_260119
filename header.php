@@ -22,10 +22,10 @@
                     <ul class="l-header__list">
                         <li class="l-header__item"><a href="<?php echo esc_url(home_url('/')); ?>"
                                 class="l-header__link">ホーム</a></li>
-                        <li class="l-header__item"><a href="<?php echo esc_url(home_url('/medical/')); ?>"
-                                class="l-header__link">診療科目</a></li>
                         <li class="l-header__item"><a href="<?php echo esc_url(home_url('/about/')); ?>"
                                 class="l-header__link">当院について</a></li>
+                        <li class="l-header__item"><a href="<?php echo esc_url(home_url('/medical/')); ?>"
+                                class="l-header__link">診療科目</a></li>
                         <li class="l-header__item"><a href="<?php echo esc_url(home_url('/guide/')); ?>"
                                 class="l-header__link">入院・受診案内</a></li>
                         <li class="l-header__item"><a href="<?php echo esc_url(home_url('/access/')); ?>"
@@ -58,12 +58,12 @@
             <li class="l-drawer__item"><a href="<?php echo esc_url(home_url('/about/')); ?>"
                     class="l-drawer__link">当院について</a></li>
             <li class="l-drawer__item"><a href="<?php echo esc_url(home_url('/medical/')); ?>"
-                    class="l-drawer__link">診療案内</a></li>
+                    class="l-drawer__link">診療科目</a></li>
             <li class="l-drawer__item"><a href="<?php echo esc_url(home_url('/guide/')); ?>"
                     class="l-drawer__link">入院・受診案内</a></li>
-            <li class="l-drawer__item"><a href="<?php echo esc_url(home_url('/news/')); ?>" class="l-drawer__link">お知らせ</a></li>
             <li class="l-drawer__item"><a href="<?php echo esc_url(home_url('/access/')); ?>"
-                    class="l-drawer__link">アクセス</a></li>
+                    class="l-drawer__link">アクセス/お問い合わせ</a></li>
+            <li class="l-drawer__item"><a href="<?php echo esc_url(home_url('/news/')); ?>" class="l-drawer__link">お知らせ</a></li>
         </ul>
     </nav>
     <div class="l-overlay js-overlay"></div>
