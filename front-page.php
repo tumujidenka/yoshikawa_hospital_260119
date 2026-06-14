@@ -125,7 +125,7 @@ get_header();
                 <li class="p-top-departments__item"><span class="p-top-departments__link">リハビリテーション科</span></li>
             </ul>
             <div class="p-top-departments__more">
-                <a href="<?php echo esc_url(home_url('/departments')); ?>"
+                <a href="<?php echo esc_url(home_url('/medical')); ?>"
                     class="c-btn c-btn--departments c-btn--arrow">診療案内を見る</a>
             </div>
         </div>
