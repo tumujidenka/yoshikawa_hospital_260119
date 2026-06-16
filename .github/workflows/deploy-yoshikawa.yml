@@ -3,7 +3,7 @@ name: Deploy yoshikawa-staging
 on:
   push:
     branches:
-      - devalopment
+      - devalop
 
 jobs:
   deploy:
