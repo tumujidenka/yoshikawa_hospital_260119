@@ -178,21 +178,18 @@ get_header();
     </section>
 
 
-    <!-- (6) CTA（行動喚起）セクション -->
-    <div class="cta-section-new">
-        <div class="cta-inner-new">
-            <h2 class="cta-title-new">ご予約・お問い合わせはこちら</h2>
-            <p class="cta-desc-new">診療のご予約やご相談など、お気軽にお問い合わせください</p>
-            <div class="cta-buttons-new">
-                <a href="tel:0665834114" class="cta-btn-new phone-btn-new">
-                    <i class="fa-solid fa-phone"></i> 06-6583-4114
-                </a>
-                <a href="<?php echo esc_url(home_url('/access/')); ?>#contact" class="cta-btn-new web-btn-new">
-                    お問い合わせフォーム
-                </a>
+    <!-- Section: CTA -->
+    <section class="p-top-cta">
+        <div class="p-top-cta__inner">
+            <h2 class="p-top-cta__title">ご予約・お問い合わせはこちら</h2>
+            <p class="p-top-cta__text">診療のご予約やご相談など、お気軽にお問い合わせください</p>
+            <div class="p-top-cta__buttons">
+                <a href="tel:06-6583-4114" class="c-btn c-btn--lg p-top-cta__btn p-top-cta__btn--tel">06-6583-4114</a>
+                <a href="<?php echo esc_url(home_url('/access')); ?>"
+                    class="c-btn c-btn--lg p-top-cta__btn p-top-cta__btn--contact">お問い合わせフォーム</a>
             </div>
         </div>
-    </div>
+    </section>
 
 </main>
 
