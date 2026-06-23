@@ -834,7 +834,7 @@ body.admin-bar .l-header {
 .sitemap-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 35px;
 }
 .sitemap-list li {
   margin-bottom: 12px;
@@ -851,7 +851,7 @@ body.admin-bar .l-header {
 /* --- 右カラム：診療時間 --- */
 .footer-hours-table {
   width: 100%;
-  margin-bottom: 15px;
+  margin: 0 0 15px 35px;
   border-collapse: collapse;
 }
 .footer-hours-table th,
@@ -869,7 +869,7 @@ body.admin-bar .l-header {
 
 .footer-emergency {
   color: #ff9a80;
-  margin: 0;
+  margin: 0 0 0 35px;
   font-size: 14px;
 }
 
