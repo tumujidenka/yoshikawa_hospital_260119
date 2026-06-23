@@ -18,7 +18,7 @@ get_header();
     <div class="c-page-fv">
         <div class="c-page-fv__inner">
             <h1 class="c-page-fv__title">お知らせ</h1>
-            <p class="c-page-fv__lead">院内からの最新情報やお知らせをご確認いただけます</p>
+            <p class="c-page-fv__lead">院内からの最新情報やお知らせを<br class="u-sp-only">ご確認いただけます</p>
         </div>
         <div class="c-page-fv__wave">
             <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -164,7 +164,7 @@ get_header();
     <section class="p-top-cta">
         <div class="p-top-cta__inner">
             <h2 class="p-top-cta__title">ご予約・お問い合わせはこちら</h2>
-            <p class="p-top-cta__text">診療のご予約やご相談など、お気軽にお問い合わせください</p>
+            <p class="p-top-cta__text">診療のご予約やご相談など、<br class="u-sp-only">お気軽にお問い合わせください</p>
             <div class="p-top-cta__buttons">
                 <!-- 電話番号ボタン -->
                 <a href="tel:06-6583-4114" class="c-btn c-btn--lg p-top-cta__btn p-top-cta__btn--tel">

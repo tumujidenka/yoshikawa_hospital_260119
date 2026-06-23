@@ -9,7 +9,7 @@ get_header();
 <div class="c-page-fv">
     <div class="c-page-fv__inner">
         <h1 class="c-page-fv__title">アクセス・お問い合わせ</h1>
-        <p class="c-page-fv__lead">当院へのアクセス方法とお問い合わせ先をご案内いたします</p>
+        <p class="c-page-fv__lead">当院へのアクセス方法とお問い合わせ先を<br class="u-sp-only">ご案内いたします</p>
     </div>
     <div class="c-page-fv__wave">
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -182,7 +182,7 @@ get_header();
     <section class="p-top-cta">
         <div class="p-top-cta__inner">
             <h2 class="p-top-cta__title">ご予約・お問い合わせはこちら</h2>
-            <p class="p-top-cta__text">診療のご予約やご相談など、お気軽にお問い合わせください</p>
+            <p class="p-top-cta__text">診療のご予約やご相談など、<br class="u-sp-only">お気軽にお問い合わせください</p>
             <div class="p-top-cta__buttons">
                 <a href="tel:06-6583-4114" class="c-btn c-btn--lg p-top-cta__btn p-top-cta__btn--tel">06-6583-4114</a>
                 <a href="<?php echo esc_url(home_url('/access')); ?>"
