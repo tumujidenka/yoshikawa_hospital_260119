@@ -78,11 +78,8 @@ get_header(); ?>
                 <!-- 院長 -->
                 <div class="p-about-doctor__card">
                     <div class="p-about-doctor__icon-area">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="40"
-                            height="40">
-                            <path
-                                d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
-                        </svg>
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/doctor-mamoru-yoshikawa.jpg'); ?>"
+                            alt="吉川 守">
                     </div>
                     <div class="p-about-doctor__info">
                         <div class="p-about-doctor__header">
@@ -103,11 +100,8 @@ get_header(); ?>
                 <!-- 非常勤医師1 -->
                 <div class="p-about-doctor__card p-about-doctor__card--sub">
                     <div class="p-about-doctor__icon-area">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="40"
-                            height="40">
-                            <path
-                                d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
-                        </svg>
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/doctor-hiroaki-yoshikawa.jpg'); ?>"
+                            alt="吉川 博昭">
                     </div>
                     <div class="p-about-doctor__info">
                         <div class="p-about-doctor__header">
@@ -129,11 +123,8 @@ get_header(); ?>
                 <!-- 非常勤医師2 -->
                 <div class="p-about-doctor__card p-about-doctor__card--sub">
                     <div class="p-about-doctor__icon-area">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="40"
-                            height="40">
-                            <path
-                                d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
-                        </svg>
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/doctor-hideto-yoshikawa.jpg'); ?>"
+                            alt="吉川 秀人">
                     </div>
                     <div class="p-about-doctor__info">
                         <div class="p-about-doctor__header">

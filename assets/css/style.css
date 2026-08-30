@@ -3020,29 +3020,6 @@ body.admin-bar .l-header {
   border-color: #e0e0e0;
   gap: 16px;
 }
-.p-about-doctor__card--sub .p-about-doctor__icon-area {
-  width: 50px;
-  height: 50px;
-  min-width: 50px;
-  background-color: #e0e0e0;
-}
-@media screen and (min-width: 768px) {
-  .p-about-doctor__card--sub .p-about-doctor__icon-area {
-    width: 60px;
-    height: 60px;
-    min-width: 60px;
-  }
-}
-.p-about-doctor__card--sub .p-about-doctor__icon-area svg {
-  width: 24px;
-  height: 24px;
-}
-@media screen and (min-width: 768px) {
-  .p-about-doctor__card--sub .p-about-doctor__icon-area svg {
-    width: 30px;
-    height: 30px;
-  }
-}
 .p-about-doctor__card--sub .p-about-doctor__name {
   font-size: 18px;
 }
@@ -3060,11 +3037,11 @@ body.admin-bar .l-header {
   height: 70px;
   min-width: 70px;
   background-color: #FFAB88;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
+  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .p-about-doctor__icon-area {
@@ -3073,15 +3050,10 @@ body.admin-bar .l-header {
     min-width: 80px;
   }
 }
-.p-about-doctor__icon-area svg {
-  width: 36px;
-  height: 36px;
-}
-@media screen and (min-width: 768px) {
-  .p-about-doctor__icon-area svg {
-    width: 40px;
-    height: 40px;
-  }
+.p-about-doctor__icon-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .p-about-doctor__info {
   flex: 1;
