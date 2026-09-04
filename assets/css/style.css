@@ -850,7 +850,7 @@ body.admin-bar .l-header {
 
 /* --- 右カラム：診療時間 --- */
 .footer-hours-table {
-  width: 100%;
+  width: calc(100% - 35px);
   margin: 0 0 15px 35px;
   border-collapse: collapse;
 }
@@ -2186,7 +2186,10 @@ body.admin-bar .l-header {
   font-size: 16px;
   color: #333333;
   line-height: 1.8;
-  margin: 0;
+  margin: 0 0 16px;
+}
+.p-medical-item__text:last-child {
+  margin-bottom: 0;
 }
 @media screen and (min-width: 768px) {
   .p-medical-item__text {

@@ -78,7 +78,7 @@
 .sitemap-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 35px;
 
   li {
     margin-bottom: 12px;
@@ -97,8 +97,8 @@
 
 /* --- 右カラム：診療時間 --- */
 .footer-hours-table {
-  width: 100%;
-  margin-bottom: 15px;
+  width: calc(100% - 35px);
+  margin: 0 0 15px 35px;
   border-collapse: collapse;
 
   th,
@@ -118,6 +118,6 @@
 
 .footer-emergency {
   color: #ff9a80;
-  margin: 0;
+  margin: 0 0 0 35px;
   font-size: 14px;
 }

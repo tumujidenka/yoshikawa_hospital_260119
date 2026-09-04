@@ -52,3 +52,6 @@ settings.local.json
 医師紹介・病院紹介.png
 *.json
 node_modules
+
+# 自動コミットレビュー（wp-commit-reviewスキル）の生成物
+.claude/review-reports/

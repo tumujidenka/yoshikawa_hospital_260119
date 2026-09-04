@@ -79,7 +79,7 @@ get_header(); ?>
                 <div class="p-about-doctor__card">
                     <div class="p-about-doctor__icon-area">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/doctor-mamoru-yoshikawa.jpg'); ?>"
-                            alt="吉川 守">
+                            alt="吉川 守" width="80" height="80">
                     </div>
                     <div class="p-about-doctor__info">
                         <div class="p-about-doctor__header">
@@ -101,7 +101,7 @@ get_header(); ?>
                 <div class="p-about-doctor__card p-about-doctor__card--sub">
                     <div class="p-about-doctor__icon-area">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/doctor-hiroaki-yoshikawa.jpg'); ?>"
-                            alt="吉川 博昭">
+                            alt="吉川 博昭" width="80" height="80" loading="lazy">
                     </div>
                     <div class="p-about-doctor__info">
                         <div class="p-about-doctor__header">
@@ -124,7 +124,7 @@ get_header(); ?>
                 <div class="p-about-doctor__card p-about-doctor__card--sub">
                     <div class="p-about-doctor__icon-area">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/doctor-hideto-yoshikawa.jpg'); ?>"
-                            alt="吉川 秀人">
+                            alt="吉川 秀人" width="80" height="80" loading="lazy">
                     </div>
                     <div class="p-about-doctor__info">
                         <div class="p-about-doctor__header">
