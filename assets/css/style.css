@@ -3846,12 +3846,17 @@ body.admin-bar .l-header {
 /* ニュース詳細ページ（single.php）のスタイル   */
 /* ============================================ */
 .p-news-single {
-  padding: 48px 0 80px;
+  padding: 100px 0 80px;
   background-color: #fff;
 }
 @media screen and (min-width: 768px) {
   .p-news-single {
-    padding: 72px 0 120px;
+    padding: 100px 0 120px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .p-news-single {
+    padding-top: 130px;
   }
 }
 .p-news-single__inner {

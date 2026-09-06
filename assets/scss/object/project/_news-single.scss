@@ -6,11 +6,17 @@
 /* ============================================ */
 
 .p-news-single {
-    padding: 48px 0 80px;
+    /* 固定ヘッダー（高さ60px）と重ならないよう上に余白を確保 */
+    padding: 100px 0 80px;
     background-color: #fff;
 
     @include pc {
-        padding: 72px 0 120px;
+        padding: 100px 0 120px;
+    }
+
+    /* 固定ヘッダーの高さが80pxに変わるブレークポイント */
+    @include lg {
+        padding-top: 130px;
     }
 
     &__inner {
