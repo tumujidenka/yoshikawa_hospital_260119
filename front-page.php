@@ -116,13 +116,15 @@ get_header();
         <div class="p-top-departments__inner">
             <h2 class="p-top-departments__title top-title">診療科目</h2>
             <ul class="p-top-departments__list">
+                <li class="p-top-departments__item"><span class="p-top-departments__link">一般外科</span></li>
                 <li class="p-top-departments__item"><span class="p-top-departments__link">内科</span></li>
-                <li class="p-top-departments__item"><span class="p-top-departments__link">外科</span></li>
-                <li class="p-top-departments__item"><span class="p-top-departments__link">肛門外科</span></li>
                 <li class="p-top-departments__item"><span class="p-top-departments__link">整形外科</span></li>
-                <li class="p-top-departments__item"><span class="p-top-departments__link">泌尿器科</span></li>
+                <li class="p-top-departments__item"><span class="p-top-departments__link">ペインクリニック内科・外科</span></li>
+                <li class="p-top-departments__item"><span class="p-top-departments__link">肛門外科</span></li>
                 <li class="p-top-departments__item"><span class="p-top-departments__link">皮膚科</span></li>
+                <li class="p-top-departments__item"><span class="p-top-departments__link">泌尿器科</span></li>
                 <li class="p-top-departments__item"><span class="p-top-departments__link">リハビリテーション科</span></li>
+                <li class="p-top-departments__item"><span class="p-top-departments__link">もの忘れ外来・精神科</span></li>
             </ul>
             <div class="p-top-departments__more">
                 <a href="<?php echo esc_url(home_url('/medical')); ?>"
