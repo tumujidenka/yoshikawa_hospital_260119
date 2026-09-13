@@ -62,7 +62,7 @@ get_header(); ?>
                             <line x1="1" y1="10" x2="23" y2="10"></line>
                         </svg>
                     </div>
-                    <span class="p-guide-checklist__name">健康保険証</span>
+                    <span class="p-guide-checklist__name">健康保険証（マイナ保険証）</span>
                     <span class="p-guide-checklist__badge p-guide-checklist__badge--required">必須</span>
                 </div>
                 <div class="p-guide-checklist__item">

@@ -3,6 +3,8 @@
  * Yoshikawa Hospital functions and definitions
  */
 
+require_once get_template_directory() . '/inc/seo.php';
+
 function yoshikawa_hospital_scripts() {
     wp_enqueue_style( 'yoshikawa-hospital-style', get_stylesheet_uri() );
     wp_enqueue_style( 'yoshikawa-hospital-main-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.0' );
