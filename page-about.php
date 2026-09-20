@@ -137,6 +137,7 @@ get_header(); ?>
                             <span class="p-about-doctor__qualifications-label">資格</span>
                             <ul>
                                 <li>循環器学会認定専門医</li>
+                                <li>日本内科学会認定専門医</li>
                             </ul>
                         </div>
                     </div>
