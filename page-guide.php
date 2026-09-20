@@ -146,7 +146,7 @@ get_header(); ?>
                 <div class="p-guide-inpatient__feature">
                     <h3 class="p-guide-inpatient__feature-title p-medical-item__title">リハビリテーション</h3>
                     <p class="p-guide-inpatient__feature-text">
-                        長期入院中のADL低下や廃用を予防するため、リハビリテーションに力を入れています。特に高齢患者様の運動機能維持・回復のための早期介入を得意としておりますので、お気軽にご相談ください</p>
+                        長期入院中のADL低下や廃用を予防するため、リハビリテーションに力を入れています。患者様の運動機能維持・回復のための早期介入を大切に考えています。お気軽にご相談ください。</p>
                 </div>
             </div>
 
