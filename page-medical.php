@@ -234,7 +234,7 @@ get_header(); ?>
             <p class="p-top-cta__text">診療のご予約やご相談など、<br class="u-sp-only">お気軽にお問い合わせください</p>
             <div class="p-top-cta__buttons">
                 <a href="tel:06-6583-4114" class="c-btn c-btn--lg p-top-cta__btn p-top-cta__btn--tel">06-6583-4114</a>
-                <a href="<?php echo esc_url(home_url('/contact')); ?>"
+                <a href="<?php echo esc_url(home_url('/access/')); ?>"
                     class="c-btn c-btn--lg p-top-cta__btn p-top-cta__btn--contact">お問い合わせフォーム</a>
             </div>
         </div>

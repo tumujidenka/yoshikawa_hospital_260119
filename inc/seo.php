@@ -108,9 +108,7 @@ function yoshikawa_seo_og_image() {
     if (is_singular('post') && has_post_thumbnail()) {
         return get_the_post_thumbnail_url(get_the_ID(), 'large');
     }
-    // 専用のOGP画像が無いため、メインビジュアルの背景画像を仮の代表画像として使用。
-    // 理想は1200x630pxのOGP専用画像を用意して差し替える。
-    return get_template_directory_uri() . '/assets/images/mv-bg.png';
+    return get_template_directory_uri() . '/assets/images/ogp.jpg';
 }
 
 /**
@@ -144,7 +142,7 @@ add_action('wp_head', function () {
         'name'       => '吉川病院',
         'url'        => home_url('/'),
         'telephone'  => '+81-6-6583-4114',
-        'image'      => get_template_directory_uri() . '/assets/images/mv-bg.png',
+        'image'      => get_template_directory_uri() . '/assets/images/ogp.jpg',
         'address'    => [
             '@type'           => 'PostalAddress',
             'postalCode'      => '550-0025',

@@ -21,7 +21,7 @@ get_header();
                 $cat_class = '';
                 $cat_name  = '';
 
-                if (!empty($categories)) {
+                if (!empty($categories) && $categories[0]->slug !== 'uncategorized') {
                     $cat_slug = $categories[0]->slug;
                     $cat_name = $categories[0]->name;
 
@@ -78,7 +78,7 @@ get_header();
                 <a href="tel:06-6583-4114" class="c-btn c-btn--lg p-top-cta__btn p-top-cta__btn--tel">
                     06-6583-4114
                 </a>
-                <a href="<?php echo esc_url(home_url('/contact/')); ?>"
+                <a href="<?php echo esc_url(home_url('/access/')); ?>"
                     class="c-btn c-btn--lg p-top-cta__btn p-top-cta__btn--contact">お問い合わせフォーム</a>
             </div>
         </div>

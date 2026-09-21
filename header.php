@@ -12,11 +12,11 @@
 
     <header class="l-header">
         <div class="l-header__inner">
-            <h1 class="l-header__logo">
+            <p class="l-header__logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
                     吉川病院
                 </a>
-            </h1>
+            </p>
             <div class="l-header__content">
                 <nav class="l-header__nav">
                     <ul class="l-header__list">

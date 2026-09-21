@@ -70,10 +70,10 @@ get_header();
                             $cat_class = ''; // カテゴリーごとのクラス名（色分け用）
                             $cat_name = '';  // カテゴリー名
                     
-                            if (!empty($categories)) {
+                            if (!empty($categories) && $categories[0]->slug !== 'uncategorized') {
                                 $cat_slug = $categories[0]->slug; // スラッグ（URLに使われる名前）
                                 $cat_name = $categories[0]->name; // カテゴリー名（表示用）
-                    
+
                                 // スラッグに応じてCSSクラスを切り替えます
                                 if ($cat_slug === 'urgent') {
                                     $cat_class = 'c-label--urgent'; // 緊急など
@@ -171,7 +171,7 @@ get_header();
                     06-6583-4114
                 </a>
                 <!-- お問い合わせフォームへのリンクボタン -->
-                <a href="<?php echo esc_url(home_url('/contact/')); ?>"
+                <a href="<?php echo esc_url(home_url('/access/')); ?>"
                     class="c-btn c-btn--lg p-top-cta__btn p-top-cta__btn--contact">お問い合わせフォーム</a>
             </div>
         </div>
