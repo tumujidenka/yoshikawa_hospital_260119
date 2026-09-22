@@ -1,0 +1,22 @@
+name: Deploy yoshikawa-production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_PROD_SERVER }}
+          username: ${{ secrets.FTP_PROD_USERNAME }}
+          password: ${{ secrets.FTP_PROD_PASSWORD }}
+          protocol: ftps
+          local-dir: ./
+          server-dir: /yoshikawa-hospital.com/public_html/wp-content/themes/yoshikawa-hospital/
