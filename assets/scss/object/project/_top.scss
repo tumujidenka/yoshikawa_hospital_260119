@@ -429,12 +429,6 @@ $breakpoint-md-pc: 1100px;
     }
 
 
-    &:hover {
-      opacity: 0.7;
-      background-color: transparent;
-      color: $color-text;
-    }
-
     // 左側の円
     &::before {
       content: "";

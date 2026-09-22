@@ -218,6 +218,26 @@ add_action('wp_head', function () {
         . '</script>' . "\n";
 }, 3);
 
+/**
+ * 構造化データ（JSON-LD、WebSite）を出力する。
+ * Google検索結果のサイト名（ファビコン横に表示される名称）は、ドメイン名ではなく
+ * WebSiteのnameプロパティを最優先のシグナルとして参照する仕様のため、
+ * 「yoshikawa-hospital.com」ではなく「吉川病院」と表示させるために設定する。
+ * https://developers.google.com/search/docs/appearance/site-names
+ */
+add_action('wp_head', function () {
+    $data = [
+        '@context' => 'https://schema.org',
+        '@type'    => 'WebSite',
+        'name'     => '吉川病院',
+        'url'      => home_url('/'),
+    ];
+
+    echo '<script type="application/ld+json">'
+        . wp_json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)
+        . '</script>' . "\n";
+}, 3);
+
 // XMLサイトマップ（/wp-sitemap.xml）とrobots.txtへのその案内は、
 // WordPressコア標準機能（5.5以降）がデフォルトで自動生成するため、ここでは何もしない。
 

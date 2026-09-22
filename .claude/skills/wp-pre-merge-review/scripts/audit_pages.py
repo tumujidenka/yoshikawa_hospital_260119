@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-吉川病院サイト(yoshikawa-hospital)のLocal環境に対して、developをmainにマージする前に
-確認したい「コミット差分では検出できないサイト横断の項目」の生データを取得して
-標準出力にまとめる。
+吉川病院サイト(yoshikawa-hospital)のLocal環境・本番環境に対して、developをmainに
+マージする前や本番デプロイ後に確認したい「コミット差分では検出できないサイト横断の項目」
+の生データを取得して標準出力にまとめる。
 
 対象:
 - SEO: title/canonical/meta description/og:image/見出し順(h1〜h6)/imgのalt有無
@@ -12,8 +12,17 @@
 判定(良い/悪い)はここでは最小限に留め、事実の抽出を主目的にする。詳細な判断は
 SKILL.mdの手順に沿って呼び出し側(Claude)が行う。
 
-引数なし: 固定ページ全部 + 直近の投稿記事1件を対象にする（リンク切れ・重複チェックも実行）
-引数あり: PAGES のキー、または "post" のいずれか1件だけを対象にする（重複チェックは対象外）
+引数（順不同、複数指定可）:
+- なし: Local環境の固定ページ全部 + 直近の投稿記事1件（リンク切れ・重複チェックも実行）
+- "production" または "本番": 対象環境を本番(ENVIRONMENTS参照)に切り替える
+- PAGES のキー、または "post": その1件だけを対象にする（重複チェックは対象外）
+- "http"で始まる任意のURL: そのURL1件だけをアドホックにチェックする（重複チェックは対象外）
+
+例:
+  python3 audit_pages.py                      # Local、全ページ
+  python3 audit_pages.py guide                # Local、guideページのみ
+  python3 audit_pages.py production            # 本番、全ページ
+  python3 audit_pages.py production medical    # 本番、medicalページのみ
 """
 
 import json
@@ -26,7 +35,13 @@ from collections import defaultdict
 from typing import Optional
 from urllib.parse import urljoin
 
-BASE_URL = "https://yoshikawa-hospital.local"
+ENVIRONMENTS = {
+    "local": "https://yoshikawa-hospital.local",
+    "production": "https://yoshikawa-hospital.com",
+    "本番": "https://yoshikawa-hospital.com",
+}
+
+BASE_URL = ENVIRONMENTS["local"]
 
 PAGES = {
     "front": "/",
@@ -196,28 +211,50 @@ def print_duplicates(results: dict):
     print()
 
 
+def parse_args(argv):
+    global BASE_URL
+
+    page_arg = None
+    custom_url = None
+
+    for a in argv:
+        key = a.lower()
+        if key in ENVIRONMENTS or a in ENVIRONMENTS:
+            BASE_URL = ENVIRONMENTS.get(key, ENVIRONMENTS.get(a))
+        elif a.startswith("http"):
+            custom_url = a.rstrip("/")
+        elif a == "post" or a in PAGES:
+            page_arg = a
+        else:
+            valid = ", ".join(list(ENVIRONMENTS.keys()) + list(PAGES.keys()) + ["post"])
+            print(f"不明な引数です: {a}\n有効な値: {valid}")
+            sys.exit(1)
+
+    return page_arg, custom_url
+
+
 def main():
-    arg = sys.argv[1] if len(sys.argv) > 1 else None
+    page_arg, custom_url = parse_args(sys.argv[1:])
 
     targets = {}
-    if arg is None:
+    if custom_url:
+        targets["custom"] = custom_url
+    elif page_arg is None:
         targets = dict(PAGES)
         post_url = latest_post_url()
         if post_url:
             targets["post"] = post_url
-    elif arg == "post":
+    elif page_arg == "post":
         post_url = latest_post_url()
         if post_url:
             targets["post"] = post_url
         else:
             print("投稿記事が見つかりませんでした（REST APIから取得できず）。")
             return
-    elif arg in PAGES:
-        targets[arg] = PAGES[arg]
     else:
-        valid = ", ".join(list(PAGES.keys()) + ["post"])
-        print(f"不明なページ指定です: {arg}\n有効な値: {valid}")
-        sys.exit(1)
+        targets[page_arg] = PAGES[page_arg]
+
+    print(f"対象環境: {BASE_URL}\n")
 
     results = {}
     link_sources = defaultdict(set)
