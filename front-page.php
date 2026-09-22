@@ -43,7 +43,15 @@ get_header();
                     $news_query = new WP_Query(array(
                         'post_type' => 'post',
                         'posts_per_page' => 5,
-                        'post_status' => 'publish'
+                        'post_status' => 'publish',
+                        'tax_query' => array(   // 「コラム」カテゴリはこの一覧には出さない
+                            array(
+                                'taxonomy' => 'category',
+                                'field'    => 'slug',
+                                'terms'    => 'column',
+                                'operator' => 'NOT IN',
+                            ),
+                        ),
                     ));
 
                     if ($news_query->have_posts()):
@@ -129,6 +137,8 @@ get_header();
             <div class="p-top-departments__more">
                 <a href="<?php echo esc_url(home_url('/medical')); ?>"
                     class="c-btn c-btn--departments c-btn--arrow">診療案内を見る</a>
+                <a href="<?php echo esc_url(home_url('/column/')); ?>"
+                    class="c-btn c-btn--outline c-btn--arrow">コラム・おすすめ情報を見る</a>
             </div>
         </div>
     </section>

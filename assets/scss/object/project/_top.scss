@@ -474,7 +474,11 @@ $breakpoint-md-pc: 1100px;
   }
 
   &__more {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-md $spacing-lg;
     margin-top: $spacing-2xl;
   }
 }

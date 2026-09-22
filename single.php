@@ -31,6 +31,8 @@ get_header();
                         $cat_class = 'c-label--change';
                     } elseif ($cat_slug === 'event') {
                         $cat_class = 'c-label--event';
+                    } elseif ($cat_slug === 'column') {
+                        $cat_class = 'c-label--column';
                     } else {
                         $cat_class = 'c-label--info';
                     }
@@ -58,9 +60,14 @@ get_header();
                 </div>
 
                 <!-- 一覧に戻るボタン -->
+                <?php
+                $is_column = (!empty($cat_slug) && $cat_slug === 'column');
+                $back_url  = $is_column ? home_url('/column/') : home_url('/news/');
+                $back_text = $is_column ? 'コラム一覧に戻る' : 'お知らせ一覧に戻る';
+                ?>
                 <div class="p-news-single__back">
-                    <a href="<?php echo esc_url(home_url('/news/')); ?>" class="p-news-single__back-btn">
-                        お知らせ一覧に戻る
+                    <a href="<?php echo esc_url($back_url); ?>" class="p-news-single__back-btn">
+                        <?php echo esc_html($back_text); ?>
                     </a>
                 </div>
 
