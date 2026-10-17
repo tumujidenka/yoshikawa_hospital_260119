@@ -190,14 +190,14 @@ get_header(); ?>
                         </p>
                     </div>
                 </div>
-                <!-- オンライン診療 -->
+                <!-- 産業医（嘱託産業医）の選任 -->
                 <div class="p-medical-item">
                     <div class="p-medical-item__head">
-                        <span class="p-medical-item__title">オンライン診療</span>
+                        <span class="p-medical-item__title">産業医（嘱託産業医）</span>
                     </div>
                     <div class="p-medical-item__body">
                         <p class="p-medical-item__text">
-                            オンライン診療の準備を進めております。詳細が決まり次第、お知らせいたします。
+                            働く皆さまの健康管理を支援するため、嘱託産業医に関するご相談を承っております。当院常勤医は産業医で、従業員の健康管理、職場のメンタルヘルス対策などの産業保健活動を行っています。事業者からの嘱託産業医に関するご相談は、お電話またはお問い合わせフォームよりご連絡ください。
                         </p>
                     </div>
                 </div>
