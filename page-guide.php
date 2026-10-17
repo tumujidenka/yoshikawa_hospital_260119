@@ -133,7 +133,7 @@ get_header(); ?>
             <div class="p-guide-inpatient__features">
                 <div class="p-guide-inpatient__feature">
                     <h3 class="p-guide-inpatient__feature-title p-medical-item__title">長期入院対応</h3>
-                    <p class="p-guide-inpatient__feature-text">医療療養病床を備え、急性期を終えても引き続き長期入院いただける体制を整えています</p>
+                    <p class="p-guide-inpatient__feature-text">医療療養病床を備え、急性期を終えても引き続き長期入院いただける体制を整えています。</p>
                 </div>
                 <div class="p-guide-inpatient__feature">
                     <h3 class="p-guide-inpatient__feature-title p-medical-item__title">医師常駐</h3>
@@ -141,7 +141,7 @@ get_header(); ?>
                 </div>
                 <div class="p-guide-inpatient__feature">
                     <h3 class="p-guide-inpatient__feature-title p-medical-item__title">院内調理</h3>
-                    <p class="p-guide-inpatient__feature-text">管理栄養士がご要望に合わせて院内調理して提供しておりますので、お気軽にご相談ください</p>
+                    <p class="p-guide-inpatient__feature-text">管理栄養士がご要望に合わせて院内調理して提供しておりますので、お気軽にご相談ください。</p>
                 </div>
                 <div class="p-guide-inpatient__feature">
                     <h3 class="p-guide-inpatient__feature-title p-medical-item__title">リハビリテーション</h3>
@@ -197,7 +197,8 @@ get_header(); ?>
                 </div>
                 <div class="p-guide-faq__item">
                     <h3 class="p-guide-faq__question">院内薬局には、すべてのお薬がそろっていますか？</h3>
-                    <p class="p-guide-faq__answer">当院では、入院患者様にも対応できるよう幅広く内服や注射剤を常備しています。院内に在庫がない一部の内服薬については、院外処方箋を発行し、院外の調剤薬局でお受け取りいただけます。</p>
+                    <p class="p-guide-faq__answer">
+                        当院では、入院患者様にも対応できるよう幅広く内服や注射剤を常備しています。院内に在庫がない一部の内服薬については、院外処方箋を発行し、院外の調剤薬局でお受け取りいただけます。</p>
                 </div>
             </div>
         </div>
